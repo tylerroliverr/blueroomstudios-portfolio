@@ -2,8 +2,13 @@
 import Menu from "./Menu";
 import { useEffect, useState } from "react";
 import ProjectNav from "./ProjectNav";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+
+   const pathname = usePathname();
+   const isProjectPage = pathname === "/project";
+   const hideProjectNav = isProjectPage ? null : <ProjectNav />;
 
    const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -35,7 +40,7 @@ export default function Navbar() {
                </p>
             </div>
          </div>
-         {isMenuOpen ? ( <Menu /> ): ( <ProjectNav /> )}
+         {isMenuOpen ? ( <Menu /> ) : ( null )}
       </>
    )
 }

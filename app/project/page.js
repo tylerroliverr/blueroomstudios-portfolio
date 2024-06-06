@@ -10,7 +10,7 @@ export default function ProjectPage() {
                         [visit site]
                     </Link>
                 </p>
-                <p className="projectPageNavItem">insert project name</p> {/* sanity slug something or rather here */}
+                <p className="projectPageNavItem projectTitle">insert project name</p> {/* sanity slug something or rather here */}
             </div>
         </>
     )

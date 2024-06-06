@@ -6,7 +6,7 @@
   --padding-sides: 0.8rem;
   --padding-vertical: 0.45rem;
   --container-width: 85%;
-  --blue: #1039CB;
+  --blue: #1039cb;
   --white: #f1f1f1;
 }
 
@@ -22,11 +22,12 @@ body {
 }
 
 a {
-   all: unset;
+  all: unset;
 }
 
 /* NAVBAR SECTION */
 .navbar {
+   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,7 +45,7 @@ a {
 }
 
 .menuButton {
-   cursor: pointer;
+  cursor: pointer;
 }
 
 /* PROJECT NAV SECTION */
@@ -58,22 +59,27 @@ a {
 }
 
 .projectNavItem {
-   cursor: pointer;
+  cursor: pointer;
 }
 
 /* OPEN MENU SECTION */
 .menuOpen {
+  position: absolute;
+  left: 0;
+  right: 0;
   display: flex;
-  align-items: center;
   padding: var(--padding-vertical) var(--padding-sides);
   font-size: var(--mobile-font-size);
   gap: 8px;
+  z-index: 2;
+  background-color: var(--white);
+  height: 100%;
 }
 
 .menuItem,
 .themeItem {
-   cursor: pointer;
-   transition: all 0.3s ease-out;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
 }
 
 .menuInactive {
@@ -90,6 +96,7 @@ a {
   bottom: var(--padding-vertical);
   left: 0;
   right: 0;
+  z-index: 2;
 }
 
 .themeButtons {
@@ -138,5 +145,12 @@ a {
 
 /* PROJECT PAGE SECTION */
 .projectPageNavbar {
-   font-size: var(--mobile-font-size);
+  font-size: var(--mobile-font-size);
+  padding: var(--padding-vertical) var(--padding-sides);
+  display: flex;
+  gap: 8px;
+}
+
+.projectTitle {
+  color: var(--blue);
 }
