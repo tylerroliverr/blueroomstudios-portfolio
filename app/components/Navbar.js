@@ -32,7 +32,7 @@ export default function Navbar() {
    return (
       <>
          <div className="navbar">
-            <p className="title">blueroom studios</p>
+            <p className="title link">blueroom studios</p>
             <div>
                <p onClick={toggleMenu} className="link">
                   <span className="menuButton link">[menu]</span>
