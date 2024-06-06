@@ -35,7 +35,7 @@ export default function Navbar() {
             <p className="title">blueroom studios</p>
             <div>
                <p onClick={toggleMenu} className="link">
-                  <span className="menuButton">[menu]</span>
+                  <span className="menuButton link">[menu]</span>
                   <span className="star">★</span>
                </p>
             </div>

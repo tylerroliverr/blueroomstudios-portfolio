@@ -1,11 +1,18 @@
+"use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function ProjectPage() {
+
+   const router = useRouter();
+
     return (
         <>
             <div className="projectPageNavbar">
-                <p className="projectPageNavItem">[back]</p>
-                <p className="projectPageNavItem">
+                <p className="projectPageNavItem link"
+                  onClick={() => router.back()}>
+                     [back]</p>
+                <p className="projectPageNavItem link">
                     <Link target="_blank" href={"www.google.com"}>
                         [visit site]
                     </Link>

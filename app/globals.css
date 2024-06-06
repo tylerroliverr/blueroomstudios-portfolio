@@ -25,6 +25,10 @@ a {
   all: unset;
 }
 
+.link {
+   cursor: pointer;
+}
+
 /* NAVBAR SECTION */
 .navbar {
    position: relative;
@@ -37,15 +41,10 @@ a {
 
 .title {
   font-size: var(--mobile-title-font-size);
-  cursor: pointer;
 }
 
 .star {
   font-size: var(--mobile-tiny-font-size);
-}
-
-.menuButton {
-  cursor: pointer;
 }
 
 /* PROJECT NAV SECTION */
@@ -56,10 +55,6 @@ a {
   gap: 6px;
   color: var(--blue);
   font-size: var(--mobile-font-size);
-}
-
-.projectNavItem {
-  cursor: pointer;
 }
 
 /* OPEN MENU SECTION */
@@ -78,7 +73,6 @@ a {
 
 .menuItem,
 .themeItem {
-  cursor: pointer;
   transition: all 0.3s ease-out;
 }
 
