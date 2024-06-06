@@ -8,6 +8,7 @@ async function getData() {
         projectDescription,
         "currentSlug": projectSlug.current,
         development,
+        siteURL,
         images[] {
           "imagePath": asset -> url
         }
@@ -17,7 +18,37 @@ async function getData() {
     return data;
 };
 
-export default async function getProjectData() {
+export async function getProjectData() {
     const data = await getData();
-    return data;
+
+    const transformedData = data.map(project => ({
+        projectName: project.projectName,
+        technologies: project.technologies,
+        projectDescription: project.projectDescription,
+        currentSlug: project.currentSlug,
+        development: project.development,
+        siteURL: project.siteURL,
+        images: project.images.map(image => ({
+            imagePath: image.imagePath
+        }))
+    }))
+
+    return transformedData;
+}
+
+export async function getProjectDataSlug(slug) {
+    const query = `
+    *[_type == "project" && projectSlug.current == $slug] {
+        projectName,
+        technologies,
+        projectDescription,
+        "currentSlug": projectSlug.current,
+        development,
+        siteURL,
+        images[] {
+            "imagePath": asset -> url
+        }
+    }[0]
+`;
+const data = await client.fetch(query, { slug });
 }

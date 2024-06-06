@@ -44,6 +44,11 @@ export const projectdata = {
             title: "Technologies",
             name: "technologies",
             type: "string"
+        },
+        {
+            title: "SiteURL",
+            name: "siteURL",
+            type: "string"
         }
     ]
 }
