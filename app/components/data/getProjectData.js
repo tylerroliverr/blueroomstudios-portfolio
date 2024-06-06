@@ -18,7 +18,7 @@ async function getData() {
     return data;
 };
 
-export async function getProjectData() {
+export default async function getProjectData() {
     const data = await getData();
 
     const transformedData = data.map(project => ({
@@ -36,19 +36,19 @@ export async function getProjectData() {
     return transformedData;
 }
 
-export async function getProjectDataSlug(slug) {
-    const query = `
-    *[_type == "project" && projectSlug.current == $slug] {
-        projectName,
-        technologies,
-        projectDescription,
-        "currentSlug": projectSlug.current,
-        development,
-        siteURL,
-        images[] {
-            "imagePath": asset -> url
-        }
-    }[0]
-`;
-const data = await client.fetch(query, { slug });
-}
+// export async function getProjectDataSlug(slug) {
+//     const query = `
+//     *[_type == "project" && projectSlug.current == $slug] {
+//         projectName,
+//         technologies,
+//         projectDescription,
+//         "currentSlug": projectSlug.current,
+//         development,
+//         siteURL,
+//         images[] {
+//             "imagePath": asset -> url
+//         }
+//     }[0]
+// `;
+// const data = await client.fetch(query, { slug });
+// }
