@@ -36,7 +36,7 @@ const EmailButtonFooter = () => {
    }, []);
 
    return (
-      <div ref={buttonRef} className="email link">
+      <div ref={buttonRef} className="email link menuItem">
          <p>[help@blueroomstudios.com.au]</p>
       </div>
    );
