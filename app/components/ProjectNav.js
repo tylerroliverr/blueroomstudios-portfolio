@@ -1,10 +1,14 @@
 import Link from "next/link";
+import getProjectData from "./data/getProjectData";
 
-export default function ProjectNav() {
+export default async function ProjectNav() {
+
+    const projectData = await getProjectData();
+
     return (
         <>
             <div className="projectNav">
-               <Link href={"/project"}>
+               <Link href={`/project/${projectData.currentSlug}`}>
                   <p className="projectNavItem link">1107®</p>
                </Link>
                 <p className="projectNavItem link">hayden riley</p>

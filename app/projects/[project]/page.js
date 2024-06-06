@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export default function ProjectPage() {
+export default function ProjectPage({ params }) {
 
    const router = useRouter();
 

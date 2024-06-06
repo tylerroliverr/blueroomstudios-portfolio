@@ -3,6 +3,7 @@ import Menu from "./Menu";
 import { useEffect, useState } from "react";
 import ProjectNav from "./ProjectNav";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
 
@@ -32,7 +33,7 @@ export default function Navbar() {
    return (
       <>
          <div className="navbar">
-            <p className="title link">blueroom studios</p>
+            <p className="title link"><Link href={"/"}>blueroom studios</Link></p>
             <div>
                <p onClick={toggleMenu} className="link">
                   <span className="menuButton link">[menu]</span>
