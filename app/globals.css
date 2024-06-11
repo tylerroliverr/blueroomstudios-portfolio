@@ -31,7 +31,7 @@ a {
 
 /* NAVBAR SECTION */
 .navbar {
-   position: relative;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,25 +55,30 @@ a {
   gap: 6px;
   color: var(--blue);
   font-size: var(--mobile-font-size);
+  width: fit-content;
 }
 
 /* OPEN MENU SECTION */
-.menuOpen {
+.menuContainer {
   position: absolute;
+  z-index: 2;
   left: 0;
   right: 0;
+  height: 100%;
+  background-color: var(--white);
+}
+
+.menuOpen {
   display: flex;
   padding: var(--padding-vertical) var(--padding-sides);
   font-size: var(--mobile-font-size);
   gap: 8px;
-  z-index: 2;
-  background-color: var(--white);
-  height: 70%;
 }
 
 .menuItem,
 .themeItem {
   transition: all 0.3s ease-out;
+  height: fit-content;
 }
 
 .menuInactive {
@@ -106,8 +111,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  position: absolute;
-  z-index: 2;
 }
 
 .serviceTitle {
@@ -140,13 +143,46 @@ a {
 }
 
 /* PROJECT PAGE SECTION */
-.projectPageNavbar {
+.projectPage {
   font-size: var(--mobile-font-size);
   padding: var(--padding-vertical) var(--padding-sides);
+}
+
+.projectPageNavbar {
   display: flex;
   gap: 8px;
 }
 
 .projectTitle {
   color: var(--blue);
+}
+
+.projectPageInformation {
+  width: var(--container-width);
+  text-align: justify;
+  font-size: var(--mobile-tiny-font-size);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: var(--padding-vertical) 0;
+  color: var(--blue);
+}
+
+.projectPageImages {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  padding: var(--padding-vertical) 0;
+}
+
+.imageContainer {
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
+
+.projectImage {
+  display: block;
+  object-fit: contain;
+  padding: 10px;
 }

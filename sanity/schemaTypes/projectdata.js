@@ -46,8 +46,8 @@ export const projectdata = {
             type: "string"
         },
         {
-            title: "SiteURL",
-            name: "siteURL",
+            title: "VisitSite",
+            name: "visitSite",
             type: "string"
         }
     ]

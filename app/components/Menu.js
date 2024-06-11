@@ -41,29 +41,31 @@ export default function Menu() {
       setAboutOpen(false);
    }
 
-    return (
-        <>
+   return (
+      <>
+         <div className="menuContainer">
             <div className="menuOpen">
-                <p className="menuItem about link"
+               <p className="menuItem about link"
                   onClick={handleAboutToggle}>
-                     [about]</p>
-                <p className="menuItem services link"
+                  [about]</p>
+               <p className="menuItem services link"
                   onClick={handleServicesToggle}>
-                     [services]</p>
-                <EmailButton />
+                  [services]</p>
+               <EmailButton />
             </div>
-            {isAboutOpen ? ( <About /> ) : ( null )}
-            {isServicesOpen ? ( <Services /> ) : ( null )}
-            <div className="menuFooter">
-                <div className="themeButtons">
-                    <p className="themeItem link">[blue]</p>
-                    <p className="themeItem menuInactive link">[red]</p>
-                    <p className="themeItem menuInactive link">[black]</p>
-                </div>
-                <div className="contactButton">
-                    <EmailButtonFooter />
-                </div>
+            {isAboutOpen ? (<About />) : (null)}
+            {isServicesOpen ? (<Services />) : (null)}
+         </div>
+         <div className="menuFooter">
+            <div className="themeButtons">
+               <p className="themeItem link">[blue]</p>
+               <p className="themeItem menuInactive link">[red]</p>
+               <p className="themeItem menuInactive link">[black]</p>
             </div>
-        </>
-    )
+            <div className="contactButton">
+               <EmailButtonFooter />
+            </div>
+         </div>
+      </>
+   )
 }

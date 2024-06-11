@@ -8,7 +8,7 @@ async function getData() {
         projectDescription,
         "currentSlug": projectSlug.current,
         development,
-        siteURL,
+        visitSite,
         images[] {
           "imagePath": asset -> url
         }
@@ -27,11 +27,12 @@ export default async function getProjectData() {
         projectDescription: project.projectDescription,
         currentSlug: project.currentSlug,
         development: project.development,
-        siteURL: project.siteURL,
+        visitSite: project.visitSite,
         images: project.images.map(image => ({
             imagePath: image.imagePath
         }))
     }))
+    console.log(transformedData);
 
     return transformedData;
 }
