@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ProjectNav from "./ProjectNav";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import style from "../styles/navbar.module.css";
 
 export default function Navbar() {
 
@@ -32,12 +33,12 @@ export default function Navbar() {
 
    return (
       <>
-         <div className="navbar">
-            <p className="title link"><Link href={"/"}>blueroom studios</Link></p>
+         <div className={style.navbar}>
+            <p className={`${style.title} link`}><Link href={"/"}>blueroom studios</Link></p>
             <div>
                <p onClick={toggleMenu} className="link">
-                  <span className="menuButton link">[menu]</span>
-                  <span className="star">★</span>
+                  <span className="menuButton link">[menu]</span> {/* menuButton class only for menuOpen function */}
+                  <span className={style.star}>★</span>
                </p>
             </div>
          </div>

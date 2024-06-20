@@ -1,6 +1,7 @@
 import Link from "next/link";
 import getProjectData from "@/app/components/data/getProjectData";
 import Image from "next/image";
+import styles from "../../styles/projectDetails.module.css";
 
 export async function generateStaticParams() {
     const projectData = await getProjectData();
@@ -14,37 +15,35 @@ export default async function ProjectPage({ params }) {
     const projectData = await getProjectData();
     const project = projectData.find((proj) => proj.currentSlug === params.project);
 
-    console.log(project);
-
     return (
-        <div className="projectPage">
-            <div className="projectPageNavbar">
-                <p className="projectPageNavItem link"
+        <div className={styles.projectPage}>
+            <div className={styles.projectPageNavbar}>
+                <p className={`${styles.projectPageNavItem} link`}
                 >
                     [back]</p>
-                <p className="projectPageNavItem link">
+                <p className={`${styles.projectPageNavItem} link`}>
                     <Link target="_blank" href={`https://${project.visitSite}`}>
                         [visit site]
                     </Link>
                 </p>
-                <p className="projectPageNavItem projectTitle">{project.projectName}</p> {/* sanity slug something or rather here */}
+                <p className={`${styles.projectPageNavItem} ${styles.projectTitle}`}>{project.projectName}</p>
             </div>
-            <div className="projectPageInformation">
-                <div className="projectDescription">
+            <div className={styles.projectPageInformation}>
+                <div className={styles.projectDescription}>
                     <p>{project.projectDescription}</p>
                 </div>
-                <div className="extraProjectInfo">
-                    <p>{project.development} <span className="infoSeparator">/</span> {project.technologies}</p>
+                <div className={styles.extraProjectInfo}>
+                    <p>{project.development} <span className={styles.infoSeparator}>/</span> {project.technologies}</p>
                 </div>
             </div>
-            <div className="projectPageImages">
+            <div className={styles.projectPageImages}>
                 {project.images.map((image, index) => (
-                    <div className="imageContainer" key={index}>
+                    <div className={styles.imageContainer} key={index}>
                     <Image
                         src={image.imagePath}
                         fill
                         alt='Project Image'
-                        className="projectImage"
+                        className={styles.projectImage}
                         priority
                         sizes="30vw">
                     </Image>

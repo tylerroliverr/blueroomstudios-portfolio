@@ -1,0 +1,7 @@
+.aboutContainer {
+    padding: var(--padding-vertical) var(--padding-sides);
+    font-size: var(--mobile-font-size);
+    color: var(--blue);
+    width: var(--container-width);
+    text-align: justify;
+  }

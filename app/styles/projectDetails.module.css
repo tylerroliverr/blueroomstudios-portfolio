@@ -1,0 +1,43 @@
+.projectPage {
+    font-size: var(--mobile-font-size);
+    padding: var(--padding-vertical) var(--padding-sides);
+  }
+  
+  .projectPageNavbar {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .projectTitle {
+    color: var(--blue);
+  }
+  
+  .projectPageInformation {
+    width: var(--container-width);
+    text-align: justify;
+    /* font-size: var(--mobile-tiny-font-size); */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: var(--padding-vertical) 0;
+    color: var(--blue);
+  }
+  
+  .projectPageImages {
+    position: relative;
+    display: flex;
+    gap: 14px;
+    padding: var(--padding-vertical) 0;
+  }
+  
+  .imageContainer {
+    position: relative;
+    height: 100px;
+    width: 100%;
+  }
+  
+  .projectImage {
+    display: block;
+    object-fit: contain;
+    padding: 10px;
+  }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import getProjectData from "./data/getProjectData";
+import style from "../styles/projectNav.module.css";
 
 export default async function ProjectNav() {
 
@@ -8,7 +9,7 @@ export default async function ProjectNav() {
     return (
         <>
             {projectData.map((project, index) => (
-                <div className="projectNav" key={index}>
+                <div className={style.projectNav} key={index}>
                     <Link href={`/projects/${project.currentSlug}`}>
                         <p className="projectNavItem link">{project.projectName}</p>
                     </Link>

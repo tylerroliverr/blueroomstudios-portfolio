@@ -1,0 +1,27 @@
+.servicesContainer {
+    padding: var(--padding-vertical) var(--padding-sides);
+    font-size: var(--mobile-font-size);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .serviceTitle {
+    padding-bottom: 3px;
+  }
+  
+  .serviceDescription {
+    color: var(--blue);
+    width: var(--container-width);
+    text-align: justify;
+  }
+  
+  .servicePrice {
+    color: var(--blue);
+    padding: var(--padding-vertical) 0;
+    font-size: var(--mobile-price-font-size);
+  }
+  
+  .aud {
+    font-size: var(--mobile-tiny-font-size);
+  }

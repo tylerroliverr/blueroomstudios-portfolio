@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
+import style from "../styles/menu.module.css";
 
 const EmailButtonFooter = () => {
    const buttonRef = useRef(null);
@@ -36,7 +37,7 @@ const EmailButtonFooter = () => {
    }, []);
 
    return (
-      <div ref={buttonRef} className="email link menuItem">
+      <div ref={buttonRef} className={`email link ${style.menuItem}`}>
          <p>[help@blueroomstudios.com.au]</p>
       </div>
    );

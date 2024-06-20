@@ -32,7 +32,6 @@ export default async function getProjectData() {
             imagePath: image.imagePath
         }))
     }))
-    console.log(transformedData);
 
     return transformedData;
 }

@@ -1,0 +1,9 @@
+.projectNav {
+    padding: var(--padding-vertical) var(--padding-sides) 0 var(--padding-sides);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--blue);
+    font-size: var(--mobile-font-size);
+    width: fit-content;
+  }

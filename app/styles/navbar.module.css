@@ -1,0 +1,16 @@
+.navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px var(--padding-sides); /*top, bottom = 10 & left, right = variable*/
+    font-size: var(--mobile-font-size);
+  }
+  
+  .title {
+    font-size: var(--mobile-title-font-size);
+  }
+  
+  .star {
+    font-size: var(--mobile-tiny-font-size);
+  }

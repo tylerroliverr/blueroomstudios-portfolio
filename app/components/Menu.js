@@ -4,6 +4,7 @@ import EmailButton from "./EmailButton";
 import EmailButtonFooter from "./EmailButtonFooter";
 import Services from "./Services";
 import { useState, useEffect } from "react";
+import style from "../styles/menu.module.css";
 
 export default function Menu() {
 
@@ -43,12 +44,12 @@ export default function Menu() {
 
    return (
       <>
-         <div className="menuContainer">
-            <div className="menuOpen">
-               <p className="menuItem about link"
+         <div className={style.menuContainer}>
+            <div className={style.menuOpen}>
+               <p className={`${style.menuItem} about link`} //about class for menu interactions function
                   onClick={handleAboutToggle}>
                   [about]</p>
-               <p className="menuItem services link"
+               <p className={`${style.menuItem} services link`} //services class for menu interactions function
                   onClick={handleServicesToggle}>
                   [services]</p>
                <EmailButton />
@@ -56,13 +57,13 @@ export default function Menu() {
             {isAboutOpen ? (<About />) : (null)}
             {isServicesOpen ? (<Services />) : (null)}
          </div>
-         <div className="menuFooter">
-            <div className="themeButtons">
-               <p className="themeItem link">[blue]</p>
-               <p className="themeItem menuInactive link">[red]</p>
-               <p className="themeItem menuInactive link">[black]</p>
+         <div className={style.menuFooter}>
+            <div className={style.themeButtons}>
+               <p className={`${style.themeItem} link`}>[blue]</p>
+               <p className={`${style.themeItem} ${style.menuInactive} link`}>[red]</p>
+               <p className={`${style.themeItem} ${style.menuInactive} link`}>[black]</p>
             </div>
-            <div className="contactButton">
+            <div className={style.contactButton}>
                <EmailButtonFooter />
             </div>
          </div>
