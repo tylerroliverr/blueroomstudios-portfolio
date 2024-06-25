@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import style from "../styles/menu.module.css";
 
-const EmailButton = () => {
+const EmailButton = ({ text }) => {
    const buttonRef = useRef(null);
 
    useEffect(() => {
@@ -37,9 +37,7 @@ const EmailButton = () => {
    }, []);
 
    return (
-      <div ref={buttonRef} className={`email link ${style.menuItem}`}>
-         <p>[contact]</p>
-      </div>
+      <span ref={buttonRef} className={`email link ${style.menuItem}`}>{text}</span>
    );
 };
 

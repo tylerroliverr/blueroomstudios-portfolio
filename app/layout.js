@@ -6,6 +6,8 @@ export const metadata = {
   description: "creative web design and development",
 };
 
+export const revalidate = 3600;
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

@@ -20,15 +20,15 @@ export default function Menu() {
       const servicesButton = document.querySelector(".services");
 
       if (isServicesOpen) {
-         aboutButton.classList.add("menuInactive");
+         aboutButton.classList.add(`${style.menuInactive}`);
       } else {
-         aboutButton.classList.remove("menuInactive");
+         aboutButton.classList.remove(`${style.menuInactive}`);
       }
 
       if (isAboutOpen) {
-         servicesButton.classList.add("menuInactive");
+         servicesButton.classList.add(`${style.menuInactive}`);
       } else {
-         servicesButton.classList.remove("menuInactive");
+         servicesButton.classList.remove(`${style.menuInactive}`);
       }
    }
 
@@ -52,7 +52,7 @@ export default function Menu() {
                <p className={`${style.menuItem} services link`} //services class for menu interactions function
                   onClick={handleServicesToggle}>
                   [services]</p>
-               <EmailButton />
+               <EmailButton text="[contact]"/>
             </div>
             {isAboutOpen ? (<About />) : (null)}
             {isServicesOpen ? (<Services />) : (null)}

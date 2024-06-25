@@ -15,6 +15,8 @@ export default async function ProjectNav() {
                     </Link>
                 </div>
             ))}
+            <p className={style.projectNav}>add acknowledgment somewhere</p>
+            <p className={style.projectNav}>add acknowledgment!</p>
         </>
     )
 }

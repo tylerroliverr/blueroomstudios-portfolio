@@ -2,6 +2,7 @@ import Link from "next/link";
 import getProjectData from "@/app/components/data/getProjectData";
 import Image from "next/image";
 import styles from "../../styles/projectDetails.module.css";
+import BackButton from "@/app/components/BackButton";
 
 export async function generateStaticParams() {
     const projectData = await getProjectData();
@@ -18,13 +19,15 @@ export default async function ProjectPage({ params }) {
     return (
         <div className={styles.projectPage}>
             <div className={styles.projectPageNavbar}>
-                <p className={`${styles.projectPageNavItem} link`}
-                >
-                    [back]</p>
+                <BackButton />
                 <p className={`${styles.projectPageNavItem} link`}>
-                    <Link target="_blank" href={`https://${project.visitSite}`}>
-                        [visit site]
-                    </Link>
+                    {project.visitSite ? (
+                        <Link target="_blank" href={`${project.visitSite}`}>
+                            [visit site]
+                        </Link>
+                    ) : (
+                        <span>[work in progress]</span>
+                    )}
                 </p>
                 <p className={`${styles.projectPageNavItem} ${styles.projectTitle}`}>{project.projectName}</p>
             </div>
@@ -39,14 +42,14 @@ export default async function ProjectPage({ params }) {
             <div className={styles.projectPageImages}>
                 {project.images.map((image, index) => (
                     <div className={styles.imageContainer} key={index}>
-                    <Image
-                        src={image.imagePath}
-                        fill
-                        alt='Project Image'
-                        className={styles.projectImage}
-                        priority
-                        sizes="30vw">
-                    </Image>
+                        <Image
+                            src={image.imagePath}
+                            fill
+                            alt='Project Image'
+                            className={styles.projectImage}
+                            priority
+                            sizes="30vw">
+                        </Image>
                     </div>
                 ))}
             </div>
