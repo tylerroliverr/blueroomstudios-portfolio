@@ -1,44 +1,44 @@
 .menuContainer {
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    right: 0;
-    height: 90%;
-    background-color: var(--white);
-  }
-  
-  .menuOpen {
-    display: flex;
-    padding: var(--padding-vertical) var(--padding-sides);
-    font-size: var(--mobile-font-size);
-    gap: 8px;
-  }
-  
-  .menuItem,
-  .themeItem {
-    transition: all 0.3s ease-out;
-    height: fit-content;
-  }
-  
-  .menuInactive {
-    opacity: 0.3;
-  }
-  
-  .menuFooter {
-    font-size: var(--mobile-font-size);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 var(--padding-sides) 5px var(--padding-sides);
-    position: fixed;
-    bottom: var(--padding-vertical);
-    left: 0;
-    right: 0;
-    z-index: 2;
-  }
-  
-  .themeButtons {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  height: 90%;
+  background-color: var(--white);
+}
+
+.menuOpen {
+  display: flex;
+  padding: var(--padding-vertical) var(--padding-sides);
+  font-size: var(--mobile-font-size);
+  gap: 8px;
+}
+
+.menuItem,
+.themeItem {
+  transition: all 0.3s ease-out;
+  height: fit-content;
+}
+
+.menuInactive {
+  opacity: 0.3;
+}
+
+.menuFooter {
+  font-size: var(--mobile-font-size);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--padding-sides) 5px var(--padding-sides);
+  position: fixed;
+  bottom: var(--padding-vertical);
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.themeButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

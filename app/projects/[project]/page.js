@@ -17,32 +17,32 @@ export default async function ProjectPage({ params }) {
     const project = projectData.find((proj) => proj.currentSlug === params.project);
 
     return (
-        <div className={styles.projectPage}>
-            <div className={styles.projectPageNavbar}>
-                <BackButton />
-                <p className={`${styles.projectPageNavItem} link`}>
-                    {project.visitSite ? (
-                        <Link target="_blank" href={`${project.visitSite}`}>
-                            [visit site]
-                        </Link>
-                    ) : (
-                        <span>[work in progress]</span>
-                    )}
-                </p>
-                <p className={`${styles.projectPageNavItem} ${styles.projectTitle}`}>{project.projectName}</p>
-            </div>
-            <div className={styles.projectPageInformation}>
-                <div className={styles.projectDescription}>
-                    <p>{project.projectDescription}</p>
+            <div className={styles.projectPage}>
+                <div className={styles.projectPageNavbar}>
+                    <BackButton />
+                    <p className={`${styles.projectPageNavItem} link`}>
+                        {project.visitSite !== null ? (
+                            <Link target="_blank" href={`${project.visitSite}`}>
+                                [visit site]
+                            </Link>
+                        ) : (
+                            <span>[work in progress]</span>
+                        )}
+                    </p>
+                    <p className={`${styles.projectPageNavItem} ${styles.projectTitle}`}>{project.projectName}</p>
                 </div>
-                <div className={styles.extraProjectInfo}>
-                    <p>{project.development} <span className={styles.infoSeparator}>/</span> {project.technologies}</p>
+                <div className={styles.projectPageInformation}>
+                    <div className={styles.projectDescription}>
+                        <p>{project.projectDescription}</p>
+                    </div>
+                    <div className={styles.extraProjectInfo}>
+                        <p>{project.development} <span className={styles.infoSeparator}>/</span> {project.technologies}</p>
+                    </div>
                 </div>
-            </div>
-            <div className={styles.projectPageImages}>
-                {project.images.map((image, index) => (
-                    <div className={styles.imageContainer} key={index}>
-                        <Image
+                <div className={styles.projectPageImages}>
+                    {project.images.map((image, index) => (
+                        <div className={`${styles.imageContainer} gallery`} key={index}>
+                                {/* <Image
                             src={image.imagePath}
                             fill
                             alt='Project Image'
@@ -50,10 +50,16 @@ export default async function ProjectPage({ params }) {
                             priority
                             sizes="100vw"
                             quality={100}>
-                        </Image>
-                    </div>
-                ))}
+                        </Image> */}
+                                <img
+                                    src={image.imagePath}
+                                    alt='Project Image'
+                                    title=""
+                                    className={styles.projectImage}>
+                                </img>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
     )
 }
