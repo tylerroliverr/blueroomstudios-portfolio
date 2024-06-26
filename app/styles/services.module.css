@@ -23,7 +23,7 @@
   .servicePrice {
     color: var(--blue);
     padding: var(--padding-vertical) 0;
-    font-size: var(--mobile-price-font-size);
+    font-size: var(--mobile-small-font-size);
   }
   
   .aud {

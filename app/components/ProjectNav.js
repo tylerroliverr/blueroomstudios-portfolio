@@ -1,6 +1,7 @@
 import Link from "next/link";
 import getProjectData from "./data/getProjectData";
 import style from "../styles/projectNav.module.css";
+import ModelCanvas from "./3DCanvas";
 
 export default async function ProjectNav() {
 
@@ -16,7 +17,6 @@ export default async function ProjectNav() {
                 </div>
             ))}
             <p className={style.projectNav}>add acknowledgment somewhere</p>
-            <p className={style.projectNav}>add acknowledgment!</p>
         </>
     )
 }

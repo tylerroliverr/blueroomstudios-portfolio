@@ -48,7 +48,8 @@ export default async function ProjectPage({ params }) {
                             alt='Project Image'
                             className={styles.projectImage}
                             priority
-                            sizes="30vw">
+                            sizes="100vw"
+                            quality={100}>
                         </Image>
                     </div>
                 ))}

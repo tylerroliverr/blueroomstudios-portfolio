@@ -14,18 +14,20 @@
   
   .projectPageInformation {
     width: var(--container-width);
-    text-align: justify;
     /* font-size: var(--mobile-tiny-font-size); */
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: var(--padding-vertical) 0;
     color: var(--blue);
+    font-size: var(--mobile-small-font-size);
   }
   
   .projectPageImages {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 14px;
     padding: var(--padding-vertical) 0;
   }
@@ -33,13 +35,12 @@
   .imageContainer {
     position: relative;
     height: 100px;
-    width: 100%;
+    width: 100px;
   }
   
   .projectImage {
     display: block;
     object-fit: contain;
-    padding: 10px;
   }
 
   .infoSeparator {

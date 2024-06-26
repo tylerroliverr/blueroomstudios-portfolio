@@ -4,11 +4,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 8px var(--padding-sides); /*top, bottom = 10 & left, right = variable*/
+    padding-bottom: 0;
     font-size: var(--mobile-font-size);
   }
   
   .title {
     font-size: var(--mobile-title-font-size);
+    font-family: var(--youngblood);
+    padding-left: 4px;
   }
   
   .star {
