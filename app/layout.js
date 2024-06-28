@@ -1,6 +1,7 @@
 import Script from "next/script";
 import Navbar from "./components/Navbar";
 import "./globals.css";
+import CustomCursor from "./components/CustomCursor";
 
 export const metadata = {
   title: "blueroom studios",
@@ -17,9 +18,10 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Navbar />
+        <CustomCursor />
         {children}
       </body>
-      <Script src="/Lightbox.js" />
+      <Script src="/cursorScript.js" />
     </html>
   );
 }

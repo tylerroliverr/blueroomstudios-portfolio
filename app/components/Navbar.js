@@ -14,7 +14,7 @@ export default function Navbar() {
 
    const [isMenuOpen, setMenuOpen] = useState(false);
 
-   useEffect(() => {
+   useEffect(() => { //update the innerHTML when menu is interacted with
       menuOpen();
    }, [isMenuOpen]);
 
@@ -31,10 +31,16 @@ export default function Navbar() {
       setMenuOpen(!isMenuOpen);
    }
 
+   const closeMenu = () => {
+      if (isMenuOpen) {
+         setMenuOpen(false);
+      }
+   }
+
    return (
       <>
          <div className={style.navbar}>
-            <p className={`${style.title} link`}><Link href={"/"}>blueroom studios</Link></p>
+            <p className={`${style.title} logo link`}><Link href={"/"} onClick={closeMenu}>blueroom studios</Link></p>
             <div>
                <p onClick={toggleMenu} className="link">
                   <span className="menuButton">[menu]</span> {/* menuButton class only for menuOpen function */}
@@ -42,7 +48,7 @@ export default function Navbar() {
                </p>
             </div>
          </div>
-         {isMenuOpen ? ( <Menu /> ) : ( null )}
+         {isMenuOpen ? (<Menu />) : (null)}
       </>
    )
 }
