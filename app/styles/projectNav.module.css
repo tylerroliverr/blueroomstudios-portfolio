@@ -1,9 +1,18 @@
-.projectNav {
-  padding: var(--padding-vertical) var(--padding-sides) 0 var(--padding-sides);
+.projectNavMainContainer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+}
+
+.projectNav {
+  padding: 4px var(--padding-sides) 0 var(--padding-sides);
+  display: flex;
+  flex-direction: column;
   color: var(--blue);
   font-size: var(--mobile-font-size);
   width: fit-content;
+}
+
+.lastUpdatedDiv {
+  position: absolute;
+  bottom: var(--padding-vertical);
 }

@@ -2,6 +2,7 @@ import Script from "next/script";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 import CustomCursor from "./components/CustomCursor";
+import CursorHoverLink from "./components/CursorLinkHover";
 
 export const metadata = {
   title: "blueroom studios",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         <CustomCursor />
+        <CursorHoverLink />
         {children}
       </body>
       <Script src="/cursorScript.js" />

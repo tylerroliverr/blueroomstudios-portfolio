@@ -11,13 +11,13 @@
   --youngblood: "youngblood", sans-serif;
   --symbols: "rufina-stencil-ornaments", sans-serif;
   --transitionDetails: 
-      transform 0.3s ease-out,
+      transform 0.1s ease-out,
       border-radius 0.4s ease-out,
       height 0.4s ease-out,
       width 0.4s ease-out,
       background-color 0.4s ease-out,
       opacity 1s ease-out,
-      -webkit-transform 0.3s ease-out;
+      -webkit-transform 0.1s ease-out;
 }
 
 @media screen and (max-width: 760px) {
@@ -52,6 +52,7 @@
   z-index: 1000;
   visibility: hidden;
   opacity: 0;
+  mix-blend-mode: difference;
 
   -webkit-transition: visibility 3s ease-out, opacity 3s ease-out;
   -o-transition: visibility 3s ease-out, opacity 3s ease-out;
@@ -60,10 +61,10 @@
 
 #custom-cursor {
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-  background-color: black;
+  width: 7px;
+  height: 7px;
+  border-radius: 0%;
+  background-color: white;
   z-index: 999;
   visibility: hidden;
 
@@ -79,28 +80,30 @@
 
 #custom-pointer {
   position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 100%;
-  background-color: black;
+  width: 3px;
+  height: 3px;
+  border-radius: 0%;
+  background-color: white;
   z-index: 1000;
   opacity: 1;
+  mix-blend-mode: difference;
  
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 
-  transition: border-radius 0.4s ease-out, opacity 0.3s ease-out;
-  -o-transition: border-radius 0.4s ease-out, opacity 0.3s ease-out;
+  transition: border-radius 0.4s ease-out, opacity 0.3s ease-out, height 0.4s ease-out, width 0.4s ease-out;
+  -o-transition: border-radius 0.4s ease-out, opacity 0.3s ease-out, height 0.4s ease-out, width 0.4s ease-out;
 }
 
 #custom-cursor.hovering {
-  height: 32px;
-  width: 32px;
+  height: 9px;
+  width: 9px;
 }
 
 #custom-pointer.hovering {
-
+  height: 8px;
+  width: 8px;
 }
 
 #custom-cursor.hidden {
@@ -121,7 +124,6 @@ body {
   font-weight: 400;
   font-style: normal;
   background-color: var(--white);
-  height: 1200vh;
   cursor: none;
 }
 
@@ -130,7 +132,6 @@ a {
 }
 
 .link {
-  cursor: pointer;
   transition: filter 0.16s ease-out;
 }
 

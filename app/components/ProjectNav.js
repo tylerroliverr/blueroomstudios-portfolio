@@ -1,14 +1,13 @@
 import Link from "next/link";
 import getProjectData from "./data/getProjectData";
 import style from "../styles/projectNav.module.css";
-import ModelCanvas from "./3DCanvas";
 
 export default async function ProjectNav() {
 
     const projectData = await getProjectData();
 
     return (
-        <>
+        <div className={style.projectNavMainContainer}>
             {projectData.map((project, index) => (
                 <div className={style.projectNav} key={index}>
                     <Link href={`/projects/${project.currentSlug}`}>
@@ -17,6 +16,10 @@ export default async function ProjectNav() {
                 </div>
             ))}
             <p className={style.projectNav}>add acknowledgment somewhere</p>
-        </>
+
+            <div className={style.lastUpdatedDiv}>
+                <p className={style.projectNav}>last updated: 03/07/2024</p>
+            </div>
+        </div>
     )
 }
