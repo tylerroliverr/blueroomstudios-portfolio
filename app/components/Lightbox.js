@@ -1,52 +1,129 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 const Lightbox = () => {
+  const [isActive, setIsActive] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const imagesRef = useRef([]);
+  const lightboxRef = useRef(null);
+  const touchStartRef = useRef(null);
+  const touchEndRef = useRef(null);
+
+  const openLightbox = useCallback((index) => {
+    setCurrentImageIndex(index);
+    setIsActive(true);
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setIsActive(false);
+  }, []);
+
+  const nextImage = useCallback(() => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imagesRef.current.length);
+  }, []);
+
+  const prevImage = useCallback(() => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + imagesRef.current.length) % imagesRef.current.length);
+  }, []);
+
+  const handleTouchStart = (e) => {
+    touchEndRef.current = null;
+    touchStartRef.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndRef.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartRef.current || !touchEndRef.current) return;
+    const distance = touchStartRef.current - touchEndRef.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+    if (isLeftSwipe) {
+      nextImage();
+    } else if (isRightSwipe) {
+      prevImage();
+    }
+  };
 
   useEffect(() => {
     const lightbox = document.createElement('div');
     lightbox.id = 'lightbox';
     document.body.appendChild(lightbox);
+    lightboxRef.current = lightbox;
 
-    const images = document.querySelectorAll('img');
+    const imagesNodeList = document.querySelectorAll('img');
+    imagesRef.current = Array.from(imagesNodeList);
 
-    images.forEach(image => {
-      image.addEventListener('click', e => {
-        lightbox.classList.add('active');
-        const img = document.createElement('img');
-        img.src = image.src;
-        while (lightbox.firstChild) {
-          lightbox.removeChild(lightbox.firstChild);
-        }
-        lightbox.appendChild(img);
-      });
+    imagesRef.current.forEach((image, index) => {
+      image.addEventListener('click', () => openLightbox(index));
     });
 
-    lightbox.addEventListener('click', e => {
-      if (e.target !== e.currentTarget) return;
-      lightbox.classList.remove('active');
-    });
+    const handleKeyDown = (e) => {
+      if (!isActive) return;
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'Escape') closeLightbox();
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      // Clean up by removing the lightbox and event listeners when the component unmounts
       document.body.removeChild(lightbox);
-      images.forEach(image => {
-        image.removeEventListener('click', e => {
-          lightbox.classList.add('active');
-          const img = document.createElement('img');
-          img.src = image.src;
-          while (lightbox.firstChild) {
-            lightbox.removeChild(lightbox.firstChild);
-          }
-          lightbox.appendChild(img);
-        });
+      imagesRef.current.forEach((image, index) => {
+        image.removeEventListener('click', () => openLightbox(index));
       });
-      lightbox.removeEventListener('click', e => {
-        if (e.target !== e.currentTarget) return;
-        lightbox.classList.remove('active');
-      });
+      document.removeEventListener('keydown', handleKeyDown);
     };
-  }, []); // Empty dependency array ensures this runs only once after initial render
+  }, [openLightbox, closeLightbox, nextImage, prevImage, isActive]);
+
+  useEffect(() => {
+    if (!lightboxRef.current) return;
+
+    if (isActive) {
+      lightboxRef.current.classList.add('active');
+      lightboxRef.current.innerHTML = `
+        <div class="lightbox-content">
+          <img src="${imagesRef.current[currentImageIndex]?.src}" alt="Lightbox image" class="lightbox-img"/>
+          <button class="prev-button">←</button>
+          <button class="next-button">→</button>
+          <button class="close-button">×</button>
+        </div>
+      `;
+
+      const content = lightboxRef.current.querySelector('.lightbox-content');
+      content.addEventListener('touchstart', handleTouchStart);
+      content.addEventListener('touchmove', handleTouchMove);
+      content.addEventListener('touchend', handleTouchEnd);
+
+      const prevButton = lightboxRef.current.querySelector('.prev-button');
+      const nextButton = lightboxRef.current.querySelector('.next-button');
+      const closeButton = lightboxRef.current.querySelector('.close-button');
+
+      prevButton.addEventListener('click', prevImage);
+      nextButton.addEventListener('click', nextImage);
+      closeButton.addEventListener('click', closeLightbox);
+
+      lightboxRef.current.addEventListener('click', (e) => {
+        if (e.target === lightboxRef.current) closeLightbox();
+      });
+
+    } else {
+      lightboxRef.current.classList.remove('active');
+    }
+
+    return () => {
+      if (lightboxRef.current) {
+        const content = lightboxRef.current.querySelector('.lightbox-content');
+        if (content) {
+          content.removeEventListener('touchstart', handleTouchStart);
+          content.removeEventListener('touchmove', handleTouchMove);
+          content.removeEventListener('touchend', handleTouchEnd);
+        }
+      }
+    };
+  }, [isActive, currentImageIndex, prevImage, nextImage, closeLightbox]);
 
   return null;
 };
