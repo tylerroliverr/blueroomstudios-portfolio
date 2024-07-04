@@ -25,10 +25,10 @@ export default async function ProjectPage({ params }) {
                 <p className={`${styles.projectPageNavItem} link`}>
                     {project.visitSite !== null ? (
                         <Link target="_blank" href={`${project.visitSite}`}>
-                            [visit site]
+                            [Visit site]
                         </Link>
                     ) : (
-                        <span>[work in progress]</span>
+                        <span>[Work in progress]</span>
                     )}
                 </p>
                 <p className={`${styles.projectPageNavItem} ${styles.projectTitle}`}>{project.projectName}</p>

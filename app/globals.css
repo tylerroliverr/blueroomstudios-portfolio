@@ -125,6 +125,7 @@ body {
   font-style: normal;
   background-color: var(--white);
   cursor: none;
+  height: 100vh;
 }
 
 a {

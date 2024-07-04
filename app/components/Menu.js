@@ -11,26 +11,26 @@ export default function Menu() {
    const [isAboutOpen, setAboutOpen] = useState(false);
    const [isServicesOpen, setServicesOpen] = useState(false);
 
-   useEffect(() => {
-      handleMenuInactivity();
-   }, [isAboutOpen, isServicesOpen]);
+   // useEffect(() => {
+   //    handleMenuInactivity();
+   // }, [isAboutOpen, isServicesOpen]);
 
-   const handleMenuInactivity = () => {
-      const aboutButton = document.querySelector(".about");
-      const servicesButton = document.querySelector(".services");
+   // const handleMenuInactivity = () => {
+   //    const aboutButton = document.querySelector(".about");
+   //    const servicesButton = document.querySelector(".services");
 
-      if (isServicesOpen) {
-         aboutButton.classList.add(`${style.menuInactive}`);
-      } else {
-         aboutButton.classList.remove(`${style.menuInactive}`);
-      }
+   //    if (isServicesOpen) {
+   //       aboutButton.classList.add(`${style.menuInactive}`);
+   //    } else {
+   //       aboutButton.classList.remove(`${style.menuInactive}`);
+   //    }
 
-      if (isAboutOpen) {
-         servicesButton.classList.add(`${style.menuInactive}`);
-      } else {
-         servicesButton.classList.remove(`${style.menuInactive}`);
-      }
-   }
+   //    if (isAboutOpen) {
+   //       servicesButton.classList.add(`${style.menuInactive}`);
+   //    } else {
+   //       servicesButton.classList.remove(`${style.menuInactive}`);
+   //    }
+   // }
 
    const handleAboutToggle = () => {
       setAboutOpen(!isAboutOpen);
@@ -48,11 +48,11 @@ export default function Menu() {
             <div className={style.menuOpen}>
                <p className={`${style.menuItem} about link`} //about class for menu interactions function
                   onClick={handleAboutToggle}>
-                  [about]</p>
+                  [About]</p>
                <p className={`${style.menuItem} services link`} //services class for menu interactions function
                   onClick={handleServicesToggle}>
-                  [services]</p>
-               <EmailButton text="[contact]"/>
+                  [Services]</p>
+               <EmailButton text="[Contact]"/>
             </div>
             {isAboutOpen ? (<About />) : (null)}
             {isServicesOpen ? (<Services />) : (null)}

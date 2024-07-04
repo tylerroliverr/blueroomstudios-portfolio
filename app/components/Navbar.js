@@ -21,9 +21,9 @@ export default function Navbar() {
    const menuOpen = () => {
       const menuButton = document.querySelector(".menuButton");
       if (isMenuOpen) {
-         menuButton.innerHTML = "[close]";
+         menuButton.innerHTML = "[Close]";
       } else {
-         menuButton.innerHTML = "[menu]";
+         menuButton.innerHTML = "[Menu]";
       }
    }
 
@@ -43,7 +43,7 @@ export default function Navbar() {
             <p className={`${style.title} logo link`}><Link href={"/"} onClick={closeMenu}>blueroom studios</Link></p>
             <div>
                <p onClick={toggleMenu} className="link">
-                  <span className="menuButton">[menu]</span> {/* menuButton class only for menuOpen function */}
+                  <span className="menuButton">[Menu]</span> {/* menuButton class only for menuOpen function */}
                   <span className={style.star}>★</span>
                </p>
             </div>

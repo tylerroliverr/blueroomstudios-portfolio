@@ -16,12 +16,7 @@
 
 .menuItem,
 .themeItem {
-  transition: all 0.3s ease-out;
   height: fit-content;
-}
-
-.menuInactive {
-  opacity: 0.3;
 }
 
 .menuFooter {
