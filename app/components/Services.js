@@ -10,7 +10,7 @@ export default function Services() {
                 </div>
                 <div className={style.serviceItem}>
                     <p className={style.serviceTitle}>Custom code templates <span className={style.servicePrice}>from $6,000 <span className={style.aud}>AUD</span></span></p>
-                    <p className={style.serviceDescription}>Complete freedom and control. Adjust styles, fonts, and layouts to echo your brand's personality. Your vision, your website, your way. No monthly website builder fees either.</p>
+                    <p className={style.serviceDescription}>{`Complete freedom and control. Adjust styles, fonts, and layouts to echo your brand's personality. Your vision, your website, your way. No monthly website builder fees either.`}</p>
                 </div>
                 <div className={style.serviceItem}>
                     <p className={style.serviceTitle}>Web design & interactivity <span className={style.servicePrice}>from $4,000 <span className={style.aud}>AUD</span></span></p>
@@ -26,7 +26,7 @@ export default function Services() {
                 </div>
                 <div className={style.serviceItem}>
                     <p className={style.serviceTitle}>Mobile responsive design <span className={style.servicePrice}>from $2,500 <span className={style.aud}>AUD</span></span></p>
-                    <p className={style.serviceDescription}>Already have a site that needs to look good on a mobile too? Let's make it better... Together.</p>
+                    <p className={style.serviceDescription}>{`Already have a site that needs to look good on a mobile too? Let's make it better... Together.`}</p>
                 </div>
             </div>
         </>
