@@ -22,41 +22,47 @@ export default async function ProjectPage({ params }) {
         <div className={styles.projectPage}>
             <CursorHoverLink />
             <Lightbox />
-            <div className={styles.projectPageNavbar}>
-                <BackButton />
-                <p className={`${styles.projectPageNavItem} link`}>
-                    {project.visitSite !== null ? (
-                        <Link target="_blank" href={`${project.visitSite}`}>
-                            [Visit Site]
-                        </Link>
-                    ) : (
-                        <span>[Work in progress]</span>
-                    )}
-                </p>
-                <p className={`${styles.projectPageNavItem} ${styles.projectTitle}`}>{project.projectName}</p>
-            </div>
-            <div className={styles.projectPageInformation}>
-                <div className={styles.projectDescription}>
-                    <p>{project.projectDescription}</p>
-                </div>
-                <div className={styles.extraProjectInfo}>
-                    <p><span className={styles.projectTypes}>Year</span> {project.year}</p>
-                    <p><span className={styles.projectTypes}>Tech</span> {project.technologies}</p>
-                    <p><span className={styles.projectTypes}>Design</span> {project.design}</p>
-                    <p><span className={styles.projectTypes}>Development</span> {project.development}</p>
-                </div>
-            </div>
-            <div className={styles.projectPageImages}>
-                {project.images.map((image, index) => (
-                    <div className={`${styles.imageContainer} gallery`} key={index}>
-                        <img
-                            src={image.imagePath}
-                            alt='Project Image'
-                            title=""
-                            className={styles.projectImage}>
-                        </img>
+            <div className={styles.projectPageSplit}>
+                <div className={styles.projectPageInformation}>
+                    <div className={styles.projectPageNavbar}>
+                        <div className={styles.projectPageTitleDiv}>
+                            <p className={`${styles.projectPageNavItem} ${styles.projectTitle}`}>{project.projectName}</p>
+                        </div>
+                        <div className={styles.projectPageNavButtons}>
+                            <BackButton />
+                            <p className={`${styles.projectPageNavItem} link`}>
+                                {project.visitSite !== null ? (
+                                    <Link target="_blank" href={`${project.visitSite}`}>
+                                        [Visit Site]
+                                    </Link>
+                                ) : (
+                                    <span>[Work In Progress]</span>
+                                )}
+                            </p>
+                        </div>
                     </div>
-                ))}
+                    <div className={styles.projectDescription}>
+                        <p>{project.projectDescription}</p>
+                    </div>
+                    <div className={styles.extraProjectInfo}>
+                        <p><span className={styles.projectTypes}>Year</span> {project.year}</p>
+                        <p><span className={styles.projectTypes}>Tech</span> {project.technologies}</p>
+                        <p><span className={styles.projectTypes}>Design</span> {project.design}</p>
+                        <p><span className={styles.projectTypes}>Development</span> {project.development}</p>
+                    </div>
+                </div>
+                <div className={styles.projectPageImages}>
+                    {project.images.map((image, index) => (
+                        <div className={`${styles.imageContainer} gallery`} key={index}>
+                            <img
+                                src={image.imagePath}
+                                alt='Project Image'
+                                title=""
+                                className={styles.projectImage}>
+                            </img>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )

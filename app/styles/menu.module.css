@@ -1,9 +1,11 @@
 .menuContainer {
-  position: fixed;
+  position: relative;
   z-index: 2;
+  top: 57px;
   left: 0;
   right: 0;
-  height: 93%;
+  height: 100dvh;
+  overflow: hidden;
   background-color: var(--white);
 }
 

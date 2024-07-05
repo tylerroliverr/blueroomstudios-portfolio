@@ -1,50 +1,78 @@
 .projectPage {
-  font-size: var(--mobile-font-size);
+  font-size: var(--mobile-small-font-size);
   padding: var(--padding-vertical) var(--padding-sides);
 }
 
 .projectPageNavbar {
   display: flex;
-  gap: 8px;
+  gap: 3px;
+  flex-direction: column;
+  color: black;
+}
+
+.projectPageNavButtons {
+  display: flex;
+  gap: 5px;
+  margin-left: -2px;
+}
+
+.projectPageTitleDiv {
+  display: flex;
 }
 
 .projectTitle {
   color: var(--blue);
   text-transform: capitalize;
+  font-weight: 600;
+  font-style: italic;
+  font-size: var(--mobile-font-size);
+}
+
+.projectPageSplit {
+  display: flex;
+  justify-content: space-between;
 }
 
 .projectPageInformation {
-  width: var(--container-width);
+  width: 40%;
   /* font-size: var(--mobile-tiny-font-size); */
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: var(--padding-vertical) 0;
+  padding-left: 2.5px;
   color: var(--blue);
   font-size: var(--mobile-small-font-size);
+  position: fixed;
+}
+
+.extraProjectInfo {
+  text-align: left;
 }
 
 .projectPageImages {
-  position: relative;
+  position: absolute;
+  right: 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  gap: 24px;
-  padding: var(--padding-vertical) 0;
+  gap: 10px;
+  padding-right: 2.5px;
+  max-width: 56%;
 }
 
 .imageContainer {
   position: relative;
-  height: 200px;
-  max-width: 26%;
+  height: auto;
+  max-width: 95%;
 }
 
 .projectImage {
   display: block;
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: 2px;
 }
 
 .infoSeparator {
@@ -53,4 +81,24 @@
 
 .projectTypes {
    color: black;
+}
+
+@media screen and (width >= 768px) {
+  .projectPageImages {
+    max-width: 80%;
+    gap: 30px;
+    padding-bottom: 50px;
+  }
+
+  .imageContainer {
+    width: 25%;
+  }
+
+  .projectImage {
+    height: 100%;
+  }
+
+  .projectPageInformation {
+    width: 18%;
+  }
 }

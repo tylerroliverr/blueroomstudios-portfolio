@@ -82,13 +82,17 @@ const Lightbox = () => {
     if (!lightboxRef.current) return;
 
     if (isActive) {
+      const totalImages = imagesRef.current.length;
+      const currentNumber = currentImageIndex + 1; // Adding 1 because array index starts at 0
+  
       lightboxRef.current.classList.add('active');
       lightboxRef.current.innerHTML = `
         <div class="lightbox-content">
           <img src="${imagesRef.current[currentImageIndex]?.src}" alt="Lightbox image" class="lightbox-img"/>
           <button class="prev-button">←</button>
           <button class="next-button">→</button>
-          <button class="close-button">×</button>
+          <button class="close-button"></button>
+          <div class="image-counter">[${currentNumber}/${totalImages}]</div>
         </div>
       `;
 

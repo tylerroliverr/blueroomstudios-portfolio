@@ -7,8 +7,6 @@ export default function BackButton() {
     const router = useRouter();
 
     return (
-        <p className={`${styles.projectPageNavItem} link`} onClick={() => router.back()}>
-            [Back]
-        </p>
+        <p className={`${styles.projectPageNavItem} link`} onClick={() => router.back()}>[Back]</p>
     )
 }

@@ -1,11 +1,14 @@
 :root {
-  --mobile-font-size: 0.9rem;
-  --mobile-small-font-size: 0.8rem;
-  --mobile-tiny-font-size: 0.6rem;
+  --scale-factor: 1; /* choose what rem u want and divide by the root style, place that in the query */
+  
+  --mobile-font-size: calc(0.85rem * var(--scale-factor));
+  --mobile-small-font-size: calc(0.85rem * var(--scale-factor));
+  --mobile-tiny-font-size: calc(0.7rem * var(--scale-factor));
   --mobile-title-font-size: 2.5rem;
-  --padding-sides: 1rem;
-  --padding-vertical: 0.55rem;
-  --container-width: 45%;
+  --padding-sides: calc(0.8rem * var(--scale-factor));
+  --padding-vertical: calc(0.555rem * var(--scale-factor));
+  --container-width: 18%;
+  
   --blue: #1039cb;
   --white: #f1f1f1;
   --youngblood: "youngblood", sans-serif;
@@ -22,25 +25,15 @@
 
 @media screen and (width <= 1600px) {
    :root {
-      --mobile-font-size: 0.75rem;
-      --mobile-small-font-size: 0.65rem;
-      --mobile-tiny-font-size: 0.55rem;
-      --mobile-title-font-size: 2.5rem;
-      --padding-sides: 0.9rem;
-      --padding-vertical: 0.5rem;
+      --scale-factor: 0.833; /* e.g. Approximately 0.75rem: 0.75/0.9 = 0.833 */
       --container-width: 35%;
    }
 }
 
 @media screen and (width <= 760px) {
   :root {
-    --mobile-font-size: 0.65rem;
-    --mobile-small-font-size: 0.55rem;
-    --mobile-tiny-font-size: 0.45rem;
-    --mobile-title-font-size: 2.5rem;
-    --padding-sides: 0.8rem;
-    --padding-vertical: 0.45rem;
-    --container-width: 70%;
+    --scale-factor: 0.722;
+    --container-width: 63%;
   }
 
   #cursor-container,
@@ -60,6 +53,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  cursor: none;
+}
+
+.main {
+  position: relative;
+  top: 57px;
 }
 
 #cursor-container {
@@ -143,7 +142,6 @@ body {
   font-weight: 400;
   font-style: normal;
   background-color: var(--white);
-  cursor: none;
   height: 100dvh;
 }
 
@@ -179,27 +177,28 @@ a {
 .lightbox-content {
   position: relative;
   max-width: 90%;
-  max-height: 90%;
-  height: 90%;
-  width: auto;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .lightbox-img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  border-radius: 3px;
 }
 
 .prev-button,
 .next-button,
 .close-button {
   position: absolute;
-  background: rgba(0, 0, 0, 0.2);
+  background: transparent;
   color: white;
   border: none;
-  padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
+  mix-blend-mode: difference;
 }
 
 .prev-button {
@@ -217,4 +216,16 @@ a {
 .close-button {
   top: 10px;
   right: 10px;
+}
+
+.image-counter {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  color: white;
+  padding: 0px 0px;
+  border-radius: 15px;
+  font-size: 10px;
+  mix-blend-mode: difference;
 }

@@ -17,10 +17,13 @@ export default async function ProjectNav() {
                     </Link>
                 </div>
             ))}
-            <p className={style.projectNav}>add acknowledgment somewhere</p>
 
             <div className={style.lastUpdatedDiv}>
                 <p className={style.lastUpdatedText}>last updated: 03/07/2024</p>
+            </div>
+
+            <div className={style.acknowledgmentDiv}>
+                <p>Blueroom wishes to acknowledge the traditional owners of the land on which we operate on, the Wurundjeri people of the Kulin Nation, and pay my respects to their Elders past, present and emerging.</p>
             </div>
         </div>
     )

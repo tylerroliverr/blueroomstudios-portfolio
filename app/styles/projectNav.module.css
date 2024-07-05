@@ -14,7 +14,7 @@
 }
 
 .lastUpdatedDiv {
-  position: absolute;
+  position: fixed;
   bottom: var(--padding-vertical);
 }
 
@@ -22,4 +22,20 @@
    font-size: var(--mobile-small-font-size);
    padding: 0 var(--padding-sides) 0 var(--padding-sides);
    color: var(--blue);
+}
+
+.acknowledgmentDiv {
+  font-size: var(--mobile-small-font-size);
+  position: fixed;
+  bottom: var(--padding-vertical);
+  right: var(--padding-sides);
+  color: var(--blue);
+  max-width: 20%;
+  text-align: right;
+}
+
+@media screen and (width <= 768px) {
+  .acknowledgmentDiv {
+    max-width: 50%;
+  }
 }

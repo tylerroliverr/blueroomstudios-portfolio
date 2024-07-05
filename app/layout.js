@@ -19,7 +19,9 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         <CustomCursor />
-        {children}
+        <main className="main">
+          {children}
+        </main>
       </body>
       <Script src="/cursorScript.js" />
     </html>
