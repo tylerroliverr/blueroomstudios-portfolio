@@ -5,6 +5,7 @@ import ProjectNav from "./ProjectNav";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import style from "../styles/navbar.module.css";
+import CursorHoverLink from "./CursorLinkHover";
 
 export default function Navbar() {
 
@@ -39,6 +40,7 @@ export default function Navbar() {
 
    return (
       <>
+      <CursorHoverLink />
          <div className={style.navbar}>
             <p className={`${style.title} logo link`}><Link href={"/"} onClick={closeMenu}>blueroom studios</Link></p>
             <div>

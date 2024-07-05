@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "../../styles/projectDetails.module.css";
 import BackButton from "@/app/components/BackButton";
 import Lightbox from "@/app/components/Lightbox";
+import CursorHoverLink from "@/app/components/CursorLinkHover";
 
 export async function generateStaticParams() {
     const projectData = await getProjectData();
@@ -19,13 +20,14 @@ export default async function ProjectPage({ params }) {
 
     return (
         <div className={styles.projectPage}>
+            <CursorHoverLink />
             <Lightbox />
             <div className={styles.projectPageNavbar}>
                 <BackButton />
                 <p className={`${styles.projectPageNavItem} link`}>
                     {project.visitSite !== null ? (
                         <Link target="_blank" href={`${project.visitSite}`}>
-                            [Visit site]
+                            [Visit Site]
                         </Link>
                     ) : (
                         <span>[Work in progress]</span>
@@ -38,9 +40,10 @@ export default async function ProjectPage({ params }) {
                     <p>{project.projectDescription}</p>
                 </div>
                 <div className={styles.extraProjectInfo}>
-                  <p><span className={styles.projectTypes}>who:</span> insert sanity info</p>
-                  <p><span className={styles.projectTypes}>type:</span> {project.development}</p>
-                  <p><span className={styles.projectTypes}>tech:</span> {project.technologies}</p>
+                    <p><span className={styles.projectTypes}>Year</span> {project.year}</p>
+                    <p><span className={styles.projectTypes}>Tech</span> {project.technologies}</p>
+                    <p><span className={styles.projectTypes}>Design</span> {project.design}</p>
+                    <p><span className={styles.projectTypes}>Development</span> {project.development}</p>
                 </div>
             </div>
             <div className={styles.projectPageImages}>

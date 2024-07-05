@@ -1,6 +1,7 @@
 import Link from "next/link";
 import getProjectData from "./data/getProjectData";
 import style from "../styles/projectNav.module.css";
+import CursorHoverLink from "./CursorLinkHover";
 
 export default async function ProjectNav() {
 
@@ -8,6 +9,7 @@ export default async function ProjectNav() {
 
     return (
         <div className={style.projectNavMainContainer}>
+            <CursorHoverLink />
             {projectData.map((project, index) => (
                 <div className={style.projectNav} key={index}>
                     <Link href={`/projects/${project.currentSlug}`}>

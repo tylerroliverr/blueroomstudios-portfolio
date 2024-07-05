@@ -10,6 +10,7 @@
 
 .projectTitle {
   color: var(--blue);
+  text-transform: capitalize;
 }
 
 .projectPageInformation {

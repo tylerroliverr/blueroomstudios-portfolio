@@ -5,6 +5,7 @@ import EmailButtonFooter from "./EmailButtonFooter";
 import Services from "./Services";
 import { useState, useEffect } from "react";
 import style from "../styles/menu.module.css";
+import CursorHoverLink from "./CursorLinkHover";
 
 export default function Menu() {
 
@@ -44,6 +45,7 @@ export default function Menu() {
 
    return (
       <>
+      <CursorHoverLink />
          <div className={style.menuContainer}>
             <div className={style.menuOpen}>
                <p className={`${style.menuItem} about link`} //about class for menu interactions function

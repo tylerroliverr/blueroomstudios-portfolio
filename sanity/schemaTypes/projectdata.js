@@ -46,6 +46,16 @@ export const projectdata = {
             type: "string"
         },
         {
+            title: "Design",
+            name: "design",
+            type: "string"
+        },
+        {
+            title: "Year",
+            name: "year",
+            type: "string"
+        },
+        {
             title: "VisitSite",
             name: "visitSite",
             type: "string"
