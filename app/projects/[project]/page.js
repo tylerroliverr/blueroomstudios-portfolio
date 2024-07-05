@@ -38,7 +38,9 @@ export default async function ProjectPage({ params }) {
                     <p>{project.projectDescription}</p>
                 </div>
                 <div className={styles.extraProjectInfo}>
-                    <p>{project.development} <span className={styles.infoSeparator}>/</span> {project.technologies}</p>
+                  <p><span className={styles.projectTypes}>who:</span> insert sanity info</p>
+                  <p><span className={styles.projectTypes}>type:</span> {project.development}</p>
+                  <p><span className={styles.projectTypes}>tech:</span> {project.technologies}</p>
                 </div>
             </div>
             <div className={styles.projectPageImages}>

@@ -1,9 +1,9 @@
 .menuContainer {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   left: 0;
   right: 0;
-  height: 90%;
+  height: 93%;
   background-color: var(--white);
 }
 

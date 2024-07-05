@@ -1,5 +1,8 @@
 .navbar {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: var(--white);
   display: flex;
   align-items: center;
   justify-content: space-between;

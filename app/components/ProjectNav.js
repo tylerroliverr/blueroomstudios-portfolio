@@ -18,7 +18,7 @@ export default async function ProjectNav() {
             <p className={style.projectNav}>add acknowledgment somewhere</p>
 
             <div className={style.lastUpdatedDiv}>
-                <p className={style.projectNav}>last updated: 03/07/2024</p>
+                <p className={style.lastUpdatedText}>last updated: 03/07/2024</p>
             </div>
         </div>
     )
