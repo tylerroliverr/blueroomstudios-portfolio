@@ -21,7 +21,7 @@
   font-size: var(--mobile-font-size);
   width: fit-content;
   padding-bottom: 30px;
-  color: var(--blue);
+  color: var(--text);
   font-weight: 500;
 }
 
@@ -29,7 +29,7 @@
   padding: var(--padding-vertical) var(--padding-sides) 0 var(--padding-sides);
   display: flex;
   flex-direction: column;
-  color: var(--blue);
+  color: var(--text);
   font-size: var(--mobile-font-size);
   width: fit-content;
   text-transform: capitalize;
@@ -43,7 +43,7 @@
 .lastUpdatedText {
    font-size: var(--mobile-small-font-size);
    padding: 0 var(--padding-sides) 0 var(--padding-sides);
-   color: var(--black);
+   color: var(--title);
 }
 
 .listImgContainer {

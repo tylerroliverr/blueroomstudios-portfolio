@@ -6,7 +6,7 @@ export default function Services() {
         <>
             <div className={style.servicesContainer}>
                 <div className={style.servicesHeaderInfo}>
-                    <p className={style.serviceDescription}>I offer free consultations so I can get to know you and your project better. Feel free to <EmailButton text="email"/> me {'<3'}</p>
+                    <p className={style.serviceDescription}>I offer free consultations so I can get to know you and your project better. Feel free to email me {'<3'}</p>
                 </div>
                 <div className={style.serviceItem}>
                     <p className={style.serviceTitle}>Custom code templates <span className={style.servicePrice}>from $6,000 <span className={style.aud}>AUD</span></span></p>

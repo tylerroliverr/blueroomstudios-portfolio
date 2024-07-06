@@ -8,7 +8,7 @@ export function ThemeProvider({ children }) {
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
+        if (savedTheme && ['red', 'blue', 'black'].includes(savedTheme)) {
             setTheme(savedTheme);
         }
     }, []);
@@ -18,7 +18,16 @@ export function ThemeProvider({ children }) {
         localStorage.setItem('theme', theme);
     }, [theme]);
 
-    const toggleTheme = () => {
-        setTheme()
-    }
+    const changeTheme = (newTheme) => {
+        if (['red', 'blue', 'black'].includes(newTheme)) {
+            setTheme(newTheme);
+        }
+    };
+
+    return (
+        <ThemeContext.Provider value={{ theme, changeTheme }}>
+            {children}
+        </ThemeContext.Provider>
+    );
+
 }

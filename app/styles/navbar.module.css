@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   z-index: 2;
-  background-color: var(--white);
+  background-color: var(--background);
   display: flex;
   width: 100%;
   align-items: center;
@@ -15,6 +15,11 @@
   font-size: var(--mobile-title-font-size);
   font-family: var(--youngblood);
   padding-left: 4px;
+  color: var(--title);
+}
+
+.menuDiv {
+  color: var(--title);
 }
 
 .star {

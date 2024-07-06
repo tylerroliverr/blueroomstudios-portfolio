@@ -3,6 +3,6 @@
     font-size: var(--mobile-font-size);
     display: flex;
     gap: 15px;
-    color: var(--blue);
+    color: var(--text);
     width: var(--container-width);
 }

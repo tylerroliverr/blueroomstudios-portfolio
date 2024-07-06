@@ -129,6 +129,19 @@ const Lightbox = () => {
     };
   }, [isActive, currentImageIndex, prevImage, nextImage, closeLightbox]);
 
+  useEffect(() => {
+    if (isActive) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, [isActive]);
+
   return null;
 };
 

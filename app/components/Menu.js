@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import style from "../styles/menu.module.css";
 import CursorHoverLink from "./CursorLinkHover";
 import Acknowledge from "./Acknowledge";
+import { ThemeButtons } from "./ThemeButtons";
 
 export default function Menu() {
 
@@ -74,11 +75,7 @@ export default function Menu() {
             {isAcknowledgeOpen ? (<Acknowledge />) : (null)}
          </div>
          <div className={style.menuFooter}>
-            <div className={style.themeButtons}>
-               <p className={`${style.themeItem} link`}>[Blue]</p>
-               <p className={`${style.themeItem} ${style.menuInactive} link`}>[Red]</p>
-               <p className={`${style.themeItem} ${style.menuInactive} link`}>[Black]</p>
-            </div>
+            <ThemeButtons/>
             <div className={style.contactButton}>
                <EmailButtonFooter />
             </div>

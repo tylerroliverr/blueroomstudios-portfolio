@@ -1,6 +1,6 @@
 .aboutContainer {
   padding: var(--padding-vertical) var(--padding-sides);
   font-size: var(--mobile-font-size);
-  color: var(--blue);
+  color: var(--text);
   width: var(--container-width);
 }

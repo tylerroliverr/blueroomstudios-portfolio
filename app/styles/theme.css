@@ -1,0 +1,36 @@
+:root {
+    --text: #1039cb;
+    --background: #f1f1f1;
+    --title: #111111;
+    --cursor: #f1f1f1;
+}
+
+[data-theme='red'] {
+    --text: red;
+    --background: #f1f1f1;
+    --title: #111111;
+    --cursor: #f1f1f1;
+}
+
+[data-theme='black'] {
+    --text: #f1f1f1;
+    --background: #111111;
+    --title: #acacac;
+    --cursor: #f1f1f1;
+}
+
+[data-theme='blue'] {
+    --text: #1039cb;
+    --background: #f1f1f1;
+    --title: #111111;
+    --cursor: #f1f1f1;
+}
+
+.themeButtons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: fit-content;
+    width: fit-content;
+    color: var(--title);
+}

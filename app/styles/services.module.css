@@ -8,15 +8,16 @@
 
 .serviceTitle {
   padding-bottom: 3px;
+  color: var(--title);
 }
 
 .serviceDescription {
-  color: var(--blue);
+  color: var(--text);
   width: var(--container-width);
 }
 
 .servicePrice {
-  color: var(--blue);
+  color: var(--text);
   padding: var(--padding-vertical) 0;
   font-size: var(--mobile-tiny-font-size);
   opacity: 0.8;
