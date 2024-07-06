@@ -1,0 +1,8 @@
+.acknowledgeDiv {
+    padding: var(--padding-vertical) var(--padding-sides);
+    font-size: var(--mobile-font-size);
+    display: flex;
+    gap: 15px;
+    color: var(--blue);
+    width: var(--container-width);
+}

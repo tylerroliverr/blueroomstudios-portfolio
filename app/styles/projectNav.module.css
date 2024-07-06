@@ -3,6 +3,28 @@
   flex-direction: column;
 }
 
+.navList {
+  position: fixed;
+  max-width: 45%;
+}
+
+.listDiv {
+  position: absolute;
+  padding: 5px 5px 10px 0px;
+  right: var(--padding-sides);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.listTitle {
+  font-size: var(--mobile-font-size);
+  width: fit-content;
+  padding-bottom: 30px;
+  color: var(--blue);
+  font-weight: 500;
+}
+
 .projectNav {
   padding: var(--padding-vertical) var(--padding-sides) 0 var(--padding-sides);
   display: flex;
@@ -21,21 +43,23 @@
 .lastUpdatedText {
    font-size: var(--mobile-small-font-size);
    padding: 0 var(--padding-sides) 0 var(--padding-sides);
-   color: var(--blue);
+   color: var(--black);
 }
 
-.acknowledgmentDiv {
-  font-size: var(--mobile-small-font-size);
-  position: fixed;
-  bottom: var(--padding-vertical);
-  right: var(--padding-sides);
-  color: var(--blue);
-  max-width: 20%;
-  text-align: right;
+.listImgContainer {
+  width: 100%;
+  margin-left: auto;
 }
 
-@media screen and (width <= 768px) {
-  .acknowledgmentDiv {
-    max-width: 50%;
+.listImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 3px;
+}
+
+@media screen and (width >= 768px) {
+  .listDiv {
+    display: none;
   }
 }

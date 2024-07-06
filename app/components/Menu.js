@@ -6,11 +6,13 @@ import Services from "./Services";
 import { useState, useEffect } from "react";
 import style from "../styles/menu.module.css";
 import CursorHoverLink from "./CursorLinkHover";
+import Acknowledge from "./Acknowledge";
 
 export default function Menu() {
 
    const [isAboutOpen, setAboutOpen] = useState(false);
    const [isServicesOpen, setServicesOpen] = useState(false);
+   const [isAcknowledgeOpen, setAcknowledgeOpen] = useState(false);
 
    // useEffect(() => {
    //    handleMenuInactivity();
@@ -36,13 +38,21 @@ export default function Menu() {
    const handleAboutToggle = () => {
       setAboutOpen(!isAboutOpen);
       setServicesOpen(false);
+      setAcknowledgeOpen(false);
    }
 
    const handleServicesToggle = () => {
       setServicesOpen(!isServicesOpen);
       setAboutOpen(false);
+      setAcknowledgeOpen(false);
    }
 
+   const handleAcknowledgementToggle = () => {
+      setAcknowledgeOpen(!isAcknowledgeOpen);
+      setAboutOpen(false);
+      setServicesOpen(false);
+   }
+   
    return (
       <>
       <CursorHoverLink />
@@ -55,15 +65,19 @@ export default function Menu() {
                   onClick={handleServicesToggle}>
                   [Services]</p>
                <EmailButton text="[Contact]"/>
+               <p className={`${style.menuItem} acknowledgement link`}
+                  onClick={handleAcknowledgementToggle}>
+                  [Acknowledgement]</p>
             </div>
             {isAboutOpen ? (<About />) : (null)}
             {isServicesOpen ? (<Services />) : (null)}
+            {isAcknowledgeOpen ? (<Acknowledge />) : (null)}
          </div>
          <div className={style.menuFooter}>
             <div className={style.themeButtons}>
-               <p className={`${style.themeItem} link`}>[blue]</p>
-               <p className={`${style.themeItem} ${style.menuInactive} link`}>[red]</p>
-               <p className={`${style.themeItem} ${style.menuInactive} link`}>[black]</p>
+               <p className={`${style.themeItem} link`}>[Blue]</p>
+               <p className={`${style.themeItem} ${style.menuInactive} link`}>[Red]</p>
+               <p className={`${style.themeItem} ${style.menuInactive} link`}>[Black]</p>
             </div>
             <div className={style.contactButton}>
                <EmailButtonFooter />

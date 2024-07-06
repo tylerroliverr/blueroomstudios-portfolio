@@ -7,9 +7,7 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 8px var(--padding-sides);
-  /*top, bottom = 10 & left, right = variable*/
-  padding-bottom: 0;
+  padding: 6px var(--padding-sides) 18px var(--padding-sides);
   font-size: var(--mobile-font-size);
 }
 
@@ -21,4 +19,10 @@
 
 .star {
   font-size: var(--mobile-font-size);
+}
+
+@media screen and (width >= 600px) {
+  .navbar {
+    padding-bottom: 0;
+  }
 }

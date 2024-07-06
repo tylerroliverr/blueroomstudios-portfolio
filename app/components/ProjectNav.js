@@ -6,24 +6,38 @@ import CursorHoverLink from "./CursorLinkHover";
 export default async function ProjectNav() {
 
     const projectData = await getProjectData();
+    const projectImages = projectData.images;
 
     return (
         <div className={style.projectNavMainContainer}>
             <CursorHoverLink />
-            {projectData.map((project, index) => (
-                <div className={style.projectNav} key={index}>
-                    <Link href={`/projects/${project.currentSlug}`}>
-                        <p className="projectNavItem link">{project.projectName}</p>
-                    </Link>
-                </div>
-            ))}
-
-            <div className={style.lastUpdatedDiv}>
-                <p className={style.lastUpdatedText}>last updated: 03/07/2024</p>
+            <div className={style.navList}>
+                {projectData.map((project, index) => (
+                    <div className={style.projectNav} key={index}>
+                        <Link href={`/projects/${project.currentSlug}`}>
+                            <p className="projectNavItem link">{project.projectName}</p>
+                        </Link>
+                    </div>
+                ))}
             </div>
-
-            <div className={style.acknowledgmentDiv}>
-                <p>Blueroom wishes to acknowledge the traditional owners of the land on which we operate on, the Wurundjeri people of the Kulin Nation, and pay my respects to their Elders past, present and emerging.</p>
+            <div className={style.listDiv}>
+                {projectData.map((project, index) => (
+                    <div className={style.projectsList} key={index}>
+                        <Link href={`/projects/${project.currentSlug}`}>
+                        <div className={style.listImgContainer}>
+                            <img
+                                className={style.listImage}
+                                alt={project.images[0].imagePath}
+                                src={project.images[0].imagePath}
+                            />
+                        </div>
+                        </Link>
+                        <p className={style.listTitle}>{project.projectName}</p>
+                    </div>
+                ))}
+            </div>
+            <div className={style.lastUpdatedDiv}>
+                <p className={style.lastUpdatedText}>last updated: 06/07/2024</p>
             </div>
         </div>
     )

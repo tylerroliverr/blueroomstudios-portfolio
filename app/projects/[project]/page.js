@@ -28,8 +28,17 @@ export default async function ProjectPage({ params }) {
                         <div className={styles.projectPageTitleDiv}>
                             <p className={`${styles.projectPageNavItem} ${styles.projectTitle}`}>{project.projectName}</p>
                         </div>
-                        <div className={styles.projectPageNavButtons}>
-                            <BackButton />
+                    </div>
+                    <div className={styles.projectDescription}>
+                        <p>{project.projectDescription}</p>
+                    </div>
+                    <div className={styles.extraProjectInfo}>
+                        <p><span className={styles.projectTypes}>Year</span> {project.year}</p>
+                        <p><span className={styles.projectTypes}>Tech</span> {project.technologies}</p>
+                        <p><span className={styles.projectTypes}>Design</span> {project.design}</p>
+                        <p><span className={styles.projectTypes}>Development</span> {project.development}</p>
+                    </div>
+                    <div className={styles.projectPageNavButtons}>
                             <p className={`${styles.projectPageNavItem} link`}>
                                 {project.visitSite !== null ? (
                                     <Link target="_blank" href={`${project.visitSite}`}>
@@ -40,15 +49,8 @@ export default async function ProjectPage({ params }) {
                                 )}
                             </p>
                         </div>
-                    </div>
-                    <div className={styles.projectDescription}>
-                        <p>{project.projectDescription}</p>
-                    </div>
-                    <div className={styles.extraProjectInfo}>
-                        <p><span className={styles.projectTypes}>Year</span> {project.year}</p>
-                        <p><span className={styles.projectTypes}>Tech</span> {project.technologies}</p>
-                        <p><span className={styles.projectTypes}>Design</span> {project.design}</p>
-                        <p><span className={styles.projectTypes}>Development</span> {project.development}</p>
+                    <div className={`${styles.projectPageNavButtons} ${styles.backButtonDiv}`}>
+                        <BackButton />
                     </div>
                 </div>
                 <div className={styles.projectPageImages}>
