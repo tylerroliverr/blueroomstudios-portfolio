@@ -7,7 +7,7 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 6px var(--padding-sides) 18px var(--padding-sides);
+  padding: 6px var(--padding-sides) 16px var(--padding-sides);
   font-size: var(--mobile-font-size);
 }
 
