@@ -32,7 +32,7 @@ export default async function ProjectNav() {
                             />
                         </div>
                         </Link>
-                        <p className={style.listTitle}>{project.projectName}</p>
+                        <p className={style.listTitle}>[{project.projectName}]</p>
                     </div>
                 ))}
             </div>

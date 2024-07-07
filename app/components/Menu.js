@@ -8,74 +8,41 @@ import style from "../styles/menu.module.css";
 import CursorHoverLink from "./CursorLinkHover";
 import Acknowledge from "./Acknowledge";
 import { ThemeButtons } from "./ThemeButtons";
+import Contact from "./Contact";
 
 export default function Menu() {
 
-   const [isAboutOpen, setAboutOpen] = useState(false);
-   const [isServicesOpen, setServicesOpen] = useState(false);
-   const [isAcknowledgeOpen, setAcknowledgeOpen] = useState(false);
+   const [openSection, setOpenSection] = useState(null);
 
-   // useEffect(() => {
-   //    handleMenuInactivity();
-   // }, [isAboutOpen, isServicesOpen]);
+   const toggleSection = (section) => {
+      setOpenSection(openSection === section ? null : section);
+   };
 
-   // const handleMenuInactivity = () => {
-   //    const aboutButton = document.querySelector(".about");
-   //    const servicesButton = document.querySelector(".services");
-
-   //    if (isServicesOpen) {
-   //       aboutButton.classList.add(`${style.menuInactive}`);
-   //    } else {
-   //       aboutButton.classList.remove(`${style.menuInactive}`);
-   //    }
-
-   //    if (isAboutOpen) {
-   //       servicesButton.classList.add(`${style.menuInactive}`);
-   //    } else {
-   //       servicesButton.classList.remove(`${style.menuInactive}`);
-   //    }
-   // }
-
-   const handleAboutToggle = () => {
-      setAboutOpen(!isAboutOpen);
-      setServicesOpen(false);
-      setAcknowledgeOpen(false);
-   }
-
-   const handleServicesToggle = () => {
-      setServicesOpen(!isServicesOpen);
-      setAboutOpen(false);
-      setAcknowledgeOpen(false);
-   }
-
-   const handleAcknowledgementToggle = () => {
-      setAcknowledgeOpen(!isAcknowledgeOpen);
-      setAboutOpen(false);
-      setServicesOpen(false);
-   }
-   
    return (
       <>
-      <CursorHoverLink />
+         <CursorHoverLink />
          <div className={style.menuContainer}>
             <div className={style.menuOpen}>
                <p className={`${style.menuItem} about link`} //about class for menu interactions function
-                  onClick={handleAboutToggle}>
+                  onClick={() => toggleSection('about')}>
                   [About]</p>
                <p className={`${style.menuItem} services link`} //services class for menu interactions function
-                  onClick={handleServicesToggle}>
+                  onClick={() => toggleSection('services')}>
                   [Services]</p>
-               <EmailButton text="[Contact]"/>
+               <p className={`${style.menuItem} contact link`} //contact class for menu interactions function
+                  onClick={() => toggleSection('contact')}>
+                  [Contact]</p>
                <p className={`${style.menuItem} acknowledgement link`}
-                  onClick={handleAcknowledgementToggle}>
+                  onClick={() => toggleSection('acknowledge')}>
                   [Acknowledgement]</p>
             </div>
-            {isAboutOpen ? (<About />) : (null)}
-            {isServicesOpen ? (<Services />) : (null)}
-            {isAcknowledgeOpen ? (<Acknowledge />) : (null)}
+            {openSection === 'about' && <About />}
+            {openSection === 'services' && <Services />}
+            {openSection === 'contact' && <Contact />}
+            {openSection === 'acknowledge' && <Acknowledge />}
          </div>
          <div className={style.menuFooter}>
-            <ThemeButtons/>
+            <ThemeButtons />
             <div className={style.contactButton}>
                <EmailButtonFooter />
             </div>

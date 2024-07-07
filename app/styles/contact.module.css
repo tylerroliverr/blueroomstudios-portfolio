@@ -1,0 +1,15 @@
+.contactDiv {
+    padding: var(--padding-vertical) var(--padding-sides);
+    font-size: var(--mobile-font-size);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.text {
+    color: var(--text);
+}
+
+.title {
+    color: var(--title);
+}

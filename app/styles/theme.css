@@ -6,7 +6,7 @@
 }
 
 [data-theme='red'] {
-    --text: red;
+    --text: #eb1d1d;
     --background: #f1f1f1;
     --title: #111111;
     --cursor: #f1f1f1;

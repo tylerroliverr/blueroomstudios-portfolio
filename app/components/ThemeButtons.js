@@ -8,15 +8,15 @@ export function ThemeButtons() {
 
     return (
         <div className="themeButtons">
-            <p className={`link`}
+            <p className={`link blueButton`}
                 onClick={() => changeTheme('blue')} disabled={theme === 'blue'}>
                 [Blue]
             </p>
-            <p className={`link`}
+            <p className={`link redButton`}
                 onClick={() => changeTheme('red')} disabled={theme === 'red'}>
                 [Red]
             </p>
-            <p className={`link`}
+            <p className={`link blackButton`}
                 onClick={() => changeTheme('black')} disabled={theme === 'black'}>
                 [Black]
             </p>
