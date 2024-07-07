@@ -108,4 +108,9 @@
   .projectPageInformation {
     width: 18%;
   }
+
+  .backButtonDiv {
+    position: relative;
+    bottom: 0;
+  }
 }
