@@ -113,7 +113,7 @@
   -o-transition: border-radius 0.4s ease-out, opacity 0.3s ease-out, height 0.4s ease-out, width 0.4s ease-out;
 }
 
-#custom-cursor.hovering {
+/* #custom-cursor.hovering {
   height: 9px;
   width: 9px;
 }
@@ -121,7 +121,7 @@
 #custom-pointer.hovering {
   height: 8px;
   width: 8px;
-}
+} */
 
 #custom-cursor.hidden {
   height: 0px;
