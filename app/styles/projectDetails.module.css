@@ -29,9 +29,9 @@
 .projectTitle {
   color: var(--text);
   text-transform: capitalize;
-  font-weight: 600;
-  font-style: italic;
-  font-size: var(--mobile-font-size);
+  font-size: var(--title-font);
+  font-family: var(--youngblood);
+  letter-spacing: 0.09rem;
 }
 
 .projectPageSplit {
@@ -79,7 +79,8 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
-  border-radius: 2px;
+  border-radius: 6px;
+  border: 1px solid black;
 }
 
 .infoSeparator {
@@ -95,10 +96,6 @@
     max-width: 80%;
     gap: 30px;
     padding-bottom: 50px;
-  }
-
-  .imageContainer {
-    width: 25%;
   }
 
   .projectImage {

@@ -16,6 +16,7 @@
   font-family: var(--youngblood);
   padding-left: 4px;
   color: var(--title);
+  letter-spacing: 0.05rem;
 }
 
 .menuDiv {

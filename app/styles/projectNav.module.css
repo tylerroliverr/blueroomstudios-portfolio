@@ -5,16 +5,22 @@
 
 .navList {
   position: fixed;
-  max-width: 45%;
+  max-width: 40%;
 }
 
 .listDiv {
   position: absolute;
-  padding: 5px 5px 10px 0px;
+  padding: 6.1px 12px 10px 0px;
   right: var(--padding-sides);
-  width: 50%;
+  width: 55.1%;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+
+.listTitleDiv {
+  writing-mode: vertical-rl;
+  text-orientation: sideways-right;
 }
 
 .listTitle {
@@ -44,14 +50,16 @@
 }
 
 .lastUpdatedText {
-   font-size: var(--mobile-small-font-size);
-   padding: 0 var(--padding-sides) 0 var(--padding-sides);
-   color: var(--title);
+  font-size: var(--mobile-extreme-small-font-size);
+  padding: 0 var(--padding-sides) 0 var(--padding-sides);
+  color: var(--title);
 }
 
 .listImgContainer {
   width: 100%;
+  height: 100%;
   margin-left: auto;
+  display: flex;
 }
 
 .listImage {
@@ -59,10 +67,33 @@
   height: auto;
   display: block;
   border-radius: 3px;
+  border: 1px solid black;
 }
 
-@media screen and (width >= 768px) {
-  .listDiv {
+@media (width < 768px) {
+  .mobileListDiv {
+    display: flex;
+  }
+}
+
+@media (width > 769px) {
+  .mobileListDiv {
     display: none;
+  }
+
+  .listDiv {
+    width: 100%;
+    position: absolute;
+    left: 300px;
+  }
+
+  .listImgContainer {
+    width: 20dvw;
+    margin-left: auto;
+  }
+
+  .listImage {
+    max-height: 100%;
+
   }
 }

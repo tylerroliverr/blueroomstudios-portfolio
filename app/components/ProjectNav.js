@@ -2,37 +2,55 @@ import Link from "next/link";
 import getProjectData from "./data/getProjectData";
 import style from "../styles/projectNav.module.css";
 import CursorHoverLink from "./CursorLinkHover";
+import ProjectHovered from "./ProjectHovered";
 
 export default async function ProjectNav() {
-
     const projectData = await getProjectData();
-    const projectImages = projectData.images;
 
     return (
         <div className={style.projectNavMainContainer}>
             <CursorHoverLink />
             <div className={style.navList}>
                 {projectData.map((project, index) => (
-                    <div className={style.projectNav} key={index}>
-                        <Link href={`/projects/${project.currentSlug}`}>
-                            <p className="projectNavItem link">{project.projectName}</p>
-                        </Link>
-                    </div>
+                    <ProjectHovered
+                        key={index}
+                        project={project}
+                        listDiv={
+                            <div className={style.listDiv}>
+                                <div className={style.projectsList}>
+                                    <Link href={`/projects/${project.currentSlug}`}>
+                                        <div className={style.listImgContainer}>
+                                            <div className={style.listTitleDiv}>
+                                                <p className={style.listTitle}>[{project.projectName}]</p>
+                                            </div>
+                                            <img
+                                                className={style.listImage}
+                                                alt={project.images[0].imagePath}
+                                                src={project.images[0].imagePath}
+                                            />
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
+                        }
+                    />
                 ))}
             </div>
-            <div className={style.listDiv}>
+            <div className={`${style.listDiv} ${style.mobileListDiv}`}>
                 {projectData.map((project, index) => (
                     <div className={style.projectsList} key={index}>
                         <Link href={`/projects/${project.currentSlug}`}>
-                        <div className={style.listImgContainer}>
-                            <img
-                                className={style.listImage}
-                                alt={project.images[0].imagePath}
-                                src={project.images[0].imagePath}
-                            />
-                        </div>
+                            <div className={style.listImgContainer}>
+                                <div className={style.listTitleDiv}>
+                                    <p className={style.listTitle}>[{project.projectName}]</p>
+                                </div>
+                                <img
+                                    className={style.listImage}
+                                    alt={project.images[0].imagePath}
+                                    src={project.images[0].imagePath}
+                                />
+                            </div>
                         </Link>
-                        <p className={style.listTitle}>[{project.projectName}]</p>
                     </div>
                 ))}
             </div>

@@ -4,6 +4,7 @@ import "./globals.css";
 import "./styles/theme.css";
 import CustomCursor from "./components/CustomCursor";
 import { ThemeProvider } from "./components/ThemeProvider";
+import SmoothScrolling from "./components/SmoothScrolling";
 
 export const metadata = {
   title: "blueroom studios",
@@ -19,13 +20,15 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/oxd7kuk.css" />
       </head>
       <body>
-        <ThemeProvider>
-          <Navbar />
-          <CustomCursor />
-          <main className="main">
-            {children}
-          </main>
-        </ThemeProvider>
+        <SmoothScrolling>
+          <ThemeProvider>
+            <Navbar />
+            <CustomCursor />
+            <main className="main">
+              {children}
+            </main>
+          </ThemeProvider>
+        </SmoothScrolling>
       </body>
       <Script src="/cursorScript.js" />
     </html>

@@ -2,14 +2,14 @@
     --text: #1039cb;
     --background: #f1f1f1;
     --title: #111111;
-    --cursor: #f1f1f1;
+    --cursor: #E1B826;
 }
 
 [data-theme='red'] {
     --text: #eb1d1d;
     --background: #f1f1f1;
     --title: #111111;
-    --cursor: #f1f1f1;
+    --cursor: #06D4D4;
 }
 
 [data-theme='black'] {
@@ -23,7 +23,7 @@
     --text: #1039cb;
     --background: #f1f1f1;
     --title: #111111;
-    --cursor: #f1f1f1;
+    --cursor: #E1B826;
 }
 
 .themeButtons {
