@@ -20,15 +20,13 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/oxd7kuk.css" />
       </head>
       <body>
-        <SmoothScrolling>
-          <ThemeProvider>
-            <Navbar />
-            <CustomCursor />
-            <main className="main">
-              {children}
-            </main>
-          </ThemeProvider>
-        </SmoothScrolling>
+        <ThemeProvider>
+          <Navbar />
+          <CustomCursor />
+          <main className="main">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
       <Script src="/cursorScript.js" />
     </html>
