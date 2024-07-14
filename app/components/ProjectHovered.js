@@ -30,12 +30,12 @@ export default function ProjectNavItem({ project, listDiv }) {
     }
 
     return (
-        <div
-            className={style.projectNav}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
-            <Link href={`/projects/${project.currentSlug}`}>
+        <div>
+            <Link
+                href={`/projects/${project.currentSlug}`}
+                className={style.projectNav}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}>
                 <p className="projectNavItem link">{project.projectName}</p>
             </Link>
             {isHovered && listDiv}
