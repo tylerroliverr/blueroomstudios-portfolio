@@ -55,7 +55,7 @@ export default async function ProjectNav() {
                 ))}
             </div>
             <div className={style.lastUpdatedDiv}>
-                <p className={style.lastUpdatedText}>last updated: 07/07/2024</p>
+                <p className={style.lastUpdatedText}>last updated: 18/07/2024</p>
             </div>
         </div>
     )
