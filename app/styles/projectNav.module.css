@@ -67,7 +67,7 @@
   height: auto;
   display: block;
   border-radius: 3px;
-  border: 1px solid black;
+  border: 1px solid var(--title);
 }
 
 @media (width < 768px) {
