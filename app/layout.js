@@ -5,6 +5,7 @@ import "./styles/theme.css";
 import CustomCursor from "./components/CustomCursor";
 import { ThemeProvider } from "./components/ThemeProvider";
 import SmoothScrolling from "./components/SmoothScrolling";
+import Preloader from "./components/Preloader";
 
 export const metadata = {
   title: "blueroom studios",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <ThemeProvider>
+          <Preloader />
           <Navbar />
           <CustomCursor />
           <main className="main">

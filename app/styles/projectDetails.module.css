@@ -115,6 +115,10 @@
   }
 
   .imageContainer {
-    height: 85dvh;
+    height: 50dvh;
+  }
+
+  .projectImage {
+    object-fit: contain;
   }
 }

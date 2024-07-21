@@ -4,60 +4,63 @@ import style from "../styles/projectNav.module.css";
 import CursorHoverLink from "./CursorLinkHover";
 import ProjectHovered from "./ProjectHovered";
 import { TransitionLink } from "./TransitionLink";
+import Preloader from "./Preloader";
 
 export default async function ProjectNav() {
     const projectData = await getProjectData();
 
     return (
-        <div className={style.projectNavMainContainer}>
-            <CursorHoverLink />
-            <div className={style.navList}>
-                {projectData.map((project, index) => (
-                    <ProjectHovered
-                        key={index}
-                        project={project}
-                        listDiv={
-                            <div className={style.listDiv}>
-                                <div className={style.projectsList}>
-                                    <TransitionLink href={`/projects/${project.currentSlug}`}>
-                                        <div className={style.listImgContainer}>
-                                            <div className={style.listTitleDiv}>
-                                                <p className={style.listTitle}>[{project.projectName}]</p>
+        <>
+            <div className={style.projectNavMainContainer}>
+                <CursorHoverLink />
+                <div className={style.navList}>
+                    {projectData.map((project, index) => (
+                        <ProjectHovered
+                            key={index}
+                            project={project}
+                            listDiv={
+                                <div className={style.listDiv}>
+                                    <div className={style.projectsList}>
+                                        <TransitionLink href={`/projects/${project.currentSlug}`}>
+                                            <div className={style.listImgContainer}>
+                                                <div className={style.listTitleDiv}>
+                                                    <p className={style.listTitle}>[{project.projectName}]</p>
+                                                </div>
+                                                <img
+                                                    className={style.listImage}
+                                                    alt={project.images[0].imagePath}
+                                                    src={project.images[0].imagePath}
+                                                />
                                             </div>
-                                            <img
-                                                className={style.listImage}
-                                                alt={project.images[0].imagePath}
-                                                src={project.images[0].imagePath}
-                                            />
-                                        </div>
-                                    </TransitionLink>
+                                        </TransitionLink>
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                    />
-                ))}
-            </div>
-            <div className={`${style.listDiv} ${style.mobileListDiv}`}>
-                {projectData.map((project, index) => (
-                    <div className={style.projectsList} key={index}>
-                        <TransitionLink href={`/projects/${project.currentSlug}`}>
-                            <div className={style.listImgContainer}>
-                                <div className={style.listTitleDiv}>
-                                    <p className={style.listTitleMobile}>[{project.projectName}]</p>
+                            }
+                        />
+                    ))}
+                </div>
+                <div className={`${style.listDiv} ${style.mobileListDiv}`}>
+                    {projectData.map((project, index) => (
+                        <div className={style.projectsList} key={index}>
+                            <TransitionLink href={`/projects/${project.currentSlug}`}>
+                                <div className={style.listImgContainer}>
+                                    <div className={style.listTitleDiv}>
+                                        <p className={style.listTitleMobile}>[{project.projectName}]</p>
+                                    </div>
+                                    <img
+                                        className={style.listImage}
+                                        alt={project.images[0].imagePath}
+                                        src={project.images[0].imagePath}
+                                    />
                                 </div>
-                                <img
-                                    className={style.listImage}
-                                    alt={project.images[0].imagePath}
-                                    src={project.images[0].imagePath}
-                                />
-                            </div>
-                        </TransitionLink>
-                    </div>
-                ))}
+                            </TransitionLink>
+                        </div>
+                    ))}
+                </div>
+                <div className={style.lastUpdatedDiv}>
+                    <p className={style.lastUpdatedText}>last updated: 21/07/2024</p>
+                </div>
             </div>
-            <div className={style.lastUpdatedDiv}>
-                <p className={style.lastUpdatedText}>last updated: 21/07/2024</p>
-            </div>
-        </div>
+        </>
     )
 }

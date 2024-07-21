@@ -27,7 +27,7 @@
   font-size: var(--mobile-font-size);
 }
 
-@media screen and (width >=600px) {
+@media screen and (width >= 600px) {
   .navbar {
     padding-bottom: 0;
   }
