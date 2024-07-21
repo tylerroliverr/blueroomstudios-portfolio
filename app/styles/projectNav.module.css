@@ -34,8 +34,19 @@
   text-transform: capitalize;
 }
 
+.listTitleMobile {
+  font-size: var(--mobile-font-size);
+  width: fit-content;
+  padding-bottom: 30px;
+  margin-top: -2.5px;
+  margin-left: -2px;
+  color: var(--title);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
 .projectNav {
-  padding: var(--padding-vertical) var(--padding-sides) 0 var(--padding-sides);
+  padding: var(--padding-vertical) var(--padding-sides) 0px var(--padding-sides);
   display: flex;
   flex-direction: column;
   color: var(--text);
@@ -66,8 +77,8 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 3px;
-  border: 1px solid var(--title);
+  /* border-radius: 3px;
+  border: 1px solid var(--title); */
 }
 
 @media (width < 768px) {

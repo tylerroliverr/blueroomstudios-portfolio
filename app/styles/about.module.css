@@ -4,3 +4,16 @@
   color: var(--text);
   width: var(--container-width);
 }
+
+.soft {
+  font-family: youngblood;
+  font-size: calc(var(--mobile-font-size) * 1.8);
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.minimal {
+  font-size: calc(var(--mobile-font-size) - 0.15rem);
+}

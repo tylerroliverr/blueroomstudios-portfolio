@@ -13,10 +13,10 @@
 }
 
 [data-theme='black'] {
-    --text: #f1f1f1;
+    --text: #8a8a8a;
     --background: #111111;
-    --title: #acacac;
-    --cursor: #f1f1f1;
+    --title: #f1f1f1;
+    --cursor: #8a8a8a;
 }
 
 [data-theme='blue'] {

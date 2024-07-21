@@ -8,6 +8,7 @@
   gap: 3px;
   flex-direction: column;
   color: var(--title);
+  padding-left: 3px;
 }
 
 .projectPageNavButtons {
@@ -27,7 +28,7 @@
 }
 
 .projectTitle {
-  color: var(--text);
+  color: var(--title);
   text-transform: capitalize;
   font-size: var(--title-font);
   font-family: var(--youngblood);
@@ -79,8 +80,8 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
-  border-radius: 6px;
-  border: 1px solid var(--title);
+  /* border-radius: 6px;
+  border: 1px solid var(--title); */
 }
 
 .infoSeparator {
@@ -96,6 +97,8 @@
     max-width: 80%;
     gap: 30px;
     padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .projectImage {

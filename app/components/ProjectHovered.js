@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import style from "../styles/projectNav.module.css";
+import { TransitionLink } from './TransitionLink';
 
 export default function ProjectNavItem({ project, listDiv }) {
     const [isHovered, setIsHovered] = useState(false);
@@ -22,22 +23,22 @@ export default function ProjectNavItem({ project, listDiv }) {
     if (isMobile) {
         return (
             <div className={style.projectNav}>
-                <Link href={`/projects/${project.currentSlug}`}>
+                <TransitionLink href={`/projects/${project.currentSlug}`}>
                     <p className="projectNavItem link">{project.projectName}</p>
-                </Link>
+                </TransitionLink>
             </div>
         );
     }
 
     return (
         <div>
-            <Link
+            <TransitionLink
                 href={`/projects/${project.currentSlug}`}
                 className={style.projectNav}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
                 <p className="projectNavItem link">{project.projectName}</p>
-            </Link>
+            </TransitionLink>
             {isHovered && listDiv}
         </div>
     );
