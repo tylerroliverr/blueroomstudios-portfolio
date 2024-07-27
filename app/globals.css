@@ -6,7 +6,7 @@
   --mobile-font-size: calc(0.85rem * var(--scale-factor));
   --mobile-small-font-size: calc(0.85rem * var(--scale-factor));
   --mobile-tiny-font-size: calc(0.7rem * var(--scale-factor));
-  --mobile-title-font-size: 2.5rem;
+  --mobile-title-font-size: 2.2rem;
   --mobile-extreme-small-font-size: calc(0.67rem * var(--scale-factor));
   --padding-sides: calc(0.8rem * var(--scale-factor));
   --padding-vertical: calc(0.555rem * var(--scale-factor));
@@ -22,6 +22,11 @@
     background-color 0.4s ease-out,
     opacity 1s ease-out,
     -webkit-transform 0.1s ease-out;
+}
+
+@font-face {
+  font-family: 'studio pro';
+  src: url(/studio-pro-regular-webfont.woff);
 }
 
 @media screen and (width <=1600px) {
@@ -62,7 +67,7 @@
 }
 
 body {
-  font-family: monospace;
+  font-family: 'studio pro';
   font-weight: 400;
   font-style: normal;
   background-color: var(--background);

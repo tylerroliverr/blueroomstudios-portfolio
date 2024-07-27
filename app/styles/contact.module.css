@@ -7,9 +7,9 @@
 }
 
 .text {
-    color: var(--text);
+    color: var(--title);
 }
 
 .title {
-    color: var(--title);
+    color: var(--text);
 }

@@ -14,7 +14,7 @@
   padding: var(--padding-vertical) var(--padding-sides);
   font-size: var(--mobile-font-size);
   gap: 8px;
-  margin-left: -2px;
+  /* margin-left: -2px; */
 }
 
 .menuItem{

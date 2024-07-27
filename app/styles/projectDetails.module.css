@@ -14,7 +14,7 @@
 .projectPageNavButtons {
   display: flex;
   gap: 5px;
-  margin-left: -2px;
+  /* margin-left: -2px; */
   color: var(--title);
 }
 
@@ -106,7 +106,7 @@
   }
 
   .projectPageInformation {
-    width: 18%;
+    width: 14%;
   }
 
   .backButtonDiv {
