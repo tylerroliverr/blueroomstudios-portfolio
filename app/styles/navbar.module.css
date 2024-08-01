@@ -21,13 +21,31 @@
 
 .menuDiv {
   color: var(--title);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  font-family: 'youngblood';
+  @media screen and (width <=768px) {
+    font-size: 1.2rem;
+    
+  }
 }
 
 .star {
   font-size: var(--mobile-font-size);
 }
 
-@media screen and (width >= 600px) {
+.threeDStar {
+  width: 16px;
+  height: auto;
+  padding-top: 5px;
+  @media screen and (width <=768px) {
+    width: 14px;
+  }
+}
+
+@media screen and (width >=600px) {
   .navbar {
     padding-bottom: 0;
   }

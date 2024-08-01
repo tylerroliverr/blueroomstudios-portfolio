@@ -86,7 +86,9 @@ body {
 
 .main {
   position: relative;
-  top: 57px;
+  top: 45px;
+  z-index: 2;
+  padding-left: 5px;
 }
 
 #cursor-container {

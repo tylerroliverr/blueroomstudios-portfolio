@@ -101,12 +101,28 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  .projectPageImages {
+    display: flex;
+    align-items: flex-start;
+  }
+
   .projectImage {
-    height: 100%;
+    height: 150px;
+    transition:
+      transform 0.35s ease-out,
+      box-shadow 0.35s ease-out;
+  }
+
+  .projectImage:hover {
+    transform: scale(1.0225);
+    box-shadow: var(--text) 0px 10px 200px;
+    position: relative;
+    z-index: 1000;
   }
 
   .projectPageInformation {
     width: 14%;
+    margin-left: 20px;
   }
 
   .backButtonDiv {
@@ -114,11 +130,13 @@
     bottom: 0;
   }
 
-  .imageContainer {
-    height: 50dvh;
-  }
-
   .projectImage {
     object-fit: contain;
+  }
+}
+
+@media screen and (width >=900px) {
+  .projectPageImages {
+    direction: rtl;
   }
 }

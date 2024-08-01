@@ -27,10 +27,9 @@
 }
 
 .themeButtons {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    height: fit-content;
-    width: fit-content;
     color: var(--title);
+    position: relative;
+    padding: var(--padding-vertical) var(--padding-sides);
+    font-size: var(--mobile-font-size);
+    z-index: 10;
 }

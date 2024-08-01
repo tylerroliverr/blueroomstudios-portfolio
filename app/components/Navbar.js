@@ -8,61 +8,62 @@ import style from "../styles/navbar.module.css";
 import CursorHoverLink from "./CursorLinkHover";
 
 export default function Navbar() {
-   const pathname = usePathname();
-   const isProjectPage = pathname === "/project";
-   const hideProjectNav = isProjectPage ? null : <ProjectNav />;
+  const pathname = usePathname();
+  const isProjectPage = pathname === "/project";
+  const hideProjectNav = isProjectPage ? null : <ProjectNav />;
 
-   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
-   useEffect(() => { //update the innerHTML when menu is interacted with
-      menuOpen();
-   }, [isMenuOpen]);
+  useEffect(() => { //update the innerHTML when menu is interacted with
+    menuOpen();
+  }, [isMenuOpen]);
 
-   useEffect(() => {
-      if (isMenuOpen) {
-         document.body.style.overflow = 'hidden';
-      } else {
-         document.body.style.overflow = 'visible';
-      }
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
 
-      // Cleanup function to reset overflow when component unmounts
-      return () => {
-         document.body.style.overflow = 'visible';
-      };
-   }, [isMenuOpen]);
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, [isMenuOpen]);
 
-   const menuOpen = () => {
-      const menuButton = document.querySelector(".menuButton");
-      if (isMenuOpen) {
-         menuButton.innerHTML = "[Close]";
-      } else {
-         menuButton.innerHTML = "[Menu]";
-      }
-   }
+  const menuOpen = () => {
+    const menuButton = document.querySelector(".menuButton");
+    if (isMenuOpen) {
+      menuButton.innerHTML = "Close";
+    } else {
+      menuButton.innerHTML = "Menu";
+    }
+  }
 
-   const toggleMenu = () => {
-      setMenuOpen(!isMenuOpen);
-   }
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  }
 
-   const closeMenu = () => {
-      if (isMenuOpen) {
-         setMenuOpen(false);
-      }
-   }
+  const closeMenu = () => {
+    if (isMenuOpen) {
+      setMenuOpen(false);
+    }
+  }
 
-   return (
-      <>
+  return (
+    <>
       <CursorHoverLink />
-         <div className={style.navbar}>
-            <p className={`${style.title} logo link`}><Link href={"/"} onClick={closeMenu}>blueroom studios</Link></p>
-            <div className={style.menuDiv}>
-               <p onClick={toggleMenu} className="link">
-                  <span className="menuButton">[Menu]</span>
-                  <span className={style.star}>★</span>
-               </p>
-            </div>
-         </div>
-         {isMenuOpen ? (<Menu />) : (null)}
-      </>
-   )
+      <div className={style.navbar}>
+        <p className={`${style.title} logo link`}><Link href={"/"} onClick={closeMenu}>blueroom studios</Link></p>
+        <div className={style.menuDiv}>
+          <p onClick={toggleMenu} className="link">
+            <span className="menuButton">Menu</span>
+            {/* <span className={style.star}> ★</span> */}
+          </p>
+          {/* <span><img className={style.threeDStar} src="3dstar.png" /></span> */}
+        </div>
+      </div>
+      {isMenuOpen ? (<Menu />) : (null)}
+    </>
+  )
 }

@@ -1,8 +1,8 @@
 .menuContainer {
   position: fixed;
-  z-index: 2;
-  top: 55px;
-  left: 0;
+  z-index: 4;
+  top: 45px;
+  left: 5px;
   right: 0;
   height: 100%;
   overflow: hidden;
@@ -33,4 +33,16 @@
   left: 0;
   right: 0;
   z-index: 2;
+}
+
+.modelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+  margin-top: auto;
+  position: absolute;
+  opacity: 0.5;
+  z-index: 0;
 }
