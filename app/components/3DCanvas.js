@@ -26,10 +26,10 @@ function Modelp({ url }) {
         opacity: 0.9, // base opacity
         transparent: true,
         roughness: 0.1, // lower roughness for clearer reflections
-        metalness: 0.6, // some metalness for shininess
+        metalness: 1.1, // some metalness for shininess
         clearcoat: 1, // clearcoat for a glossy finish
         clearcoatRoughness: 0, // clearcoat roughness
-        ior: 1, // index of refraction for glass
+        ior: 1.5, // index of refraction for glass
       });
     }
   });
@@ -73,8 +73,8 @@ export default function GlassLogo() {
           far={1000}
         />
         {/* <DynamicFOVCamera fovs={fovs} /> */}
-        <ambientLight intensity={0} />
-        <directionalLight position={[2, 0, 0]} intensity={0} />
+        <ambientLight intensity={1} />
+        <directionalLight position={[2, 5, 2]} intensity={0} />
         <Suspense>
           <Modelp url="/24_08_01_10_19_29_584.gltf" />
           <Environment preset="night" />

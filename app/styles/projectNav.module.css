@@ -99,7 +99,7 @@
   position: absolute;
   z-index: -100;
   top: 0;
-  right: -13px;
+  right: -32px;
   bottom: -14px;
 }
 
@@ -109,7 +109,7 @@
   }
 
   .modelContainer {
-    left: 44px;
+    left: 38px;
     width: 30%;
     bottom: 25%;
   }
