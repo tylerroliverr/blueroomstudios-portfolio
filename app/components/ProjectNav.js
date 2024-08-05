@@ -61,7 +61,7 @@ export default async function ProjectNav() {
           <GlassLogoNav />
         </div>
         <div className={style.lastUpdatedDiv}>
-          <p className={style.lastUpdatedText}>last updated: 01/08/2024</p>
+          <p className={style.lastUpdatedText}>last updated: 05/08/2024</p>
         </div>
       </div>
     </>

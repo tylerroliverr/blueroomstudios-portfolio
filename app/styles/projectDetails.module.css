@@ -99,6 +99,7 @@
     padding-bottom: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding-right: 35px;
   }
 
   .projectPageImages {
