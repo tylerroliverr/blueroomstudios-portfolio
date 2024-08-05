@@ -10,6 +10,10 @@ function Modelp({ url }) {
   const { scene } = useGLTF(url);
   const ref = useRef();
 
+  useFrame(() => {
+    ref.current.rotation.y += 0.002;
+  });
+
   useEffect(() => {
     if (scene) {
       const box = new THREE.Box3().setFromObject(scene);
