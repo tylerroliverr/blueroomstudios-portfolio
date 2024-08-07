@@ -22,9 +22,10 @@
 .menuDiv {
   color: var(--title);
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   font-size: 1.4rem;
+  width: 50px;
   font-family: 'youngblood';
   @media screen and (width <=768px) {
     font-size: 1.2rem;
