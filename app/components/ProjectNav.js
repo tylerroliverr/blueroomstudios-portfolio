@@ -57,9 +57,9 @@ export default async function ProjectNav() {
             </div>
           ))}
         </div>
-        <div className={style.modelContainer}>
+        {/* <div className={style.modelContainer}>
           <GlassLogoNav />
-        </div>
+        </div> */}
         <div className={style.lastUpdatedDiv}>
           <p className={style.lastUpdatedText}>last updated: 05/08/2024</p>
         </div>
