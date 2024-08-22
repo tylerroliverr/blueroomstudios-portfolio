@@ -2,13 +2,14 @@
   position: fixed;
   top: 0;
   z-index: 2;
-  background-color: var(--background);
+  /* background-color: var(--background); */
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
   padding: 6px var(--padding-sides) 16px var(--padding-sides);
   font-size: var(--mobile-font-size);
+  z-index: 100;
 }
 
 .title {
@@ -17,6 +18,7 @@
   padding-left: 4px;
   color: var(--title);
   letter-spacing: 0.05rem;
+  mix-blend-mode: difference;
 }
 
 .menuDiv {
@@ -27,6 +29,7 @@
   font-size: 1.4rem;
   width: 50px;
   font-family: 'youngblood';
+  mix-blend-mode: difference;
   @media screen and (width <=768px) {
     font-size: 1.2rem;
     
