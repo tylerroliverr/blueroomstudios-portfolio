@@ -16,7 +16,7 @@
 
 .listDiv {
   position: absolute;
-  padding: 6.1px 12px 10px 0px;
+  /* padding: 6.1px 12px 10px 0px; */
   right: var(--padding-sides);
   width: 55.1%;
   display: flex;
@@ -77,10 +77,11 @@
   height: 100%;
   margin-left: auto;
   display: flex;
+  justify-content: flex-end;
 }
 
 .listImage {
-  width: 100%;
+  width: 80%;
   height: auto;
   display: block;
   object-fit: contain;
