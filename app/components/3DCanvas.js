@@ -27,9 +27,9 @@ function Modelp({ url }) {
     if (child.isMesh) {
       child.material = new THREE.MeshPhysicalMaterial({
         transmission: 0.1, // transmission for glass-like transparency
-        opacity: 0.9, // base opacity
+        opacity: 1, // base opacity
         transparent: true,
-        roughness: 0.1, // lower roughness for clearer reflections
+        roughness: 0, // lower roughness for clearer reflections
         metalness: 1.1, // some metalness for shininess
         clearcoat: 1, // clearcoat for a glossy finish
         clearcoatRoughness: 0, // clearcoat roughness
@@ -71,14 +71,14 @@ export default function GlassLogo() {
       <Canvas>
         <PerspectiveCamera
           makeDefault
-          fov={40}
-          position={[20, 0, 10]}
+          fov={50}
+          position={[20, 0, 0]}
           near={1}
           far={1000}
         />
         {/* <DynamicFOVCamera fovs={fovs} /> */}
         <ambientLight intensity={1} />
-        <directionalLight position={[2, 5, 2]} intensity={0} />
+        <directionalLight position={[2, 5, 2]} intensity={1} />
         <Suspense>
           <Modelp url="/24_08_01_10_19_29_584.gltf" />
           <Environment preset="night" />

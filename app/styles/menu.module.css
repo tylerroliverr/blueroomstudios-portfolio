@@ -1,7 +1,6 @@
 .menuContainer {
   position: fixed;
   z-index: 4;
-  top: 45px;
   left: 5px;
   right: 0;
   height: 100%;
@@ -14,10 +13,12 @@
   padding: var(--padding-vertical) var(--padding-sides);
   font-size: var(--mobile-font-size);
   gap: 8px;
+  position: relative;
+  top: 45px;
   /* margin-left: -2px; */
 }
 
-.menuItem{
+.menuItem {
   height: fit-content;
   color: var(--title);
 }

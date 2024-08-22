@@ -23,16 +23,18 @@
 
 .menuDiv {
   color: var(--title);
-  display: flex;
+  /* display: flex;
   justify-content: end;
-  align-items: center;
+  align-items: center; */
+  text-align: right;
   font-size: 1.4rem;
-  width: 50px;
+  width: 15%;
   font-family: 'youngblood';
   mix-blend-mode: difference;
+
   @media screen and (width <=768px) {
     font-size: 1.2rem;
-    
+
   }
 }
 
@@ -44,6 +46,7 @@
   width: 16px;
   height: auto;
   padding-top: 5px;
+
   @media screen and (width <=768px) {
     width: 14px;
   }
