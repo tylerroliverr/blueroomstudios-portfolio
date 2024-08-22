@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  position: relative;
+  top: 45px;
 }
 
 .serviceTitle {

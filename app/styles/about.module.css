@@ -3,6 +3,8 @@
   font-size: var(--mobile-font-size);
   color: var(--text);
   width: var(--container-width);
+  position: relative;
+  top: 45px;
 }
 
 .soft {

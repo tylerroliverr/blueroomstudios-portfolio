@@ -6,6 +6,7 @@
     gap: 5px;
     position: relative;
     z-index: 10;
+    top: 45px;
 }
 
 .text {
