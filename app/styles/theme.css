@@ -1,39 +1,39 @@
 :root {
-    --text: #1039cb;
-    --background: #f1f1f1;
-    --title: #111111;
-    --cursor: #E1B826;
+  --text: #8a8a8a;
+  --background: #111111;
+  --title: #f1f1f1;
+  --cursor: #f1f1f1;
 }
 
 [data-theme='red'] {
-    --text: #eb1d1d;
-    --background: #f1f1f1;
-    --title: #111111;
-    --cursor: #06D4D4;
+  --text: #eb1d1d;
+  --background: #f1f1f1;
+  --title: #111111;
+  --cursor: #06D4D4;
 }
 
 [data-theme='black'] {
-    --text: #8a8a8a;
-    --background: #111111;
-    --title: #f1f1f1;
-    --cursor: #f1f1f1;
+  --text: #8a8a8a;
+  --background: #111111;
+  --title: #f1f1f1;
+  --cursor: #f1f1f1;
 }
 
 [data-theme='blue'] {
-    --text: #1039cb;
-    --background: #f1f1f1;
-    --title: #111111;
-    --cursor: #E1B826;
+  --text: #1039cb;
+  --background: #f1f1f1;
+  --title: #111111;
+  --cursor: #E1B826;
 }
 
 .themeButtons {
-    color: var(--title);
-    position: relative;
-    padding: var(--padding-vertical) var(--padding-sides);
-    font-size: var(--mobile-font-size);
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    top: 45px;
+  color: var(--title);
+  position: relative;
+  padding: var(--padding-vertical) var(--padding-sides);
+  font-size: var(--mobile-font-size);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  top: 45px;
 }
