@@ -39,7 +39,7 @@ export default async function ProjectNav() {
             />
           ))}
         </div>
-        <div className={`${style.listDiv} ${style.mobileListDiv}`}>
+        {/* <div className={`${style.listDiv} ${style.mobileListDiv}`}>
           {projectData.map((project, index) => (
             <div className={style.projectsList} key={index}>
               <TransitionLink href={`/projects/${project.currentSlug}`}>
@@ -56,12 +56,9 @@ export default async function ProjectNav() {
               </TransitionLink>
             </div>
           ))}
-        </div>
-        {/* <div className={style.modelContainer}>
-          <GlassLogoNav />
         </div> */}
         <div className={style.lastUpdatedDiv}>
-          <p className={style.lastUpdatedText}>last updated: 05/08/2024</p>
+          <p className={style.lastUpdatedText}>last updated: 02/09/2024</p>
         </div>
       </div>
     </>
