@@ -14,6 +14,7 @@ export default async function ProjectNav() {
       <div className={style.projectNavMainContainer}>
         <CursorHoverLink />
         <div className={style.navList}>
+          <a href="/InspoPlayground/index.html">click</a>
           {projectData.map((project, index) => (
             <ProjectHovered
               key={index}
