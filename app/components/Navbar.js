@@ -54,7 +54,7 @@ export default function Navbar() {
     <>
       <CursorHoverLink />
       <div className={style.navbar}>
-        <p className={`${style.title} logo link`}><Link href={"/"} onClick={closeMenu}>blueroom studios</Link></p>
+        <p className={`${style.title} logo link`}><Link href={"/"} onClick={closeMenu}>Blueroom Studios</Link></p>
         <div className={style.menuDiv}>
           <p onClick={toggleMenu} className="link">
             <span className="menuButton">Menu</span>

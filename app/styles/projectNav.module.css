@@ -49,6 +49,8 @@
   color: var(--title);
   font-weight: 500;
   text-transform: capitalize;
+  mix-blend-mode: difference;
+
 }
 
 .projectNav {
