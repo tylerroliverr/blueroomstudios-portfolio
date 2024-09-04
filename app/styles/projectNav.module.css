@@ -54,7 +54,7 @@
 }
 
 .projectNav {
-  padding: var(--padding-vertical) var(--padding-sides) 0px var(--padding-sides);
+  padding: 0 var(--padding-sides) var(--padding-vertical) var(--padding-sides);
   display: flex;
   flex-direction: column;
   color: var(--text);
