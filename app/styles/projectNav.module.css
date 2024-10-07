@@ -43,7 +43,7 @@
 .listTitleMobile {
   font-size: var(--mobile-font-size);
   width: fit-content;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   /* margin-top: -2.5px; */
   /* margin-left: -2px; */
   color: var(--title);
