@@ -1,18 +1,18 @@
 .contactDiv {
-    padding: var(--padding-vertical) var(--padding-sides);
-    font-size: var(--mobile-font-size);
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    position: relative;
-    z-index: 10;
-    top: 45px;
+  padding: var(--padding-vertical) var(--padding-sides);
+  font-size: var(--mobile-font-size);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  z-index: 10;
+  top: 45px;
 }
 
 .text {
-    color: var(--title);
+  color: var(--text);
 }
 
 .title {
-    color: var(--text);
+  color: var(--title);
 }
