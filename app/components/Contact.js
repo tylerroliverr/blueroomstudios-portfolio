@@ -6,7 +6,7 @@ export default function Contact() {
         <>
             <div className={style.contactDiv}>
                 <p className={style.text}><span className={style.title}>Email</span> [help@blueroomstudios.com.au]</p>
-                <p className={style.text}><span className={style.title}>Instagram</span> <Link target="_blank" href={"https://www.instagram.com/blueroom.studios/"}>[@blueroom.studios]</Link></p>
+                <p className={style.text}><span className={style.title}>Instagram</span> <Link target="_blank" className="link" href={"https://www.instagram.com/blueroom.studios/"}>[@blueroom.studios]</Link></p>
             </div>
         </>
     )
