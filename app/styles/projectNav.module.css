@@ -127,11 +127,12 @@
   .listDiv {
     width: 100%;
     position: absolute;
-    left: 300px;
+    left: 150px;
+    top: 0;
   }
 
   .listImgContainer {
-    width: 20dvw;
+    width: 48dvw;
     margin-left: auto;
   }
 
