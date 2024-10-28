@@ -13,12 +13,12 @@
 }
 
 .title {
-  font-size: var(--title-font);
-  font-family: var(--youngblood);
-  font-family: "studio pro";
-  padding-left: 4px;
+  font-size: calc(var(--title-font) + 1rem);
+  font-family: "youngblood";
+  padding-left: 8px;
   color: var(--title);
   mix-blend-mode: difference;
+  letter-spacing: 1px;
 }
 
 .menuDiv {

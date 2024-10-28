@@ -95,7 +95,7 @@
 
 @media screen and (width >=768px) {
   .projectPageImages {
-    max-width: 80%;
+    max-width: 78%;
     gap: 30px;
     padding-bottom: 50px;
     display: grid;
@@ -123,7 +123,7 @@
   }
 
   .projectPageInformation {
-    width: 14%;
+    width: 18%;
     margin-left: 0px;
   }
 

@@ -29,6 +29,11 @@
   src: url(/studio-pro-regular-webfont.woff);
 }
 
+@font-face {
+  font-family: 'playground';
+  src: url(/PPPlayground-Medium.woff);
+}
+
 @media screen and (width <=1600px) {
   :root {
     --scale-factor: 0.833;
