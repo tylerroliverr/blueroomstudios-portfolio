@@ -10,18 +10,23 @@
 
 .menuOpen {
   display: flex;
-  padding: var(--padding-vertical) var(--padding-sides);
+  padding: 0 var(--padding-sides);
   font-size: var(--mobile-font-size);
   gap: 8px;
   position: relative;
-  top: 45px;
   z-index: 10;
   /* margin-left: -2px; */
+
+  top: 50px;
+
+  @media screen and (width <=768px) {
+    top: 50px;
+  }
 }
 
 .menuItem {
   height: fit-content;
-  color: var(--title);
+  color: var(--text);
 }
 
 .menuFooter {

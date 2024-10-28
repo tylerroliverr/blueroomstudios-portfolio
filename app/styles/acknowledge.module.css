@@ -1,10 +1,16 @@
 .acknowledgeDiv {
-    padding: var(--padding-vertical) var(--padding-sides);
-    font-size: var(--mobile-font-size);
-    display: flex;
-    gap: 15px;
-    color: var(--text);
-    width: var(--container-width);
-    position: relative;
-    top: 45px;
+  padding: var(--padding-vertical) var(--padding-sides);
+  font-size: var(--mobile-font-size);
+  display: flex;
+  gap: 15px;
+  color: var(--text);
+  width: var(--container-width);
+  position: relative;
+  top: 50px;
+
+  @media screen and (width <=768px) {
+    top: 50px;
+  }
+
+  ;
 }

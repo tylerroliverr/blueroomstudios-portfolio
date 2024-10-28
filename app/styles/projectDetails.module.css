@@ -1,6 +1,6 @@
 .projectPage {
   font-size: var(--mobile-small-font-size);
-  padding: var(--padding-vertical) var(--padding-sides);
+  padding: 0 var(--padding-sides);
 }
 
 .projectPageNavbar {
