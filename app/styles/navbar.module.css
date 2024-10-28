@@ -18,7 +18,10 @@
   padding-left: 8px;
   color: var(--title);
   mix-blend-mode: difference;
-  letter-spacing: 1px;
+}
+
+.titleSpacer {
+  padding-right: 1.8px;
 }
 
 .menuDiv {
