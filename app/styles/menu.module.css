@@ -26,7 +26,7 @@
 
 .menuItem {
   height: fit-content;
-  color: var(--text);
+  color: var(--title);
 }
 
 .menuFooter {
