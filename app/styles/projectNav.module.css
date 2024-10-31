@@ -87,7 +87,7 @@
   height: auto;
   display: block;
   object-fit: contain;
-  object-position: top;
+  object-position: left;
   /* border-radius: 3px;
   border: 1px solid var(--title); */
 }
@@ -132,8 +132,9 @@
   }
 
   .listImgContainer {
-    width: 40dvw;
-    margin-left: auto;
+    width: 800px;
+    max-height: 85dvh;
+    margin-right: auto;
   }
 
   .listImage {

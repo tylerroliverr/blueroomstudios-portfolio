@@ -1,15 +1,27 @@
 :root {
-  --text: #8a8a8a;
-  --background: #111111;
-  --title: #f1f1f1;
-  --cursor: #f1f1f1;
+  --text: #1039cb;
+  --background: #f1f1f1;
+  --title: #111111;
+  --cursor: #E1B826;
+
+  .blackButton,
+  .redButton,
+  .blueButton {
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+  }
 }
 
 [data-theme='red'] {
   --text: #eb1d1d;
   --background: #f1f1f1;
   --title: #111111;
-  --cursor: #06D4D4;
+  --cursor: #83d0fd;
+
+  .blackButton,
+  .blueButton {
+    opacity: 0.5;
+  }
 }
 
 [data-theme='black'] {
@@ -17,6 +29,11 @@
   --background: #111111;
   --title: #f1f1f1;
   --cursor: #f1f1f1;
+
+  .redButton,
+  .blueButton {
+    opacity: 0.5;
+  }
 }
 
 [data-theme='blue'] {
@@ -24,6 +41,27 @@
   --background: #f1f1f1;
   --title: #111111;
   --cursor: #E1B826;
+
+  .blackButton,
+  .redButton {
+    opacity: 0.5;
+  }
+}
+
+.roomText {
+  font-style: italic;
+}
+
+.blueButton {
+  color: #1039cb;
+}
+
+.redButton {
+  color: #eb1d1d;
+}
+
+.blackButton {
+  color: #8a8a8a;
 }
 
 .themeButtons {
@@ -41,5 +79,4 @@
     top: 50px;
   }
 
-  ;
 }

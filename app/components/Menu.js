@@ -41,9 +41,9 @@ export default function Menu() {
             onClick={() => toggleSection('theme')}>
             [Theme]</p>
         </div>
-        <div className={style.modelContainer}>
+        {/* <div className={style.modelContainer}>
           <GlassLogo />
-        </div>
+        </div> */}
         {openSection === 'about' && <About />}
         {openSection === 'services' && <Services />}
         {openSection === 'contact' && <Contact />}
