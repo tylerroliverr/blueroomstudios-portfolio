@@ -18,7 +18,7 @@ export function ThemeButtons() {
       </p>
       <p className={`link blackButton`}
         onClick={() => changeTheme('black')} disabled={theme === 'black'}>
-        [Black <span className="roomText">room</span>]
+        [Dark <span className="roomText">room</span>]
       </p>
     </div>
   )
