@@ -303,7 +303,11 @@ a {
 
   .star-text-div-right {
     left: 50%;
-    top: 66%;
+    top: 76%;
+  }
+
+  .star-text {
+    font-size: 10px;
   }
 }
 
