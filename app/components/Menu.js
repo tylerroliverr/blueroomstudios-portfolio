@@ -22,6 +22,9 @@ export default function Menu() {
 
   return (
     <>
+      <div className="star-text-div-right">
+        <p className="star-text"></p>
+      </div>
       <CursorHoverLink />
       <div className={style.menuContainer}>
         <div className={style.menuOpen}>

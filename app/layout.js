@@ -25,9 +25,6 @@ export default function RootLayout({ children }) {
           <Preloader />
           <Navbar />
           <CustomCursor />
-          <div className="star-text-div">
-            <p className="star-text"></p>
-          </div>
           <main className="main">
             {children}
           </main>

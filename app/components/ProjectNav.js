@@ -11,6 +11,9 @@ export default async function ProjectNav() {
 
   return (
     <>
+      <div className="star-text-div">
+        <p className="star-text"></p>
+      </div>
       <div className={style.projectNavMainContainer}>
         <CursorHoverLink />
         <div className={style.navList}>
