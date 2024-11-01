@@ -283,10 +283,6 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 50;
-
-  @media screen and (width <=768px) {
-    left: 26%;
-  }
 }
 
 .star-text-div-right {
@@ -298,8 +294,14 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 50;
+}
 
-  @media screen and (width <=768px) {
+@media screen and (width <=768px) {
+  .star-text-div {
+    left: 26%;
+  }
+
+  .star-text-div-right {
     left: 50%;
     top: 66%;
   }
