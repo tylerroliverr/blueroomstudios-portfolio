@@ -46,7 +46,7 @@
   /* padding-bottom: 30px; */
   /* margin-top: -2.5px; */
   /* margin-left: -2px; */
-  color: var(--title);
+  color: var(--text);
   font-weight: 500;
   text-transform: capitalize;
   mix-blend-mode: difference;
@@ -110,6 +110,7 @@
 @media (width <=768px) {
   .mobileListDiv {
     display: flex;
+    padding-bottom: 10px;
   }
 
   .modelContainer {
