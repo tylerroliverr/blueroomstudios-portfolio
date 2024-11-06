@@ -27,7 +27,7 @@ export default async function ProjectNav() {
                     <TransitionLink href={`/projects/${project.currentSlug}`}>
                       <div className={style.listImgContainer}>
                         <div className={style.listTitleDiv}>
-                          <p className={style.listTitle}>[{project.projectName}]</p>
+                          <p className={style.listTitle}>{project.projectName}</p>
                         </div>
                         <img
                           className={style.listImage}
@@ -48,7 +48,7 @@ export default async function ProjectNav() {
               <TransitionLink href={`/projects/${project.currentSlug}`}>
                 <div className={style.listImgContainer}>
                   <div className={style.listTitleDiv}>
-                    <p className={style.listTitleMobile}>[{project.projectName}]</p>
+                    <p className={style.listTitleMobile}>{project.projectName}</p>
                   </div>
                   <img
                     className={style.listImage}
@@ -61,7 +61,7 @@ export default async function ProjectNav() {
           ))}
         </div>
         <div className={style.lastUpdatedDiv}>
-          <p className={style.lastUpdatedText}>last updated: 31/10/2024</p>
+          <p className={style.lastUpdatedText}>last updated: 06/11/2024</p>
         </div>
       </div>
     </>
