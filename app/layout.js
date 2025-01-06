@@ -6,6 +6,7 @@ import CustomCursor from "./components/CustomCursor";
 import { ThemeProvider } from "./components/ThemeProvider";
 import SmoothScrolling from "./components/SmoothScrolling";
 import Preloader from "./components/Preloader";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: "blueroom studios",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/oxd7kuk.css" />
       </head>
       <body>
+        <Analytics />
         <ThemeProvider>
           <Preloader />
           <Navbar />
