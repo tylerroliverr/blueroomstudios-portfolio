@@ -13,7 +13,7 @@ export const metadata = {
   description: "creative web design and development",
 };
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export default function RootLayout({ children }) {
   return (
@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
         </ThemeProvider>
       </body>
       <Script src="/cursorScript.js" />
+
     </html>
   );
 }
