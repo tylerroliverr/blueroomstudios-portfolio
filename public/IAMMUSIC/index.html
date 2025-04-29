@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>water</title>
+  <link rel="stylesheet" href="./stylesheet.css">
+  <link rel="stylesheet" href="https://use.typekit.net/oxd7kuk.css" />
+</head>
+
+<body>
+
+  <audio id="background-audio" loop>
+    <source src="./resources/Audio/Background_Sound.wav" type="audio/wav">
+  </audio>
+
+  <div class="enter-container">
+    <a href="#begin" id="enter-link">Enter</a>
+  </div>
+
+  <div id="begin" class="section">
+    <p></p>
+    <img class="arrow" src="./resources/chevron.png" />
+  </div>
+
+  <div class="global-section" id="global-section">
+    <!-- <audio id="global-audio" loop>
+      <source src="./resources/Audio/Global/Global_Audio.wav" type="audio/wav">
+    </audio> -->
+
+    <div class="section one" data-audio="./resources/Audio/Global/Global_Score_1.wav">
+      <video class="video" src="./resources/Video/Global/GLOBAL VID 1.mov" loop muted autoplay></video>
+    </div>
+    <div class="section two" data-audio="./resources/Audio/Global/Global_Score_2.wav">
+      <video class="video" src="./resources/Video/Global/Golbal vid 2.mov" loop muted autoplay></video>
+    </div>
+    <div class="section three" data-audio="./resources/Audio/Global/Global_Score_3.wav">
+      <video class="video" src="./resources/Video/Global/GLOBAL VID 3.mov" loop muted autoplay></video>
+    </div>
+  </div>
+
+  <div class="nature-section" id="nature-section">
+    <audio id="nature-audio" loop>
+      <source src="./resources/Audio/Nature/Nature_Audio.wav" type="audio/wav">
+    </audio>
+
+    <div class="section four" data-audio="./resources/Audio/Nature/Nature_Score_1.wav">
+      <video class="video" src="./resources/Video/Nature/NATURE VID 1.mp4" loop muted autoplay></video>
+    </div>
+    <div class="section five" data-audio="./resources/Audio/Nature/Nature_Score_2.wav">
+      <video class="video" src="./resources/Video/Nature/NATURE VID 2.mp4" loop muted autoplay></video>
+    </div>
+    <div class="section six" data-audio="./resources/Audio/Nature/Nature_Score_3.wav">
+      <video class="video" src="./resources/Video/Nature/NATURE VID 3.mp4" loop muted autoplay></video>
+    </div>
+  </div>
+
+  <div class="personal-section" id="personal-section">
+    <audio id="personal-audio" loop>
+      <source src="./resources/Audio/Personal/Personal_Audio.wav" type="audio/wav">
+    </audio>
+
+    <div class="section seven" data-audio="./resources/Audio/Personal/Personal_Score_1.wav">
+      <video class="video" src="./resources/Video/Personal/PERSONAL VID 1.mov" loop muted autoplay></video>
+    </div>
+    <div class="section eight" data-audio="./resources/Audio/Personal/Personal_Score_2.wav">
+      <video class="video" src="./resources/Video/Personal/PERSONAL VID 2.mov" loop muted autoplay></video>
+    </div>
+    <div class="section nine" data-audio="./resources/Audio/Personal/Personal_Score_3.wav">
+      <video class="video" src="./resources/Video/Personal/PERSONAL VID 3.mov" loop muted autoplay></video>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+  <script src="/script.js"></script>
+
+</body>
+
+</html>
