@@ -53,6 +53,7 @@ export default async function ProjectNav() {
                   <ProjectImageCycle
                     images={project.images}
                     altText={project.images[0]?.imagePath}
+                    delayOffset={index * 250}
                   />
                 </div>
               </TransitionLink>
