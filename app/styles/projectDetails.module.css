@@ -143,3 +143,9 @@
     direction: rtl;
   }
 }
+
+@media screen and (width <=768px) {
+  .projectImage {
+    border-radius: 1px;
+  }
+}
