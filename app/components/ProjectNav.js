@@ -4,7 +4,7 @@ import style from "../styles/projectNav.module.css";
 import CursorHoverLink from "./CursorLinkHover";
 import ProjectHovered from "./ProjectHovered";
 import { TransitionLink } from "./TransitionLink";
-import GlassLogoNav from "./3DCanvasNav";
+import ProjectImageCycle from "./ProjectImageCycle";
 
 export default async function ProjectNav() {
   const projectData = await getProjectData();
@@ -50,10 +50,9 @@ export default async function ProjectNav() {
                   <div className={style.listTitleDiv}>
                     <p className={style.listTitleMobile}>{project.projectName}</p>
                   </div>
-                  <img
-                    className={style.listImage}
-                    alt={project.images[0].imagePath}
-                    src={project.images[0].imagePath}
+                  <ProjectImageCycle
+                    images={project.images}
+                    altText={project.images[0]?.imagePath}
                   />
                 </div>
               </TransitionLink>
