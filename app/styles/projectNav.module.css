@@ -87,7 +87,9 @@
   height: 100px;
   display: block;
   object-fit: cover;
-  object-position: left;
+  object-position: center;
+  border: 0.1px solid var(--text);
+  border-radius: 1px;
   /* border-radius: 3px;
   border: 1px solid var(--title); */
 }
