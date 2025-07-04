@@ -296,7 +296,8 @@ a {
 
 @media screen and (width <=768px) {
   .star-text-div {
-    left: 50%;
+    left: 8%;
+    top: 8%;
   }
 
   .star-text-div-right {
