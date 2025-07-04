@@ -163,3 +163,30 @@
 .fadeIn {
   opacity: 1;
 }
+
+
+
+
+
+@media screen and (width <=768px) {
+  .navList {
+    width: 100%;
+    max-width: unset;
+  }
+
+  .projectNav {
+    width: 50%;
+    text-align: right;
+    padding: 0 0 var(--padding-vertical) 0;
+  }
+
+  .projectNavType {
+    text-align: left;
+    padding-left: 2px;
+    color: gray;
+  }
+
+  .navListMobile {
+    display: flex;
+  }
+}

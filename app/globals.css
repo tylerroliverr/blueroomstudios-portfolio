@@ -92,7 +92,6 @@ body {
   position: relative;
   top: 50px;
   z-index: 2;
-  padding-left: 5px;
 
   @media screen and (width <=768px) {
     top: 50px;
@@ -297,7 +296,7 @@ a {
 
 @media screen and (width <=768px) {
   .star-text-div {
-    left: 40%;
+    left: 50%;
   }
 
   .star-text-div-right {

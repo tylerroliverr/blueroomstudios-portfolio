@@ -11,6 +11,7 @@ async function getData() {
         visitSite,
         design,
         year,
+        typeOfWork,
         images[] {
           "imagePath": asset -> url
         }
@@ -32,6 +33,7 @@ export default async function getProjectData() {
     visitSite: project.visitSite,
     design: project.design,
     year: project.year,
+    typeOfWork: project.typeOfWork,
     images: project.images.map(image => ({
       imagePath: image.imagePath
     }))
