@@ -13,7 +13,7 @@ export const metadata = {
   description: "creative web design and development",
 };
 
-export const revalidate = 10;
+export const revalidate = 0;
 
 export default function RootLayout({ children }) {
   return (
