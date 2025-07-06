@@ -26,9 +26,9 @@ export default async function ProjectNav() {
                   <div className={style.projectsList}>
                     <TransitionLink href={`/projects/${project.currentSlug}`}>
                       <div className={style.listImgContainer}>
-                        <div className={style.listTitleDiv}>
+                        {/* <div className={style.listTitleDiv}>
                           <p className={style.listTitle}>{project.projectName}</p>
-                        </div>
+                        </div> */}
                         <img
                           className={style.listImage}
                           alt={project.images[0].imagePath}
@@ -42,7 +42,7 @@ export default async function ProjectNav() {
             />
           ))}
         </div>
-        {/* <div className={`${style.listDiv} ${style.mobileListDiv}`}>
+        <div className={`${style.listDiv} ${style.mobileListDiv}`}>
           {projectData.map((project, index) => (
             <div className={style.projectsList} key={index}>
               <TransitionLink href={`/projects/${project.currentSlug}`}>
@@ -53,13 +53,13 @@ export default async function ProjectNav() {
                   <ProjectImageCycle
                     images={project.images}
                     altText={project.images[0]?.imagePath}
-                    delayOffset={index * 250}
+                    // delayOffset={index * 250}
                   />
                 </div>
               </TransitionLink>
             </div>
           ))}
-        </div> */}
+        </div>
         <div className={style.lastUpdatedDiv}>
           <p className={style.lastUpdatedText}>last updated: 04/07/2025</p>
         </div>

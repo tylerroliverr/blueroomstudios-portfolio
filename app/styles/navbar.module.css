@@ -15,9 +15,13 @@
 .title {
   font-size: calc(var(--title-font) + 1rem);
   font-family: "youngblood";
-  padding-left: 8px;
-  color: var(--title);
+  /* padding-left: 8px; */
+  /* color: var(--title); */
+  color: var(--text);
   mix-blend-mode: difference;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .titleSpacer {
@@ -59,5 +63,27 @@
 @media screen and (width >=600px) {
   .navbar {
     padding-bottom: 0;
+  }
+
+  .title {
+    font-size: 3.5rem;
+    color: var(--title);
+  }
+}
+
+@media screen and (width <=768px) {
+  .title {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .menuDiv {
+    position: absolute;
+    top: 17px;
+    right: 10px;
+    width: fit-content;
+    text-align: left;
   }
 }

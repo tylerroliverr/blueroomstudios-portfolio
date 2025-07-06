@@ -17,7 +17,7 @@ export default function Services() {
           <p className={style.serviceDescription}>Basic website using any website builder. Fine tune and elevate user experience through animations, interactivity and good design.</p>
         </div>
         <div className={style.serviceItem}>
-          <p className={style.serviceTitle}>E-commerce website <span className={style.servicePrice}>from $4,500 <span className={style.aud}>AUD</span></span></p>
+          <p className={style.serviceTitle}>E-commerce website <span className={style.servicePrice}>from $5,500 <span className={style.aud}>AUD</span></span></p>
           <p className={style.serviceDescription}>Interactivity, animations, and good design. We build an e-com website using one of the major online platforms. Get your products out there! Have a cool store.</p>
         </div>
         <div className={style.serviceItem}>

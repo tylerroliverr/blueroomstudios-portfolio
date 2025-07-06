@@ -20,9 +20,9 @@ export default async function ProjectPage({ params }) {
 
   return (
     <>
-      <div className="star-text-div">
+      {/* <div className="star-text-div">
         <p className="star-text"></p>
-      </div>
+      </div> */}
       <div className={styles.projectPage}>
         <CursorHoverLink />
         <Lightbox />

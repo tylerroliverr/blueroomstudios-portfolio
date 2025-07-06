@@ -77,9 +77,9 @@
 .listImgContainer {
   width: 100%;
   height: 100%;
-  margin-left: auto;
+  /* margin-left: auto; */
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .listImage {
@@ -88,7 +88,7 @@
   display: block;
   object-fit: cover;
   object-position: center;
-  border: 0.1px solid var(--text);
+  /* border: 0.1px solid var(--text); */
   border-radius: 1px;
   /* border-radius: 3px;
   border: 1px solid var(--title); */
@@ -134,20 +134,25 @@
   .listDiv {
     width: 100%;
     position: absolute;
-    left: 150px;
-    top: 0;
+    right: 0%;
+    top: 5%;
+    pointer-events: none;
+    z-index: 1;
   }
 
   .listImgContainer {
-    width: 800px;
-    max-height: 85dvh;
-    margin-right: auto;
+    width: 100%;
+    max-height: 100%;
   }
 
   .listImage {
-    max-height: 100%;
     height: 500px;
-    width: 100%;
+    width: 50%;
+    object-fit: contain;
+  }
+
+  .navList {
+    position: relative;
   }
 }
 
@@ -164,10 +169,6 @@
   opacity: 1;
 }
 
-
-
-
-
 @media screen and (width <=768px) {
   .navList {
     width: 100%;
@@ -180,13 +181,69 @@
     padding: 0 0 var(--padding-vertical) 0;
   }
 
-  .projectNavType {
-    text-align: left;
-    padding-left: 2px;
-    color: gray;
-  }
-
   .navListMobile {
     display: flex;
   }
+
+  .listDiv,
+  .navList {
+    position: relative;
+  }
+
+  .listDiv {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    gap: 15px;
+    right: 0;
+  }
+
+  .listImage {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 0%;
+  }
+
+  .listTitleDiv {
+    /* display: none; */
+  }
+
+  .listTitleMobile {
+    font-size: 0.35rem;
+  }
+}
+
+.projectNavType {
+  text-align: left;
+  padding-left: 0px;
+  color: gray;
+  font-size: calc(var(--mobile-font-size) - 0.2rem);
+}
+
+.navList {
+  max-width: 100%;
+  width: 100%;
+  left: 0px;
+}
+
+.projectNav {
+  width: 100%;
+}
+
+.projectItemDesk {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectItem {
+  width: 50%;
+}
+
+.projectItemTitle {
+  text-align: left;
+  font-size: calc(var(--mobile-font-size) + 0.2rem);
 }

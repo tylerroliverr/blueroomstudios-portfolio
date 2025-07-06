@@ -22,31 +22,37 @@ export default function ProjectNavItem({ project, listDiv }) {
 
   if (isMobile) {
     return (
-      <div className={style.navListMobile}>
-        <div className={style.projectNav}>
-          <TransitionLink href={`/projects/${project.currentSlug}`}>
-            <p className="projectNavItem link">{project.projectName} -</p>
-          </TransitionLink>
+      <TransitionLink href={`/projects/${project.currentSlug}`}>
+        <div className={style.navListMobile}>
+          <div className={style.projectNav}>
+            <p className="projectNavItem">{project.projectName} -</p>
+          </div>
+          <div className={`${style.projectNav} ${style.projectNavType}`}>
+            <p className="projectNavItem">{project.typeOfWork}</p>
+          </div>
         </div>
-        <div className={`${style.projectNav} ${style.projectNavType}`}>
-          <TransitionLink href={`/projects/${project.currentSlug}`}>
-            <p className="projectNavItem link">{project.typeOfWork}</p>
-          </TransitionLink>
-        </div>
-      </div >
+      </TransitionLink>
     );
   }
 
   return (
-    <div>
+    <>
       <TransitionLink
         href={`/projects/${project.currentSlug}`}
-        className={style.projectNav}
+        className={`${style.projectNav} link`}
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}>
-        <p className="projectNavItem link">{project.projectName}</p>
-      </TransitionLink>
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className={style.projectItemDesk}>
+          <div className={`${style.projectItem}`}>
+            <p className={`projectNavItem ${style.projectItemTitle}`}>{project.projectName}</p>
+          </div>
+          <div className={`${style.projectItem}`}>
+            <p className={style.projectNavType}>{project.typeOfWork}</p>
+          </div>
+        </div>
+      </TransitionLink >
       {isHovered && listDiv}
-    </div>
+    </>
   );
 }
