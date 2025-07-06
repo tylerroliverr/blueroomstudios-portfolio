@@ -28,7 +28,7 @@ export default function ProjectNavItem({ project, listDiv }) {
             <p className="projectNavItem">{project.projectName} -</p>
           </div>
           <div className={`${style.projectNav} ${style.projectNavType}`}>
-            <p className="projectNavItem">{project.typeOfWork}</p>
+            <p className="projectNavItem typeOfWork">{project.typeOfWork}</p>
           </div>
         </div>
       </TransitionLink>
