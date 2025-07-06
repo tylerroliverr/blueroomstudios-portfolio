@@ -253,4 +253,24 @@
     text-align: left;
     font-size: var(--mobile-font-size);
   }
+
+  .slideshowContainer {
+    position: relative;
+    height: 60px;
+    width: 60px;
+  }
+
+  .listImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .listImage.active {
+    opacity: 1;
+    z-index: 2;
+  }
+
 }

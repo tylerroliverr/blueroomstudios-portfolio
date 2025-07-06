@@ -2,37 +2,54 @@
 import { useState, useEffect } from 'react';
 import style from '../styles/projectNav.module.css';
 
-export default function ProjectImageCycle({ images, altText, delayOffset = 0 }) {
-  const [imageIndex, setImageIndex] = useState(0);
-  const [fade, setFade] = useState(true);
+// Global timer state (shared across components)
+let globalImageIndex = 0;
+const listeners = new Set();
+
+function startGlobalSlideshow() {
+  if (startGlobalSlideshow.timer) return;
+
+  startGlobalSlideshow.timer = setInterval(() => {
+    globalImageIndex++;
+    listeners.forEach((callback) => callback(globalImageIndex));
+  }, 7000);
+}
+
+export default function ProjectImageCycle({ images, altText }) {
+  const [imageIndex, setImageIndex] = useState(globalImageIndex % images.length);
 
   useEffect(() => {
     if (!images || images.length <= 1) return;
 
-    let intervalId;
-    const startCycle = () => {
-      intervalId = setInterval(() => {
-        setFade(false);
-        setTimeout(() => {
-          setImageIndex((prev) => (prev + 1) % images.length);
-          setFade(true);
-        }, 400); // match CSS transition
-      }, 6000);
+    const listener = (index) => {
+      setImageIndex(index % images.length);
     };
 
-    const delayTimer = setTimeout(startCycle, delayOffset);
+    listeners.add(listener);
+    startGlobalSlideshow();
+
+    // Preload images
+    images.forEach(({ imagePath }) => {
+      const img = new Image();
+      img.src = imagePath;
+    });
 
     return () => {
-      clearTimeout(delayTimer);
-      clearInterval(intervalId);
+      listeners.delete(listener);
     };
-  }, [images, delayOffset]);
+  }, [images]);
 
   return (
-    <img
-      className={`${style.listImage} ${style.fadeImage} ${fade ? style.fadeIn : style.fadeOut}`}
-      alt={altText}
-      src={images[imageIndex]?.imagePath}
-    />
+    <div className={style.slideshowContainer}>
+      {images.map((image, idx) => (
+        <img
+          key={idx}
+          className={`${style.listImage} ${idx === imageIndex ? style.active : ''}`}
+          src={image.imagePath}
+          alt={altText}
+          loading="lazy"
+        />
+      ))}
+    </div>
   );
 }
