@@ -24,7 +24,9 @@ export default async function ProjectNav() {
                   src={project.images[0].imagePath}
                   className={styles.projectImage}
                 />
-                <p className={styles.projectName}>{project.projectName}</p>
+                <div className={styles.projectNameDiv}>
+                  <p className={styles.projectName}>{project.projectName}</p>
+                </div>
               </TransitionLink>
             </div>
           ))}
