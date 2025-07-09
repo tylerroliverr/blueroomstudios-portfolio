@@ -71,5 +71,6 @@
   .projectName {
     width: fit-content;
     height: fit-content;
+    overflow: visible;
   }
 }
