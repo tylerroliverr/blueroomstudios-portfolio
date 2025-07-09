@@ -131,7 +131,8 @@
   .projectTitle {
     font-size: calc(var(--title-font) + 0.5rem);
     opacity: 0.5;
-    width: fit-content;
+    width: 100%;
+    padding-left: 10px;
     height: fit-content;
   }
 }
