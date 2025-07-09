@@ -136,6 +136,14 @@
   .projectImage {
     object-fit: contain;
   }
+
+  .projectDescription {
+    width: 60%;
+  }
+
+  .projectPageTitleDiv {
+    display: unset;
+  }
 }
 
 @media screen and (width >=900px) {
@@ -152,4 +160,22 @@
   .projectTitle {
     font-size: calc(var(--mobile-title-font-size) - 0.65rem);
   }
+
+  .backButtonDiv {
+    color: white;
+    mix-blend-mode: difference;
+    z-index: 10;
+  }
+
+  .projectPageNavButtons {
+    padding-top: 10px;
+  }
+}
+
+.projectDescription {
+  padding: 0px 0 10px 0;
+}
+
+.extraProjectInfo p {
+  padding-bottom: 5px;
 }

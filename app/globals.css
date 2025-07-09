@@ -90,7 +90,7 @@ body {
 
 .main {
   position: relative;
-  top: 50px;
+  top: 60px;
   z-index: 3;
 
   @media screen and (width <=768px) {
@@ -178,12 +178,18 @@ a {
   all: unset;
 }
 
-.link {
-  transition: filter 0.16s ease-out;
-}
+@media screen and (width >=768px) {
+  .link {
+    transition: filter 0.16s ease-out;
+  }
 
-.link:hover {
-  filter: drop-shadow(0px 0px 0.4rem var(--text));
+  .link:hover {
+    filter: drop-shadow(0px 0px 0.4rem var(--text));
+  }
+
+  .logo:hover {
+    filter: drop-shadow(0px 0px 0.4rem var(--cursor));
+  }
 }
 
 #lightbox {
@@ -296,8 +302,8 @@ a {
 
 @media screen and (width <=768px) {
   .star-text-div {
-    left: 8%;
-    top: 3%;
+    left: 35%;
+    top: 2.5%;
     display: unset;
   }
 

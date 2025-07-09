@@ -36,7 +36,7 @@ export default function Navbar() {
     if (isMenuOpen) {
       menuButton.innerHTML = "Close";
     } else {
-      menuButton.innerHTML = "Information";
+      menuButton.innerHTML = "Info";
     }
   }
 
@@ -52,15 +52,16 @@ export default function Navbar() {
 
   return (
     <>
+      <div className="star-text-div">
+        <p className="star-text"></p>
+      </div>
       <CursorHoverLink />
       <div className={style.navbar}>
         <p className={`${style.title} logo link`}><Link href={"/"} onClick={closeMenu}><span className={style.titleSpacer}>B</span>lueroom</Link></p>
         <div className={style.menuDiv}>
-          <p onClick={toggleMenu} className="link">
-            <span className="menuButton">Information</span>
-            {/* <span className={style.star}> ★</span> */}
+          <p onClick={toggleMenu} className={`${style.link} link`}>
+            <span className="menuButton">Info</span>
           </p>
-          {/* <span><img className={style.threeDStar} src="3dstar.png" /></span> */}
         </div>
       </div>
       {isMenuOpen ? (<Menu />) : (null)}

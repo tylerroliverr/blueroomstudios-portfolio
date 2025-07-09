@@ -1,7 +1,7 @@
 .menuContainer {
   position: fixed;
   z-index: 4;
-  left: 5px;
+  left: 0px;
   right: 0;
   height: 100%;
   overflow: hidden;
@@ -17,7 +17,7 @@
   z-index: 10;
   /* margin-left: -2px; */
 
-  top: 50px;
+  top: 60px;
 
   @media screen and (width <=768px) {
     top: 50px;

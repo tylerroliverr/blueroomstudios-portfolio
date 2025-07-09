@@ -1,0 +1,135 @@
+.imageContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.projectImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.projectPageImages {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  flex-direction: column;
+}
+
+.imageContainer {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.counter {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.projectTitle {
+  color: var(--title);
+  text-transform: capitalize;
+  font-size: calc(var(--title-font) + 1rem);
+  font-family: var(--youngblood);
+  letter-spacing: 0.09rem;
+  padding: 4px 0;
+}
+
+.projectPageInformation {
+  color: var(--text);
+  font-size: calc(var(--mobile-small-font-size) + 0.3rem);
+  width: 97%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+.projectPageNavButtons {
+  padding-top: 15px;
+  color: var(--title);
+}
+
+@media screen and (width >=768px) {
+  .projectPageImages {
+    flex-wrap: wrap;
+  }
+
+  .imageContainer {
+    flex: auto;
+    transition: box-shadow 0.4s ease-in-out;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .projectImage {
+    height: 600px;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .projectPageInformation {
+    width: 100%;
+    margin: 0;
+    padding-left: var(--padding-sides);
+    padding-bottom: 40px;
+    position: relative;
+    font-size: calc(var(--mobile-small-font-size) + 0.1rem);
+  }
+
+  .projectImage:hover {
+    transform: scale(1.15);
+    filter: grayscale(0.5)
+  }
+
+  .counter {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    mix-blend-mode: difference;
+    color: white;
+  }
+
+  .projectPageNavbar {
+    position: absolute;
+    opacity: 0.1;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  .projectTitle {
+    font-size: 15rem;
+    text-align: center;
+  }
+}
+
+@media screen and (width <=768px) {
+  .projectPageInformation {
+    position: relative;
+  }
+
+  .projectPageNavbar {
+    position: absolute;
+    bottom: 5px;
+    right: 2px;
+  }
+
+  .projectTitle {
+    font-size: calc(var(--title-font) + 0.5rem);
+    opacity: 0.5;
+  }
+}
