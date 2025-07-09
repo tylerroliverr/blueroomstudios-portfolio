@@ -67,4 +67,9 @@
     font-size: 0.80rem;
     padding-bottom: 10px;
   }
+
+  .projectName {
+    width: 100%;
+    height: 100%;
+  }
 }
