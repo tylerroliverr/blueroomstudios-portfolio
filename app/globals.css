@@ -279,13 +279,11 @@ a {
 }
 
 .star-text-div {
-  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 48.5%;
-  left: 58.5%;
-  transform: translate(-50%, -50%);
+  top: 1.8%;
+  left: 12.4%;
   z-index: 50;
 }
 
@@ -302,8 +300,8 @@ a {
 
 @media screen and (width <=768px) {
   .star-text-div {
-    left: 35%;
-    top: 2.5%;
+    left: 34%;
+    top: 2%;
     display: unset;
   }
 
