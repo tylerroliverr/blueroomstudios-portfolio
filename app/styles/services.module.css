@@ -1,15 +1,21 @@
 .servicesContainer {
-  padding: var(--padding-vertical) var(--padding-sides);
+  padding: 0 var(--padding-sides);
   font-size: var(--mobile-font-size);
   display: flex;
   flex-direction: column;
   gap: 15px;
   position: relative;
-  top: 50px;
+  width: 80%;
+}
 
-  @media screen and (width <=768px) {
-    top: 50px;
-  }
+.contactDiv {
+  padding: 30px var(--padding-sides);
+  font-size: var(--mobile-font-size);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 8px;
+  width: fit-content;
 }
 
 .serviceTitle {
@@ -22,13 +28,65 @@
   width: var(--container-width);
 }
 
-.servicePrice {
+.linkTitle {
   color: var(--text);
-  padding: var(--padding-vertical) 0;
-  font-size: var(--mobile-tiny-font-size);
-  opacity: 0.8;
 }
 
-.aud {
-  font-size: var(--mobile-tiny-font-size);
+.photoDiv {
+  position: fixed;
+  bottom: var(--padding-sides);
+  right: var(--padding-sides);
+  width: 230px;
+  height: 100px;
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+.photoDiv:hover {
+  box-shadow: var(--text) 0px 10px 200px;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: var(--text) 1px solid;
+}
+
+@media screen and (width <=768px) {
+
+  .servicesContainer,
+  .contactDiv {
+    font-size: calc(var(--mobile-font-size) - 0.1rem);
+  }
+
+  .servicesContainer {
+    gap: 8px;
+    width: 70%;
+  }
+
+  .contactDiv {
+    gap: 4px;
+    position: relative;
+  }
+
+  .serviceDescription {
+    width: 100%;
+  }
+
+  .photoDiv {
+    position: relative;
+    padding-left: var(--padding-sides);
+    bottom: unset;
+    right: unset;
+    width: 150px;
+    height: 60px;
+  }
+
+  .ackContainer {
+    padding-bottom: 20px;
+  }
+
+  .photoDiv:hover {
+    box-shadow: unset;
+  }
 }

@@ -137,10 +137,6 @@
     object-fit: contain;
   }
 
-  .projectDescription {
-    width: 60%;
-  }
-
   .projectPageTitleDiv {
     display: unset;
   }
@@ -178,4 +174,8 @@
 
 .extraProjectInfo p {
   padding-bottom: 5px;
+}
+
+.linkText {
+  color: var(--text);
 }

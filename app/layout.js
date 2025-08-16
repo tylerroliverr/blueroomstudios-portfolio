@@ -7,6 +7,8 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import SmoothScrolling from "./components/SmoothScrolling";
 import Preloader from "./components/Preloader";
 import { Analytics } from "@vercel/analytics/react"
+import NavbarNew from "./components/NavbarNew";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: "blueroom studios",
@@ -24,12 +26,13 @@ export default function RootLayout({ children }) {
       <body>
         <Analytics />
         <ThemeProvider>
-          <Preloader />
-          <Navbar />
+          {/* <Preloader /> */}
+          <NavbarNew />
           <CustomCursor />
           <main className="main">
             {children}
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
       <Script src="/cursorScript.js" />

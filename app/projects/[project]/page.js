@@ -25,10 +25,8 @@ export default async function ProjectPage({ params }) {
       <Lightbox />
       <div className={style.projectPageSplit}>
         <div className={style.projectPageInformation}>
-          <div className={style.projectPageNavbar}>
-            <div className={styles.projectPageTitleDiv}>
-              <p className={`${styles.projectPageNavItem} ${style.projectTitle}`}>{project.projectName}</p>
-            </div>
+          <div className={style.projectTitleDiv}>
+            <p>{project.projectName}</p>
           </div>
           <div className={styles.projectDescription}>
             <p>{project.projectDescription}</p>
@@ -43,16 +41,19 @@ export default async function ProjectPage({ params }) {
             <p className={`${styles.projectPageNavItem} link`}>
               {project.visitSite !== null ? (
                 <Link target="_blank" href={`${project.visitSite}`}>
-                  [Visit Site]
+                  Visit site <span className={styles.linkText}> {project.visitSite
+                    ?.replace(/^https?:\/\/(www\.)?/, "")
+                    .replace(/\/$/, "")
+                  } </span>
                 </Link>
               ) : (
-                <span>[Work In Progress]</span>
+                <span>Work in progress</span>
               )}
             </p>
           </div>
-          <div className={`${styles.projectPageNavButtons} ${styles.backButtonDiv}`}>
+          {/* <div className={`${styles.projectPageNavButtons} ${styles.backButtonDiv}`}>
             <BackButton />
-          </div>
+          </div> */}
         </div>
         <div className={style.projectPageImages}>
           {project.images.map((image, index) => (
@@ -63,9 +64,12 @@ export default async function ProjectPage({ params }) {
                 title=""
                 className={style.projectImage}>
               </img>
-              <p className={style.counter}>[{index + 1}/{project.images.length}]</p>
+              {/* <p className={style.counter}>[{index + 1}/{project.images.length}]</p> */}
             </div>
           ))}
+        </div>
+        <div className={style.fancyTitleDiv}>
+          <p className={style.projectTitleFancy}>{project.projectName}</p>
         </div>
       </div>
     </>

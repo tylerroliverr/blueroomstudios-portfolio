@@ -1,0 +1,22 @@
+.footerContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+  color: var(--text);
+  font-size: calc(var(--mobile-font-size) - 0.12rem);
+  display: flex;
+  gap: 18px;
+  padding: var(--padding-vertical) var(--padding-sides);
+}
+
+.themeDiv {
+  display: flex;
+}
+
+@media screen and (width <=768px) {
+  .footerContainer {
+    flex-direction: column;
+    gap: 3px;
+  }
+}

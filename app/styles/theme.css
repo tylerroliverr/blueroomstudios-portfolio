@@ -1,6 +1,7 @@
 :root {
   --text: #1039cb;
   --background: #f1f1f1;
+  --navbackground: rgba(241, 241, 241, 0.55);
   --title: #111111;
   --cursor: #E1B826;
 
@@ -14,7 +15,8 @@
 
 [data-theme='red'] {
   --text: #eb1d1d;
-  --background: #f1f1f1;
+  --background: #fff;
+  --navbackground: rgba(255, 255, 255, 0.85);
   --title: #111111;
   --cursor: #83d0fd;
 
@@ -27,6 +29,7 @@
 [data-theme='black'] {
   --text: #8a8a8a;
   --background: #111111;
+  --navbackground: rgba(17, 17, 17, 0.85);
   --title: #f1f1f1;
   --cursor: #f1f1f1;
 
@@ -52,7 +55,7 @@
   font-style: italic;
 }
 
-.blueButton {
+/* .blueButton {
   color: #1039cb;
 }
 
@@ -62,21 +65,11 @@
 
 .blackButton {
   color: #8a8a8a;
-}
+} */
 
 .themeButtons {
-  color: var(--title);
-  position: relative;
-  padding: var(--padding-vertical) var(--padding-sides);
-  font-size: var(--mobile-font-size);
-  z-index: 10;
+  color: var(--text);
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-  top: 50px;
-
-  @media screen and (width <=768px) {
-    top: 50px;
-  }
-
+  flex-direction: row;
+  gap: 6px;
 }

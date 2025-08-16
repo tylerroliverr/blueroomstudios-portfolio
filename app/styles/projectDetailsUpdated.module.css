@@ -1,28 +1,31 @@
-.imageContainer {
-  height: 100%;
+.projectPageSplit {
+  padding: 0 var(--padding-sides);
   width: 100%;
-}
-
-.projectImage {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: block;
+  display: flex;
+  gap: 20px;
+  position: relative;
 }
 
 .projectPageImages {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  flex-direction: column;
+  margin-left: auto;
+  gap: 15px;
+  width: 60%;
+  flex-wrap: wrap;
+  justify-content: right;
 }
 
 .imageContainer {
-  flex: 0 0 auto;
-  scroll-snap-align: center;
+  width: auto;
+  height: 120px;
+}
+
+.projectImage {
   width: 100%;
-  position: relative;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border: var(--text) 1px solid;
 }
 
 .counter {
@@ -33,27 +36,33 @@
   color: white;
 }
 
-.projectImage {
-  width: 100%;
-  height: auto;
-  display: block;
+.projectTitleDiv {
+  color: var(--text);
+  font-size: calc(var(--mobile-font-size) + 0.5rem);
+  padding-bottom: 4px;
+  text-transform: capitalize;
 }
 
-.projectTitle {
-  color: var(--title);
+.fancyTitleDiv {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.projectTitleFancy {
+  color: var(--text);
   text-transform: capitalize;
-  font-size: calc(var(--title-font) + 1rem);
+  font-size: calc(var(--title-font) + 5rem);
   font-family: var(--youngblood);
   letter-spacing: 0.09rem;
-  padding: 4px 0;
+  opacity: 0.2;
 }
 
 .projectPageInformation {
   color: var(--text);
-  font-size: calc(var(--mobile-small-font-size) + 0.1rem);
-  width: 97%;
-  margin: 0 auto;
-  padding-bottom: 15px;
+  font-size: calc(var(--mobile-font-size));
+  width: 30%;
 }
 
 .projectPageNavButtons {
@@ -62,35 +71,12 @@
 }
 
 @media screen and (width >=768px) {
-  .projectPageImages {
-    flex-wrap: wrap;
-  }
-
   .imageContainer {
-    flex: auto;
-    transition: box-shadow 0.4s ease-in-out;
+    transition:
+      transform 0.35s ease-out,
+      box-shadow 0.35s ease-out;
     overflow: hidden;
     position: relative;
-  }
-
-  .projectImage {
-    height: 600px;
-    object-fit: cover;
-    transition: transform 0.4s ease-in-out;
-  }
-
-  .projectPageInformation {
-    width: 100%;
-    margin: 0;
-    padding-left: var(--padding-sides);
-    padding-bottom: 40px;
-    position: relative;
-    font-size: calc(var(--mobile-small-font-size) + 0.1rem);
-  }
-
-  .projectImage:hover {
-    transform: scale(1.15);
-    filter: grayscale(0.5)
   }
 
   .counter {
@@ -101,19 +87,9 @@
     color: white;
   }
 
-  .projectPageNavbar {
-    position: absolute;
-    opacity: 0.1;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0px;
-    width: 100%;
-    pointer-events: none;
-  }
-
-  .projectTitle {
-    font-size: 15rem;
-    text-align: center;
+  .imageContainer:hover {
+    transform: scale(1.0225);
+    box-shadow: var(--text) 0px 10px 200px;
   }
 }
 
@@ -128,11 +104,46 @@
     right: 2px;
   }
 
-  .projectTitle {
-    font-size: calc(var(--title-font) + 0.5rem);
-    opacity: 0.5;
+  .projectTitleDiv {
+    font-size: calc(var(--mobile-font-size) + 0.4rem);
     width: 100%;
-    padding-left: 10px;
     height: fit-content;
+  }
+
+  .projectPageImages {
+    display: flex;
+    margin-left: auto;
+    gap: 8px;
+    width: 47%;
+    flex-direction: column;
+    flex-wrap: unset;
+  }
+
+  .imageContainer {
+    width: auto;
+    height: 80px;
+  }
+
+  .projectImage {
+    object-fit: cover;
+  }
+
+  .projectPageInformation {
+    color: var(--text);
+    font-size: calc(var(--mobile-font-size) - 0.1rem);
+    width: 45%;
+  }
+
+  .fancyTitleDiv {
+    position: fixed;
+    bottom: 20px;
+    left: 0px;
+    transform: unset;
+  }
+
+  .projectTitleFancy {
+    font-size: calc(var(--title-font) + 1rem);
+    padding-bottom: 25px;
+    padding-left: 15px;
   }
 }
