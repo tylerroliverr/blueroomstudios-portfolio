@@ -82,11 +82,11 @@ body {
     transform 0.3s ease-out;
 }
 
-.pageTransition {
+/* .pageTransition {
   filter: blur(6px);
   opacity: 0;
   transform: translateX(-100px);
-}
+} */
 
 .main {
   position: relative;
