@@ -148,6 +148,18 @@
   }
 }
 
+.projectDescription {
+  padding: 0px 0 10px 0;
+}
+
+.extraProjectInfo p {
+  padding-bottom: 5px;
+}
+
+.linkText {
+  color: var(--text);
+}
+
 @media screen and (width <=768px) {
   .projectImage {
     border-radius: 1px;
@@ -163,19 +175,11 @@
     z-index: 10;
   }
 
+  .extraProjectInfo p {
+    padding-bottom: 2px;
+  }
+
   .projectPageNavButtons {
     padding-top: 10px;
   }
-}
-
-.projectDescription {
-  padding: 0px 0 10px 0;
-}
-
-.extraProjectInfo p {
-  padding-bottom: 5px;
-}
-
-.linkText {
-  color: var(--text);
 }

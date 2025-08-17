@@ -66,8 +66,29 @@
 }
 
 .projectPageNavButtons {
-  padding-top: 15px;
+  padding-top: 5px;
   color: var(--title);
+}
+
+.projectPageSwapButtons {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 97%;
+  z-index: 1000;
+}
+
+.projectPageSwapButtons button {
+  color: var(--text);
+  background-color: transparent;
+  font-size: calc(var(--mobile-font-size) - 0.2rem);
+  font-family: 'PPMont';
+  /* border: var(--text) 0.8px solid;
+  padding: 1px 2px; */
+  border: none;
 }
 
 @media screen and (width >=768px) {
@@ -95,7 +116,7 @@
 
 @media screen and (width <=768px) {
   .projectPageInformation {
-    position: relative;
+    position: fixed;
   }
 
   .projectPageNavbar {
@@ -117,6 +138,7 @@
     width: 47%;
     flex-direction: column;
     flex-wrap: unset;
+    padding-bottom: 20px;
   }
 
   .imageContainer {
@@ -132,6 +154,17 @@
     color: var(--text);
     font-size: calc(var(--mobile-font-size) - 0.1rem);
     width: 45%;
+  }
+
+  .projectPageSwapButtons {
+    width: 45%;
+    top: 50%;
+    left: unset;
+    transform: unset;
+  }
+
+  .projectPageSwapButtons button {
+    font-size: calc(var(--mobile-font-size) - 0.2rem);
   }
 
   .fancyTitleDiv {

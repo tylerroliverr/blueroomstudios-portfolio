@@ -15,9 +15,28 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectPage({ params }) {
-
   const projectData = await getProjectData();
-  const project = projectData.find((proj) => proj.currentSlug === params.project);
+
+  const currentIndex = projectData.findIndex(
+    (proj) => proj.currentSlug === params.project
+  );
+  const project = projectData[currentIndex];
+
+  // Compute prev/next indexes (looping)
+  const prevIndex =
+    (currentIndex - 1 + projectData.length) % projectData.length;
+  const nextIndex = (currentIndex + 1) % projectData.length;
+
+  const prevProject = projectData[prevIndex];
+  const nextProject = projectData[nextIndex];
+
+  function getDomain(url) {
+    try {
+      return new URL(url).hostname.replace(/^www\./, "");
+    } catch (e) {
+      return url; // fallback if it's not a valid URL
+    }
+  }
 
   return (
     <>
@@ -32,46 +51,67 @@ export default async function ProjectPage({ params }) {
             <p>{project.projectDescription}</p>
           </div>
           <div className={styles.extraProjectInfo}>
-            <p><span className={styles.projectTypes}>Year</span> {project.year}</p>
-            <p><span className={styles.projectTypes}>Tech</span> {project.technologies}</p>
-            <p><span className={styles.projectTypes}>Design</span> {project.design}</p>
-            <p><span className={styles.projectTypes}>Development</span> {project.development}</p>
+            <p>
+              <span className={styles.projectTypes}>Year</span> {project.year}
+            </p>
+            <p>
+              <span className={styles.projectTypes}>Tech</span>{" "}
+              {project.technologies}
+            </p>
+            <p>
+              <span className={styles.projectTypes}>Design</span>{" "}
+              {project.design}
+            </p>
+            <p>
+              <span className={styles.projectTypes}>Development</span>{" "}
+              {project.development}
+            </p>
           </div>
+
+          {/* Visit Site */}
           <div className={style.projectPageNavButtons}>
             <p className={`${styles.projectPageNavItem} link`}>
-              {project.visitSite !== null ? (
-                <Link target="_blank" href={`${project.visitSite}`}>
-                  Visit site <span className={styles.linkText}> {project.visitSite
-                    ?.replace(/^https?:\/\/(www\.)?/, "")
-                    .replace(/\/$/, "")
-                  } </span>
+              {project.visitSite ? (
+                <Link target="_blank" href={project.visitSite}>
+                  Visit site{" "}
+                  <span className={styles.linkText}>
+                    {getDomain(project.visitSite)}
+                  </span>
                 </Link>
               ) : (
                 <span>Work in progress</span>
               )}
             </p>
           </div>
-          {/* <div className={`${styles.projectPageNavButtons} ${styles.backButtonDiv}`}>
-            <BackButton />
-          </div> */}
+
+          {/* Prev / Next buttons */}
+          <div className={style.projectPageSwapButtons}>
+            <Link href={`/projects/${prevProject.currentSlug}`}>
+              <button className={`link ${styles.projectPageNavItem}`}>← Prev</button>
+            </Link>
+            <Link href={`/projects/${nextProject.currentSlug}`}>
+              <button className={`link ${styles.projectPageNavItem}`}>Next →</button>
+            </Link>
+          </div>
         </div>
+
+        {/* Images */}
         <div className={style.projectPageImages}>
           {project.images.map((image, index) => (
             <div className={`${style.imageContainer} gallery`} key={index}>
               <img
                 src={image.imagePath}
-                alt='Project Image'
-                title=""
-                className={style.projectImage}>
-              </img>
-              {/* <p className={style.counter}>[{index + 1}/{project.images.length}]</p> */}
+                alt="Project Image"
+                className={style.projectImage}
+              />
             </div>
           ))}
         </div>
+
         <div className={style.fancyTitleDiv}>
           <p className={style.projectTitleFancy}>{project.projectName}</p>
         </div>
       </div>
     </>
-  )
+  );
 }

@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import style from '../styles/services.module.css';
 import Link from 'next/link';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { ThemeContext } from "../components/ThemeProvider";
 
 export default function Services() {
@@ -27,6 +27,22 @@ export default function Services() {
   };
 
   const currentImages = images[theme] || images.blue; // fallback to blue
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // detect mobile
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleClick = () => {
+    if (isMobile) {
+      setIsHovered((prev) => !prev); // toggle on tap
+    }
+  };
 
   return (
     <>
@@ -69,8 +85,9 @@ export default function Services() {
 
       <div
         className={style.photoDiv}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={!isMobile ? () => setIsHovered(true) : undefined}
+        onMouseLeave={!isMobile ? () => setIsHovered(false) : undefined}
+        onClick={handleClick}
       >
         <Image
           className={style.photo}

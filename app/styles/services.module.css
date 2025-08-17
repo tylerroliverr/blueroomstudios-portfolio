@@ -67,6 +67,7 @@
   .contactDiv {
     gap: 4px;
     position: relative;
+    padding-bottom: 8px;
   }
 
   .serviceDescription {
@@ -88,5 +89,9 @@
 
   .photoDiv:hover {
     box-shadow: unset;
+  }
+
+  .serviceTitle {
+    padding-bottom: 0;
   }
 }
