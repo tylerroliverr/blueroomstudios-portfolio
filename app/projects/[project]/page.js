@@ -15,11 +15,19 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectPage({ params }) {
+  const { project: projectSlug } = await params;
+
   const projectData = await getProjectData();
 
   const currentIndex = projectData.findIndex(
-    (proj) => proj.currentSlug === params.project
+    (proj) => proj.currentSlug === projectSlug
   );
+
+  // 🔹 Guard against missing project (e.g. bad/mismatched slug)
+  if (currentIndex === -1) {
+    return <div>Project not found.</div>; // or use notFound() from 'next/navigation'
+  }
+
   const project = projectData[currentIndex];
 
   // Compute prev/next indexes (looping)

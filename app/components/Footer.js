@@ -11,7 +11,7 @@ export default function Footer() {
     <>
       <div className={styles.footerContainer}>
         <div className={styles.lastUpdatedDiv}>
-          <p>Last Updated: 15 August 2025</p>
+          <p>Last Updated: 18 December 2025</p>
         </div>
         <div className={styles.themeDiv}>
           <div className="themeButtons">
