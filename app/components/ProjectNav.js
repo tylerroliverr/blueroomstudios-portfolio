@@ -39,9 +39,24 @@ export default async function ProjectNav() {
       <div className={styles.pageContainer}>
 
         <div className={styles.aboutContainer}>
-          <p>Blueroom studios is a creative agency specialising in website design and development. Run by Tyler as a freelance agency from Melbourne, Naarm. Blueroom aims to create beautiful digital online works through these mediums to portray brands, portfolios and the like in a unique way.</p>
-          <br></br>
-          <p>In the realm of web design, Tylers journey spans over a decade. Bringing a unique touch to each project, combining a love ❦ for <span className={styles.soft}>soft</span>, <span className={styles.bold}>bold</span>, and <span className={styles.minimal}>minimal</span> aesthetics.</p>
+          <div>
+            <p>Blueroom studios is a creative agency specialising in website design and development. Run by Tyler as a freelance agency from Melbourne, Naarm. Blueroom aims to create beautiful digital online works through these mediums to portray brands, portfolios and the like in a unique way.</p>
+            <br></br>
+            <p>In the realm of web design, Tylers journey spans over a decade. Bringing a unique touch to each project, combining a love ❦ for <span className={styles.soft}>soft</span>, <span className={styles.bold}>bold</span>, and <span className={styles.minimal}>minimal</span> aesthetics.</p>
+          </div>
+          <div className="mini">
+            <div className="title-star-holder">Services <span className="star-text home"></span></div>
+            <p>Front-end Development</p>
+            <p>E-commerce Development</p>
+            <p>Custom Shopify Templates</p>
+            <p>Website Design</p>
+            <p>UI/UX Design</p>
+          </div>
+          <div className="">
+            <div className="title-star-holder">Contact <span className="star-text home"></span></div>
+            <p>help@blueroomstudios.com.au</p>
+            <Link target="_blank" className="link" href={"https://www.instagram.com/blueroom.studios/"}>@blueroom.studios</Link>
+          </div>
         </div>
 
         <div className={styles.projectContainer}>

@@ -292,21 +292,46 @@ a {
   font-size: 0.8rem;
 }
 
+.mini {
+  padding-top: 200px;
+  padding-bottom: 20px;
+}
+
+.title-star-holder {
+  position: relative;
+}
+
+.home {
+  font-size: 8px;
+  position: absolute;
+  top: -20%;
+  padding-left: 2px;
+}
+
 @media screen and (width <=768px) {
   .star-text {
     font-size: 10px;
+  }
+
+  .home {
+    font-size: 6px;
   }
 
   .star-text-div {
     top: 15%;
     right: -14%;
   }
+
+  .mini {
+    padding-top: 180px;
+    padding-bottom: 15px;
+  }
 }
 
 .star-text::before {
   content: '★';
   display: inline-block;
-  animation: spin 21s infinite linear;
+  animation: spin 10s infinite linear;
 }
 
 @keyframes spin {

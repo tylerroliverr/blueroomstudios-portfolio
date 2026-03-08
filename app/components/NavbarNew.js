@@ -28,7 +28,7 @@ export default function NavbarNew() {
             <Link href={"/"}><p className="link">Projects</p></Link>
           )}
 
-          <Link href={"/services"}><p className="link">Services</p></Link>
+          {/* <Link href={"/services"}><p className="link">Services</p></Link> */}
           <Link href={"/acknowledgement"}><p className="link">Acknowledgement</p></Link>
         </div>
       </div>
