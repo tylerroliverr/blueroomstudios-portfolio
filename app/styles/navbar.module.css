@@ -69,6 +69,6 @@
   }
 
   .menuDiv {
-    font-size: calc(var(--mobile-font-size));
+    font-size: calc(var(--mobile-font-size) - .1 rem);
   }
 }

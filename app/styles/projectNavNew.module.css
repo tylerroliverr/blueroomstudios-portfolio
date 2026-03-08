@@ -12,7 +12,7 @@
   font-size: var(--mobile-font-size);
   color: var(--text);
   position: fixed;
-  width: 40%;
+  width: 30%;
 }
 
 .soft {
@@ -39,8 +39,8 @@
 }
 
 .projectImageContainer {
-  width: 550px;
-  height: 250px;
+  width: 620px;
+  height: 300px;
   transition: box-shadow 0.4s ease-in-out;
 }
 
