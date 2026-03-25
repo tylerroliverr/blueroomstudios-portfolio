@@ -1,11 +1,8 @@
 import Script from "next/script";
-import Navbar from "./components/Navbar";
 import "./globals.css";
 import "./styles/theme.css";
 import CustomCursor from "./components/CustomCursor";
 import { ThemeProvider } from "./components/ThemeProvider";
-import SmoothScrolling from "./components/SmoothScrolling";
-import Preloader from "./components/Preloader";
 import { Analytics } from "@vercel/analytics/react"
 import NavbarNew from "./components/NavbarNew";
 import Footer from "./components/Footer";

@@ -69,6 +69,7 @@
   transition-property: color, background-color;
   transition-duration: 0.15s;
   transition-timing-function: ease-out;
+  /* border: green solid 1px; */
 }
 
 body {
@@ -90,12 +91,8 @@ body {
 
 .main {
   position: relative;
-  top: 60px;
   z-index: 3;
-
-  @media screen and (width <=768px) {
-    top: 50px;
-  }
+  padding-top: 10px;
 }
 
 #cursor-container {
@@ -292,39 +289,14 @@ a {
   font-size: 0.8rem;
 }
 
-.mini {
-  padding-top: 200px;
-  padding-bottom: 20px;
-}
-
-.title-star-holder {
-  position: relative;
-}
-
-.home {
-  font-size: 8px;
-  position: absolute;
-  top: -20%;
-  padding-left: 2px;
-}
-
 @media screen and (width <=768px) {
   .star-text {
     font-size: 10px;
   }
 
-  .home {
-    font-size: 6px;
-  }
-
   .star-text-div {
     top: 15%;
     right: -14%;
-  }
-
-  .mini {
-    padding-top: 180px;
-    padding-bottom: 15px;
   }
 }
 
@@ -334,6 +306,108 @@ a {
   animation: spin 10s infinite linear;
 }
 
+.title-star-holder {
+  width: fit-content;
+  margin-left: auto;
+  position: relative;
+}
+
+.title-star-holder::before {
+  content: '★';
+  display: inline-block;
+  animation: spin 10s infinite linear;
+  position: absolute;
+  left: -10px;
+  top: -5px;
+  font-size: 8px;
+}
+
+.footer-star {
+  position: relative;
+}
+
+.footer-star::before {
+  content: '★';
+  display: inline-block;
+  animation: spin 10s infinite linear;
+  position: absolute;
+  left: -15px;
+  top: 0px;
+  font-size: 8px;
+}
+
+.footer-star-mobile {
+  position: relative;
+}
+
+.footer-star-mobile::before {
+  content: '★';
+  display: inline-block;
+  animation: spin 10s infinite linear;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  font-size: 8px;
+}
+
+.project-page-star {
+  position: relative;
+  color: var(--text);
+}
+
+.project-page-star::before {
+  content: '★';
+  display: inline-block;
+  animation: spin 18s infinite linear;
+  position: absolute;
+  left: 20px;
+  top: -50px;
+  font-size: 75px;
+  filter: blur(5px);
+}
+
+.project-page-star-mobile {
+  position: relative;
+  color: var(--text);
+}
+
+.project-page-star-mobile::before {
+  content: '★';
+  display: inline-block;
+  animation: spin 18s infinite linear;
+  position: absolute;
+  right: 18px;
+  bottom: 38px;
+  font-size: 35px;
+  filter: blur(3px);
+}
+
+@media screen and (width >=768px) {
+  .project-page-star-mobile::before {
+    content: "" !important;
+  }
+}
+
+.main-hero-star {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  filter: blur(12px);
+  z-index: -1;
+}
+
+.hero-star {
+  font-size: 180px;
+}
+
+.hero-star::before {
+  content: '★';
+  display: inline-block;
+  animation: spin 35s infinite linear;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -341,5 +415,94 @@ a {
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+.lineDivNav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid var(--text) 1px;
+  align-items: center;
+}
+
+.lineDivFooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border-top: solid var(--text) 1px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  gap: 8px;
+}
+
+.lineDivFooterMobile {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: solid var(--text) 1px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  gap: 18px;
+}
+
+.cursor-trail-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* or 100vh */
+  overflow: hidden;
+  border: #000 solid 1px;
+  z-index: 1;
+  cursor: none;
+  /* hide default cursor */
+}
+
+.cursor-trail-container-project-page {
+  z-index: 1;
+  cursor: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+/* trail text */
+.trail-item,
+.trail-item-project-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+
+  color: var(--text);
+  font-size: 12px;
+  white-space: nowrap;
+
+  pointer-events: none;
+
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.trail-item-project-page {
+  opacity: 0.2;
+}
+
+@media screen and (width <=768px) {
+  .cursor-trail-container {
+    touch-action: manipulation;
+  }
+
+  .trail-item,
+  .trail-item-project-page {
+    font-size: calc(var(--mobile-font-size) - 0.12rem);
   }
 }

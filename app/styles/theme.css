@@ -15,6 +15,7 @@
 
 [data-theme='red'] {
   --text: #eb1d1d;
+  --boxshadow: rgba(235, 29, 29, 0.5);
   --background: #fff;
   --navbackground: rgba(255, 255, 255, 0.85);
   --title: #111111;
@@ -28,6 +29,7 @@
 
 [data-theme='black'] {
   --text: #8a8a8a;
+  --boxshadow: rgba(138, 138, 138, 0.5);
   --background: #111111;
   --navbackground: rgba(17, 17, 17, 0.85);
   --title: #f1f1f1;
@@ -41,6 +43,7 @@
 
 [data-theme='blue'] {
   --text: #1039cb;
+  --boxshadow: rgba(16, 57, 203, 0.5);
   --background: #f1f1f1;
   --title: #111111;
   --cursor: #E1B826;

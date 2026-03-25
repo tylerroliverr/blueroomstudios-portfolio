@@ -2,30 +2,57 @@
   padding: 0 var(--padding-sides);
   width: 100%;
   display: flex;
-  gap: 20px;
+  gap: 0px;
   position: relative;
 }
 
 .projectPageImages {
   display: flex;
-  margin-left: auto;
-  gap: 15px;
-  width: 60%;
-  flex-wrap: wrap;
-  justify-content: right;
+  padding-left: 20px;
+  gap: 20px;
+  width: 70%;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  padding-right: 2px;
+  position: relative;
+  z-index: 1000;
 }
 
 .imageContainer {
-  width: auto;
-  height: 120px;
+  width: fit-content;
+  height: 420px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.imageContainerShadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text);
+  opacity: 0.1;
+  border-radius: 10px;
+  z-index: -1;
+  transition: opacity 0.25s ease-out;
+  box-shadow: var(--boxshadow) 0px 10px 200px;
 }
 
 .projectImage {
-  width: 100%;
+  width: auto;
   height: 100%;
   object-fit: contain;
   display: block;
   border: var(--text) 1px solid;
+  border-radius: 10px;
+  transition: transform 0.25s ease-out;
+}
+
+.imageContainer:hover .projectImage {
+  transform: scale(0.95);
+  /* box-shadow: var(--boxshadow) 0px 10px 200px; */
 }
 
 .counter {
@@ -48,21 +75,31 @@
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.fancyTitleDiv:hover .projectTitleFancy {
+  filter: blur(5px);
 }
 
 .projectTitleFancy {
   color: var(--text);
   text-transform: capitalize;
-  font-size: calc(var(--title-font) + 5rem);
+  font-size: calc(var(--title-font) + 12rem);
   font-family: var(--youngblood);
   letter-spacing: 0.09rem;
   opacity: 0.2;
+  transition: filter 0.5s ease-in-out;
 }
 
 .projectPageInformation {
   color: var(--text);
   font-size: calc(var(--mobile-font-size));
   width: 30%;
+  border-right: var(--text) solid 1px;
+  position: relative;
+  padding-right: 10px;
 }
 
 .projectPageNavButtons {
@@ -73,12 +110,11 @@
 .projectPageSwapButtons {
   display: flex;
   justify-content: space-between;
-  position: fixed;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 97%;
-  z-index: 1000;
+  position: absolute;
+  bottom: 40%;
+  left: 0;
+  width: 100%;
+  padding-right: 10px;
 }
 
 .projectPageSwapButtons button {
@@ -89,6 +125,12 @@
   /* border: var(--text) 0.8px solid;
   padding: 1px 2px; */
   border: none;
+  position: relative;
+  z-index: 1000;
+}
+
+.fancyTitleDivMobile {
+  display: none;
 }
 
 @media screen and (width >=768px) {
@@ -100,6 +142,10 @@
     position: relative;
   }
 
+  .projectPageInformation {
+    height: 420px;
+  }
+
   .counter {
     position: absolute;
     top: 5px;
@@ -107,16 +153,11 @@
     mix-blend-mode: difference;
     color: white;
   }
-
-  .imageContainer:hover {
-    transform: scale(1.0225);
-    box-shadow: var(--text) 0px 10px 200px;
-  }
 }
 
 @media screen and (width <=768px) {
-  .projectPageInformation {
-    position: fixed;
+  .projectPageSplit {
+    flex-direction: column;
   }
 
   .projectPageNavbar {
@@ -133,34 +174,42 @@
 
   .projectPageImages {
     display: flex;
-    margin-left: auto;
     gap: 8px;
-    width: 47%;
-    flex-direction: column;
-    flex-wrap: unset;
-    padding-bottom: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 0;
+    overflow-x: unset;
+    padding-bottom: 70px;
   }
 
   .imageContainer {
     width: auto;
-    height: 80px;
+    height: auto;
+    flex-shrink: unset;
+
   }
 
   .projectImage {
     object-fit: cover;
+    width: 100%;
   }
 
   .projectPageInformation {
     color: var(--text);
     font-size: calc(var(--mobile-font-size) - 0.1rem);
-    width: 45%;
+    position: relative;
+    border: none;
+    width: 100%;
+    padding: 0;
   }
 
   .projectPageSwapButtons {
-    width: 45%;
-    top: 50%;
-    left: unset;
+    width: 100%;
+    position: relative;
     transform: unset;
+    padding-right: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .projectPageSwapButtons button {
@@ -168,10 +217,24 @@
   }
 
   .fancyTitleDiv {
-    position: fixed;
-    bottom: 20px;
-    left: 0px;
-    transform: unset;
+    display: none;
+  }
+
+  .fancyTitleDivMobile {
+    display: flex;
+    position: relative;
+    overflow: visible;
+  }
+
+  .projectTitleFancyMobile {
+    color: var(--text);
+    text-transform: capitalize;
+    font-size: calc(var(--title-font) + 2rem);
+    font-family: var(--youngblood);
+    letter-spacing: 0.09rem;
+    opacity: 0.2;
+    overflow: visible;
+    padding: 0 20px 0 5px;
   }
 
   .projectTitleFancy {
@@ -179,4 +242,5 @@
     padding-bottom: 25px;
     padding-left: 15px;
   }
+
 }

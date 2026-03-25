@@ -6,17 +6,87 @@
   color: var(--text);
   font-size: calc(var(--mobile-font-size) - 0.12rem);
   display: flex;
-  gap: 18px;
-  padding: var(--padding-vertical) var(--padding-sides);
+  gap: 8px;
+  padding: 0 var(--padding-sides) var(--padding-vertical) var(--padding-sides);
+  width: 100%;
+  background-color: var(--background);
 }
 
 .themeDiv {
   display: flex;
 }
 
+.contactDiv {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.footerContainerMobile {
+  display: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media screen and (width <=768px) {
+  .footerContainerMobile {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 200;
+    color: var(--text);
+    font-size: calc(var(--mobile-font-size) - 0.12rem);
+    display: flex;
+    gap: 18px;
+    padding: 0 var(--padding-sides) var(--padding-vertical) var(--padding-sides);
+    width: 100%;
+    background-color: var(--background);
+  }
+
   .footerContainer {
+    display: none;
+  }
+
+  .lastUpdatedDiv {
     flex-direction: column;
-    gap: 3px;
+  }
+
+  .contactItem {
+    position: relative;
+    width: fit-content;
+  }
+
+  .instagram::before,
+  .email::before {
+    content: '★';
+    display: inline-block;
+    animation: spin 10s infinite linear;
+    font-size: calc(var(--mobile-font-size) - 0.25rem);
+    position: absolute;
+    top: 0px;
+    left: -12px;
+  }
+
+  .email::before {
+    animation: spin 12s infinite linear;
+  }
+
+  .contactDiv {
+    flex-direction: column;
+    text-align: right;
+    padding: 0;
+    gap: 0;
+    margin-left: 0;
+    align-items: flex-end;
   }
 }

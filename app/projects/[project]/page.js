@@ -3,9 +3,10 @@ import getProjectData from "@/app/components/data/getProjectData";
 import Image from "next/image";
 import styles from "../../styles/projectDetails.module.css";
 import style from "../../styles/projectDetailsUpdated.module.css";
-import BackButton from "@/app/components/BackButton";
 import Lightbox from "@/app/components/Lightbox";
 import CursorHoverLink from "@/app/components/CursorLinkHover";
+import HorizontalScrollContainer from "@/app/components/HorizontalScroll";
+import CursorTrail from "@/app/components/CursorTrailProjectPage";
 
 export async function generateStaticParams() {
   const projectData = await getProjectData();
@@ -50,47 +51,66 @@ export default async function ProjectPage({ params }) {
     <>
       <CursorHoverLink />
       <Lightbox />
+      <CursorTrail />
+
       <div className={style.projectPageSplit}>
-        <div className={style.projectPageInformation}>
-          <div className={style.projectTitleDiv}>
+        <div className={`${style.projectPageInformation} project-page-star-mobile`}>
+          {/* <div className={style.projectTitleDiv}>
             <p>{project.projectName}</p>
+          </div> */}
+          <div className={`${style.fancyTitleDivMobile}`}>
+            <p className={style.projectTitleFancyMobile}>{project.projectName}</p>
           </div>
           <div className={styles.projectDescription}>
             <p>{project.projectDescription}</p>
           </div>
           <div className={styles.extraProjectInfo}>
-            <p>
-              <span className={styles.projectTypes}>Year</span> {project.year}
-            </p>
-            <p>
-              <span className={styles.projectTypes}>Tech</span>{" "}
-              {project.technologies}
-            </p>
-            <p>
-              <span className={styles.projectTypes}>Design</span>{" "}
-              {project.design}
-            </p>
-            <p>
-              <span className={styles.projectTypes}>Development</span>{" "}
-              {project.development}
-            </p>
+            <div className={styles.projectDetails}>
+              <p className={styles.projectDetailsTitle}>
+                <span className={styles.projectTypes}>Year</span>
+              </p>
+              <p>{project.year}</p>
+            </div>
+            <div className={styles.projectDetails}>
+              <p className={styles.projectDetailsTitle}>
+                <span className={styles.projectTypes}>Tech</span>
+              </p>
+              <p>{project.technologies}</p>
+            </div>
+            <div className={styles.projectDetails}>
+              <p className={styles.projectDetailsTitle}>
+                <span className={styles.projectTypes}>Design</span>
+              </p>
+              <p>{project.design}</p>
+            </div>
+            <div className={styles.projectDetails}>
+              <p className={styles.projectDetailsTitle}>
+                <span className={styles.projectTypes}>Development</span>
+              </p>
+              <p>{project.development}</p>
+            </div>
           </div>
 
           {/* Visit Site */}
-          <div className={style.projectPageNavButtons}>
-            <p className={`${styles.projectPageNavItem} link`}>
-              {project.visitSite ? (
-                <Link target="_blank" href={project.visitSite}>
-                  Visit site{" "}
-                  <span className={styles.linkText}>
+          <div className={`${styles.projectVisitLink} link`}>
+
+            {project.visitSite ? (
+              <Link target="_blank" href={project.visitSite}>
+                <div className={`${styles.projectDetails} link`}>
+                  <p className={`${styles.projectDetailsTitle} ${styles.projectTypes}`}>
+                    Visit site{" "}
+                  </p>
+                  <p className={styles.linkText}>
                     {getDomain(project.visitSite)}
-                  </span>
-                </Link>
-              ) : (
-                <span>Work in progress</span>
-              )}
-            </p>
+                  </p>
+
+                </div>
+              </Link>
+            ) : (
+              <span>Work in progress</span>
+            )}
           </div>
+
 
           {/* Prev / Next buttons */}
           <div className={style.projectPageSwapButtons}>
@@ -104,7 +124,7 @@ export default async function ProjectPage({ params }) {
         </div>
 
         {/* Images */}
-        <div className={style.projectPageImages}>
+        <HorizontalScrollContainer className={style.projectPageImages}>
           {project.images.map((image, index) => (
             <div className={`${style.imageContainer} gallery`} key={index}>
               <img
@@ -112,11 +132,12 @@ export default async function ProjectPage({ params }) {
                 alt="Project Image"
                 className={style.projectImage}
               />
+
             </div>
           ))}
-        </div>
+        </HorizontalScrollContainer>
 
-        <div className={style.fancyTitleDiv}>
+        <div className={`${style.fancyTitleDiv} project-page-star`}>
           <p className={style.projectTitleFancy}>{project.projectName}</p>
         </div>
       </div>

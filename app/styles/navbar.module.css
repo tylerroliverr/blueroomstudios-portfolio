@@ -1,5 +1,5 @@
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 2;
   /* background-color: var(--background); */
@@ -7,10 +7,10 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 3px var(--padding-sides) 16px var(--padding-sides);
+  padding: 3px var(--padding-sides) 0px var(--padding-sides);
   font-size: var(--mobile-font-size);
   z-index: 100;
-  /* background-color: var(--navbackground); */
+  background-color: var(--background);
 }
 
 .title {
@@ -36,7 +36,7 @@
   justify-content: end;
   align-items: center; */
   text-align: right;
-  font-size: calc(var(--mobile-font-size) + 0.1rem);
+  font-size: var(--mobile-font-size);
   font-family: 'PPMont';
   mix-blend-mode: normal;
   display: flex;
@@ -54,9 +54,6 @@
 }
 
 @media screen and (width >=600px) {
-  .navbar {
-    padding-bottom: 0;
-  }
 
   .title {
     font-size: 3.5rem;
